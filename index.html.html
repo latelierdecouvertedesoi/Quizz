@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Véronique - Guide Intuitive Rennes</title>
+    <meta name="description" content="Découvrez si l'accompagnement de Véronique, Guide Intuitive à Rennes, correspond à vos besoins. Quiz gratuit de découverte de soi.">
+    <meta property="og:title" content="Êtes-vous fait(e) pour mon accompagnement ? - Quiz Véronique Guide Intuitive">
+    <meta property="og:description" content="Libération émotionnelle & découverte authentique de soi à Rennes. Testez votre compatibilité avec ma méthode unique.">
+    <meta property="og:image" content="https://latelierdecouvertedesoi.com/wp-content/uploads/2025/01/bousole-numerique.png">
+    <meta property="og:url" content="https://latelierdecouvertedesoi.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8360c3, #2ebf91);
+            padding: 25px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .profile-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1em;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .linkedin-compatible {
+            font-size: 0.85em;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .quiz-content {
+            padding: 25px 20px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .question:nth-child(2) { animation-delay: 0.1s; }
+        .question:nth-child(3) { animation-delay: 0.15s; }
+        .question:nth-child(4) { animation-delay: 0.2s; }
+        .question:nth-child(5) { animation-delay: 0.25s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question h3 {
+            color: #4a5568;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .question h3::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+
+        .options {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option {
+            position: relative;
+        }
+
+        .option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .option label {
+            display: block;
+            padding: 12px 18px;
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            line-height: 1.4;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .option label:hover {
+            border-color: #8360c3;
+            background: #edf2f7;
+            transform: translateX(5px);
+        }
+
+        .option label:hover::before {
+            left: 100%;
+        }
+
+        .option input[type="radio"]:checked + label {
+            background: linear-gradient(135deg, #8360c3, #2ebf91);
+            color: white;
+            border-color: #8360c3;
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(131, 96, 195, 0.3);
+        }
+
+        .calculate-btn {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            margin: 30px auto 0;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #8360c3, #2ebf91);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(131, 96, 195, 0.3);
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(131, 96, 195, 0.4);
+        }
+
+        .calculate-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .result {
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .result h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .result p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .result-high {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+
+        .result-medium {
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+            color: white;
+        }
+
+        .result-low {
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8360c3, #2ebf91);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                margin: 5px;
+                border-radius: 12px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header p {
+                font-size: 0.9em;
+            }
+            
+            .quiz-content {
+                padding: 20px 15px;
+            }
+            
+            .question h3 {
+                font-size: 1em;
+                padding-left: 20px;
+            }
+            
+            .option label {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            
+            .calculate-btn {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+            
+            .result h2 {
+                font-size: 1.4em;
+            }
+            
+            .result p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Styles spécifiques LinkedIn */
+        .linkedin-optimized {
+            background: #f3f2ef;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .header-linkedin {
+            background: linear-gradient(135deg, #0077b6, #00a8cc);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-badge">
+                <span>👋</span>
+                <span><strong>Véronique - Guide Intuitive à Rennes</strong></span>
+                <span>🌟</span>
+            </div>
+            
+            <h1><span class="sparkle">✨</span> Êtes-vous fait(e) pour mon accompagnement ? <span class="sparkle">✨</span></h1>
+            <p>Libération émotionnelle • Découverte de soi • Tarot intuitif</p>
+            <p class="linkedin-compatible">Quiz gratuit - 2 minutes - Résultat immédiat</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="quiz-content">
+            <form id="quizForm">
+                <div class="question">
+                    <h3>Comment vous sentez-vous actuellement dans votre vie ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q1a" name="q1" value="3">
+                            <label for="q1a">Je me sens bloqué(e), comme si quelque chose m'empêchait d'avancer malgré mes efforts</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1b" name="q1" value="2">
+                            <label for="q1b">J'ai des moments de doute, j'aimerais être plus aligné(e) avec qui je suis vraiment</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1c" name="q1" value="1">
+                            <label for="q1c">Globalement ça va, mais j'ai envie d'explorer de nouveaux aspects de moi-même</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1d" name="q1" value="0">
+                            <label for="q1d">Je me sens épanoui(e) et n'ai pas de questionnements particuliers</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Quelle est votre relation avec vos émotions ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q2a" name="q2" value="3">
+                            <label for="q2a">J'ai tendance à les refouler ou je me sens submergé(e) par elles</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2b" name="q2" value="2">
+                            <label for="q2b">Je ressens beaucoup d'émotions mais j'ai du mal à les comprendre et les gérer</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2c" name="q2" value="1">
+                            <label for="q2c">Je commence à mieux les comprendre mais j'aimerais aller plus loin</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2d" name="q2" value="0">
+                            <label for="q2d">Je suis à l'aise avec mes émotions et sais les gérer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Comment réagissez-vous face aux approches intuitives et énergétiques ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q3a" name="q3" value="3">
+                            <label for="q3a">Cela me parle profondément, j'ai moi-même une sensibilité intuitive</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3b" name="q3" value="2">
+                            <label for="q3b">Je suis curieux(se) et ouvert(e) à ces pratiques</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3c" name="q3" value="1">
+                            <label for="q3c">Je suis un peu sceptique mais prêt(e) à essayer</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3d" name="q3" value="0">
+                            <label for="q3d">Je préfère les approches purement rationnelles et scientifiques</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Qu'est-ce qui vous motive le plus dans une démarche de développement personnel ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q4a" name="q4" value="3">
+                            <label for="q4a">Libérer des blocages profonds et des traumatismes du passé</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4b" name="q4" value="2">
+                            <label for="q4b">Mieux me connaître et comprendre mes schémas inconscients</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4c" name="q4" value="1">
+                            <label for="q4c">Développer mes compétences relationnelles et ma confiance</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4d" name="q4" value="0">
+                            <label for="q4d">Acquérir des techniques concrètes pour optimiser ma performance</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Comment décririez-vous votre personnalité ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q5a" name="q5" value="3">
+                            <label for="q5a">Intense, passionné(e), parfois dispersé(e), avec une grande sensibilité</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5b" name="q5" value="2">
+                            <label for="q5b">Créatif(ve), empathique, à la recherche d'authenticité</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5c" name="q5" value="1">
+                            <label for="q5c">Équilibré(e), curieux(se), ouvert(e) au changement</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5d" name="q5" value="0">
+                            <label for="q5d">Pragmatique, organisé(e), préférant les solutions concrètes</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Quelle phrase vous correspond le mieux ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q6a" name="q6" value="3">
+                            <label for="q6a">"Je sens qu'il y a une part de moi que je ne connais pas encore"</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6b" name="q6" value="2">
+                            <label for="q6b">"J'aimerais oser être plus authentique dans mes relations"</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6c" name="q6" value="1">
+                            <label for="q6c">"Je cherche des outils pour mieux me comprendre"</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6d" name="q6" value="0">
+                            <label for="q6d">"Je veux des résultats concrets et mesurables"</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>Comment envisagez-vous un accompagnement idéal ?</h3>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q7a" name="q7" value="3">
+                            <label for="q7a">Un espace de confiance où je peux me révéler sans jugement</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7b" name="q7" value="2">
+                            <label for="q7b">Un accompagnement personnalisé qui s'adapte à mes besoins</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7c" name="q7" value="1">
+                            <label for="q7c">Une méthode structurée avec des étapes claires</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7d" name="q7" value="0">
+                            <label for="q7d">Un coaching efficace avec des objectifs précis</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="calculate-btn" onclick="calculateResult()">
+                    Découvrir mon résultat ✨
+                </button>
+            </form>
+
+            <div id="result" class="result">
+                <!-- Le résultat sera affiché ici -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mise à jour de la barre de progression
+        function updateProgress() {
+            const questions = document.querySelectorAll('input[type="radio"]:checked');
+            const totalQuestions = 7;
+            const progress = (questions.length / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Ajouter des écouteurs d'événements à tous les boutons radio
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', updateProgress);
+        });
+
+        function calculateResult() {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            let totalScore = 0;
+            let answeredQuestions = 0;
+
+            // Calculer le score total
+            for (let i = 1; i <= 7; i++) {
+                const answer = formData.get(`q${i}`);
+                if (answer) {
+                    totalScore += parseInt(answer);
+                    answeredQuestions++;
+                }
+            }
+
+            // Vérifier si toutes les questions ont été répondues
+            if (answeredQuestions < 7) {
+                alert('Veuillez répondre à toutes les questions pour obtenir votre résultat personnalisé.');
+                return;
+            }
+
+            const resultDiv = document.getElementById('result');
+            let resultHTML = '';
+
+            if (totalScore >= 18) {
+                resultDiv.className = 'result result-high';
+                resultHTML = `
+                    <h2>🎯 Vous êtes PARFAITEMENT aligné(e) avec cet accompagnement !</h2>
+                    <p><strong>Score : ${totalScore}/21</strong></p>
+                    <p>Votre profil correspond exactement à ce que je propose. Vous êtes prêt(e) pour une transformation profonde et authentique.</p>
+                    <p><strong>Pourquoi cet accompagnement est fait pour vous :</strong></p>
+                    <p>• Vous avez la sensibilité nécessaire pour accueillir les révélations de votre inconscient</p>
+                    <p>• Votre ouverture aux approches intuitives permettra un travail en profondeur</p>
+                    <p>• Votre désir de libération émotionnelle trouvera sa réponse dans mes outils</p>
+                    <div class="contact-info">
+                        <p><strong>🎯 Vous êtes ma cliente idéale ! 🎯</strong></p>
+                        <p>Réservez votre séance découverte gratuite de 15 minutes</p>
+                        <div class="social-links">
+                            <a href="https://latelierdecouvertedesoi.com" target="_blank">🌐 Mon site</a>
+                            <a href="mailto:veronique@latelierdecouvertedesoi.com">📧 Contact</a>
+                            <a href="https://www.linkedin.com/in/veronique-guide-intuitive" target="_blank">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                `;
+            } else if (totalScore >= 12) {
+                resultDiv.className = 'result result-medium';
+                resultHTML = `
+                    <h2>🌟 Cet accompagnement peut vous convenir</h2>
+                    <p><strong>Score : ${totalScore}/21</strong></p>
+                    <p>Vous montrez des signes d'ouverture à ma méthode, mais quelques aspects méritent d'être explorés ensemble.</p>
+                    <p><strong>Ce qui pourrait vous correspondre :</strong></p>
+                    <p>• Mon approche bienveillante peut vous aider à explorer vos questionnements</p>
+                    <p>• Les outils que je propose peuvent compléter votre cheminement personnel</p>
+                    <p>• Votre curiosité est un atout pour découvrir de nouveaux aspects de vous-même</p>
+                    <div class="contact-info">
+                        <p><strong>🌟 Un échange pour voir si on se correspond ? 🌟</strong></p>
+                        <p>Appelez-moi ou envoyez-moi un message pour discuter de vos besoins</p>
+                        <div class="social-links">
+                            <a href="https://latelierdecouvertedesoi.com" target="_blank">🌐 Mon site</a>
+                            <a href="mailto:veronique@latelierdecouvertedesoi.com">📧 Contact</a>
+                            <a href="https://www.linkedin.com/in/veronique-guide-intuitive" target="_blank">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                resultDiv.className = 'result result-low';
+                resultHTML = `
+                    <h2>💭 Mon approche ne semble pas correspondre à vos attentes actuelles</h2>
+                    <p><strong>Score : ${totalScore}/21</strong></p>
+                    <p>Votre profil indique que vous pourriez préférer d'autres types d'accompagnement pour le moment.</p>
+                    <p><strong>Ce que je vous recommande :</strong></p>
+                    <p>• Explorez d'abord des approches plus rationnelles qui vous correspondent mieux</p>
+                    <p>• Prenez le temps de développer votre ouverture aux dimensions intuitives</p>
+                    <p>• Revenez vers moi si votre cheminement vous amène à chercher une approche plus holistique</p>
+                    <div class="contact-info">
+                        <p><strong>🌱 Votre chemin est unique 🌱</strong></p>
+                        <p>Peut-être qu'une approche différente vous conviendrait mieux pour l'instant</p>
+                        <div class="social-links">
+                            <a href="https://latelierdecouvertedesoi.com" target="_blank">🌐 Mon site</a>
+                            <a href="mailto:veronique@latelierdecouvertedesoi.com">📧 Contact</a>
+                            <a href="https://www.linkedin.com/in/veronique-guide-intuitive" target="_blank">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            resultDiv.innerHTML = resultHTML;
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.question');
+            questions.forEach((question, index) => {
+                question.style.animationDelay = (index * 0.1) + 's';
+            });
+        });
+    </script>
+</body>
+</html>
