@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Est-ce que mon accompagnement est fait pour vous ? — L'Atelier Découverte de Soi</title>
+<meta name="description" content="Sept questions, deux minutes, une réponse honnête. Découvrez si l'accompagnement de Véronique, à Rennes, correspond à votre situation.">
+<meta property="og:title" content="Est-ce que mon accompagnement est fait pour vous ?">
+<meta property="og:description" content="Sept questions, deux minutes, une réponse honnête — L'Atelier Découverte de Soi, Rennes.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --or:#B59659;--or-fonce:#9A7E45;--turquoise:#8ED8D8;--turquoise-fonce:#4E9E9E;
+  --pale:#DBEEEE;--encre:#33383B;--encre-doux:#5C6467;--creme:#FBFAF8;
+  --display:'Fraunces',Georgia,serif;--corps:'Karla',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--corps);font-size:17px;line-height:1.65;color:var(--encre);background:var(--creme);-webkit-font-smoothing:antialiased}
+.enveloppe{max-width:660px;margin:0 auto;background:#fff;min-height:100vh}
+header{padding:44px 24px 34px;border-bottom:1px solid #EDE9E1}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--turquoise-fonce);font-weight:600;display:block;margin-bottom:14px}
+h1{font-family:var(--display);font-weight:300;font-size:31px;line-height:1.22;margin-bottom:16px}
+header p{color:var(--encre-doux);max-width:62ch}
+.marque{font-family:var(--display);font-size:15px;color:var(--encre);margin-bottom:6px}
+.marque small{display:block;font-family:var(--corps);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--turquoise-fonce);margin-top:3px;font-weight:500}
+.jauge{height:3px;background:#EDE9E1;position:sticky;top:0;z-index:10}
+.jauge span{display:block;height:100%;width:0;background:var(--or);transition:width .35s ease}
+main{padding:34px 24px 44px}
+fieldset{border:0;margin:0 0 34px;padding:0}
+legend{display:block;width:100%;float:none;font-family:var(--display);font-weight:300;font-size:22px;line-height:1.3;margin-bottom:16px;color:var(--encre)}
+.numero{display:block;font-family:var(--corps);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--turquoise-fonce);font-weight:600;display:block;margin-bottom:8px}
+.choix{display:grid;gap:10px}
+.choix label{
+  display:block;padding:15px 18px;background:#fff;border:1px solid #E9E4DA;border-radius:12px;
+  cursor:pointer;font-size:15.5px;line-height:1.5;color:var(--encre-doux);transition:border-color .2s,background .2s,color .2s;
+}
+.choix label:hover{border-color:var(--turquoise);background:#FBFDFD}
+.choix input{position:absolute;opacity:0;width:0;height:0}
+.choix input:focus-visible+label{outline:2px solid var(--turquoise-fonce);outline-offset:2px}
+.choix input:checked+label{background:var(--pale);border-color:var(--turquoise-fonce);color:var(--encre);font-weight:500}
+.btn{
+  display:block;width:100%;background:var(--or);color:#fff;border:0;border-radius:9px;
+  font-family:var(--corps);font-weight:600;font-size:15.5px;padding:16px 26px;cursor:pointer;
+  text-align:center;text-decoration:none;transition:background .2s,transform .2s;
+}
+.btn:hover{background:var(--or-fonce);transform:translateY(-1px)}
+.btn.clair{background:#fff;color:var(--encre);border:1px solid #E9E4DA;margin-top:12px}
+.btn.clair:hover{background:var(--creme);color:var(--encre)}
+.alerte{background:#FBF7EF;border:1px solid var(--or);border-radius:9px;padding:14px 18px;font-size:15px;color:var(--or-fonce);margin-bottom:16px}
+.alerte[hidden]{display:none}
+#resultat{margin-top:38px;padding-top:34px;border-top:1px solid #E9E4DA}
+#resultat[hidden]{display:none}
+.res-eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--turquoise-fonce);display:block;margin-bottom:12px}
+#resultat h2{font-family:var(--display);font-weight:300;font-size:26px;line-height:1.28;margin-bottom:16px}
+#resultat p{color:var(--encre-doux);margin-bottom:16px;max-width:62ch}
+#resultat ul{list-style:none;margin:0 0 20px}
+#resultat li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--encre-doux);font-size:15.5px}
+#resultat li::before{content:'';position:absolute;left:0;top:10px;width:9px;height:1.5px;background:var(--or)}
+.encart{background:var(--pale);border-radius:14px;padding:28px 24px;text-align:center;margin-top:28px}
+.encart h3{font-family:var(--display);font-weight:300;font-size:21px;margin-bottom:10px}
+.encart p{margin:0 auto 20px !important;color:var(--encre-doux)}
+.coords{margin-top:18px;font-size:15px;color:var(--encre-doux)}
+.coords a{color:var(--turquoise-fonce)}
+footer{border-top:1px solid #EDE9E1;background:var(--creme);padding:30px 24px 40px;font-size:13px;color:#8A8F91;line-height:1.7}
+footer a{color:var(--turquoise-fonce)}
+@media(min-width:700px){
+  header{padding:64px 40px 44px}main{padding:44px 40px 60px}footer{padding:36px 40px 48px}
+  h1{font-size:40px}legend{font-size:24px}
+  .btn{display:inline-block;width:auto;min-width:280px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="jauge"><span id="jauge"></span></div>
+<div class="enveloppe">
+
+<header>
+  <div class="marque">L'Atelier Découverte de Soi<small>Rennes · Retiers · Visio</small></div>
+  <span class="eyebrow">Deux minutes, sept questions</span>
+  <h1>Est-ce que mon accompagnement est fait pour vous&nbsp;?</h1>
+  <p>Je préfère vous dire honnêtement que ce n'est pas pour vous plutôt que de vous accompagner à contretemps. Répondez spontanément&nbsp;: c'est votre première réaction qui est juste.</p>
+</header>
+
+<main>
+<form id="quiz">
+
+  <fieldset>
+    <legend><span class="numero">Question 1 sur 7</span>Où en êtes-vous en ce moment&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q1a" name="q1" value="3"><label for="q1a">Je tourne en rond. Quelque chose me retient, malgré tous mes efforts.</label>
+      <input type="radio" id="q1b" name="q1" value="2"><label for="q1b">J'ai des périodes de doute et j'aimerais me sentir plus alignée avec moi-même.</label>
+      <input type="radio" id="q1c" name="q1" value="1"><label for="q1c">Globalement ça va, mais j'ai envie de mieux me comprendre.</label>
+      <input type="radio" id="q1d" name="q1" value="0"><label for="q1d">Tout va bien, je n'ai pas de questionnement particulier.</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 2 sur 7</span>Quelle est votre relation à vos émotions&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q2a" name="q2" value="3"><label for="q2a">Soit je les mets de côté, soit elles me submergent. Rarement l'entre-deux.</label>
+      <input type="radio" id="q2b" name="q2" value="2"><label for="q2b">Je ressens beaucoup, mais j'ai du mal à comprendre ce qui se joue.</label>
+      <input type="radio" id="q2c" name="q2" value="1"><label for="q2c">Je commence à mieux les repérer, et j'aimerais aller plus loin.</label>
+      <input type="radio" id="q2d" name="q2" value="0"><label for="q2d">Je suis à l'aise avec mes émotions et je sais quoi en faire.</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 3 sur 7</span>Et avec votre corps&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q3a" name="q3" value="3"><label for="q3a">Mon corps parle fort — tensions, fatigue, gorge serrée — et je ne sais pas quoi en faire.</label>
+      <input type="radio" id="q3b" name="q3" value="2"><label for="q3b">Je sens bien qu'il y a un lien avec ce que je vis, sans savoir l'explorer.</label>
+      <input type="radio" id="q3c" name="q3" value="1"><label for="q3c">Je suis curieuse de cette piste, même si elle m'est peu familière.</label>
+      <input type="radio" id="q3d" name="q3" value="0"><label for="q3d">Je préfère m'en tenir à des approches purement rationnelles.</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 4 sur 7</span>Qu'est-ce qui vous mettrait en mouvement&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q4a" name="q4" value="3"><label for="q4a">Comprendre enfin ce qui se rejoue en moi depuis des années.</label>
+      <input type="radio" id="q4b" name="q4" value="2"><label for="q4b">Repérer mes schémas et mes croyances pour arrêter de les subir.</label>
+      <input type="radio" id="q4c" name="q4" value="1"><label for="q4c">Gagner en confiance et savoir poser mes limites.</label>
+      <input type="radio" id="q4d" name="q4" value="0"><label for="q4d">Obtenir des techniques concrètes pour être plus performante.</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 5 sur 7</span>Comment vous décririez-vous&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q5a" name="q5" value="3"><label for="q5a">Intense, sensible, parfois dispersée&nbsp;; je ressens tout très fort.</label>
+      <input type="radio" id="q5b" name="q5" value="2"><label for="q5b">Empathique, créative, en quête d'authenticité.</label>
+      <input type="radio" id="q5c" name="q5" value="1"><label for="q5c">Plutôt posée, curieuse, ouverte au changement.</label>
+      <input type="radio" id="q5d" name="q5" value="0"><label for="q5d">Pragmatique et organisée, je préfère le concret.</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 6 sur 7</span>Quelle phrase vous ressemble le plus&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q6a" name="q6" value="3"><label for="q6a">«&nbsp;Je sens qu'il y a une part de moi que je ne connais pas encore.&nbsp;»</label>
+      <input type="radio" id="q6b" name="q6" value="2"><label for="q6b">«&nbsp;J'aimerais oser être plus vraie dans mes relations.&nbsp;»</label>
+      <input type="radio" id="q6c" name="q6" value="1"><label for="q6c">«&nbsp;Je cherche des outils pour mieux me comprendre.&nbsp;»</label>
+      <input type="radio" id="q6d" name="q6" value="0"><label for="q6d">«&nbsp;Je veux des résultats concrets et mesurables.&nbsp;»</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="numero">Question 7 sur 7</span>Qu'attendez-vous d'un accompagnement&nbsp;?</legend>
+    <div class="choix">
+      <input type="radio" id="q7a" name="q7" value="3"><label for="q7a">Un espace sûr où je peux déposer ce que je ne dis nulle part ailleurs.</label>
+      <input type="radio" id="q7b" name="q7" value="2"><label for="q7b">Un accompagnement sur mesure, qui s'ajuste à ma situation.</label>
+      <input type="radio" id="q7c" name="q7" value="1"><label for="q7c">Une méthode structurée, avec des étapes claires.</label>
+      <input type="radio" id="q7d" name="q7" value="0"><label for="q7d">Un coaching efficace avec des objectifs chiffrés.</label>
+    </div>
+  </fieldset>
+
+  <p class="alerte" id="alerte" hidden role="alert">Il reste des questions sans réponse — remontez un peu, elles sont surlignées dans votre esprit, pas dans la page&nbsp;!</p>
+  <button type="submit" class="btn">Voir ma réponse</button>
+</form>
+
+<section id="resultat" hidden aria-live="polite"></section>
+</main>
+
+<footer>
+  Ce quiz est un repère, pas un diagnostic. Il ne remplace ni un avis médical, ni un suivi psychologique.<br>
+  L'Atelier Découverte de Soi — Véronique · Rennes, Retiers et à distance ·
+  <a href="https://latelierdecouvertedesoi.com">latelierdecouvertedesoi.com</a>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var TOTAL=7, form=document.getElementById('quiz'), jauge=document.getElementById('jauge'),
+      alerte=document.getElementById('alerte'), sortie=document.getElementById('resultat');
+
+  var CONTACT='<div class="coords">📞 <a href="tel:+33783604308">07 83 60 43 08</a>'+
+    ' &nbsp;·&nbsp; ✉️ <a href="mailto:latelier.decouvertedesoi@gmail.com">latelier.decouvertedesoi@gmail.com</a></div>';
+
+  function repondues(){return form.querySelectorAll('input[type=radio]:checked').length;}
+
+  form.addEventListener('change',function(){
+    jauge.style.width=(repondues()/TOTAL*100)+'%';
+    if(repondues()===TOTAL) alerte.hidden=true;
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(repondues()<TOTAL){alerte.hidden=false;alerte.scrollIntoView({behavior:'smooth',block:'center'});return;}
+
+    var score=0;
+    form.querySelectorAll('input[type=radio]:checked').forEach(function(i){score+=parseInt(i.value,10);});
+
+    var html;
+    if(score>=16){
+      html='<span class="res-eyebrow">Votre réponse</span>'+
+        '<h2>Oui — c\'est exactement le travail que je propose.</h2>'+
+        '<p>Ce que vous décrivez, je le rencontre presque à chaque première séance&nbsp;: la tête a compris, et pourtant ça continue de se rejouer. C\'est précisément là que mon accompagnement est utile.</p>'+
+        '<ul>'+
+        '<li>Votre sensibilité est une ressource, pas un obstacle&nbsp;: on va s\'appuyer dessus.</li>'+
+        '<li>Le lien corps–émotions vous parle&nbsp;: c\'est le cœur de ma pratique.</li>'+
+        '<li>Vous cherchez à comprendre, pas à performer&nbsp;: nous sommes d\'accord sur l\'essentiel.</li>'+
+        '</ul>'+
+        '<div class="encart"><h3>La suite&nbsp;: un appel de 20 minutes</h3>'+
+        '<p>Gratuit et sans engagement. Vous me racontez votre situation, je vous dis franchement comment je peux vous aider.</p>'+
+        '<a class="btn" href="https://latelierdecouvertedesoi.com/contact">Réserver mon appel découverte</a>'+CONTACT+'</div>';
+    } else if(score>=9){
+      html='<span class="res-eyebrow">Votre réponse</span>'+
+        '<h2>Probablement — mais parlons-en avant de vous engager.</h2>'+
+        '<p>Plusieurs de vos réponses vont dans le sens de ce que je propose&nbsp;; d\'autres montrent que vous attendez peut-être quelque chose d\'un peu différent. Ce n\'est ni un oui ni un non&nbsp;: c\'est une conversation à avoir.</p>'+
+        '<ul>'+
+        '<li>Vous avez de la curiosité et de l\'ouverture&nbsp;: c\'est le principal.</li>'+
+        '<li>Reste à vérifier que ma façon de travailler correspond à ce que vous cherchez vraiment.</li>'+
+        '<li>Vingt minutes suffisent à le savoir — et à vous éviter de vous tromper de porte.</li>'+
+        '</ul>'+
+        '<div class="encart"><h3>Posez-moi vos questions</h3>'+
+        '<p>L\'appel découverte sert exactement à ça. Sans engagement, et sans argumentaire de vente.</p>'+
+        '<a class="btn" href="https://latelierdecouvertedesoi.com/contact">Réserver mon appel découverte</a>'+
+        '<a class="btn clair" href="https://latelierdecouvertedesoi.com/mon-approche">Lire d\'abord mon approche</a>'+CONTACT+'</div>';
+    } else {
+      html='<span class="res-eyebrow">Votre réponse</span>'+
+        '<h2>Honnêtement&nbsp;: pas en ce moment.</h2>'+
+        '<p>Vos réponses décrivent quelqu\'un qui va plutôt bien et qui cherche du concret, du mesurable, du rationnel. Mon accompagnement travaille ailleurs&nbsp;: sur le corps, les émotions et les schémas de fonctionnement. Vous seriez sans doute déçue.</p>'+
+        '<ul>'+
+        '<li>Pour des objectifs précis et chiffrés, un coach professionnel sera plus indiqué.</li>'+
+        '<li>Si une difficulté psychique est présente, un professionnel de santé reste le bon interlocuteur.</li>'+
+        '<li>Et si les choses bougent un jour&nbsp;: la porte reste ouverte, sans délai de péremption.</li>'+
+        '</ul>'+
+        '<div class="encart"><h3>Merci d\'avoir pris ces deux minutes</h3>'+
+        '<p>Vous pouvez malgré tout m\'écrire si quelque chose reste en suspens — je vous orienterai volontiers.</p>'+
+        '<a class="btn clair" href="https://latelierdecouvertedesoi.com/contact">M\'écrire quand même</a>'+CONTACT+'</div>';
+    }
+
+    sortie.innerHTML=html;
+    sortie.hidden=false;
+    sortie.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+})();
+</script>
+</body>
+</html>

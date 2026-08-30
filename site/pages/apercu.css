@@ -1,0 +1,15 @@
+/* APERÇU LOCAL uniquement — ne pas copier dans WordPress.
+   Simule l'en-tête, le menu et le pied de page que votre thème WordPress fournira. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Karla:wght@400;500;600&display=swap');
+body{margin:0;background:#fff;font-family:'Karla',system-ui,sans-serif}
+.apercu-bandeau{background:#33383B;color:#fff;font-size:12.5px;padding:9px 16px;text-align:center;letter-spacing:.02em}
+.apercu-bandeau b{color:#8ED8D8;font-weight:600}
+.apercu-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #EDE9E1}
+.apercu-bar{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.apercu-logo{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.15;color:#33383B;text-decoration:none;margin-right:auto}
+.apercu-logo small{display:block;font-family:'Karla',sans-serif;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:#4E9E9E;margin-top:3px;font-weight:500}
+.apercu-bar nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.apercu-bar nav a{font-size:14.5px;color:#5C6467;text-decoration:none;padding:4px 0}
+.apercu-bar nav a:hover{color:#33383B}
+.apercu-bar nav a[aria-current]{color:#33383B;border-bottom:1.5px solid #B59659}
+.apercu-pied{background:#FBFAF8;border-top:1px solid #EDE9E1;padding:40px 20px;text-align:center;font-size:13px;color:#8A8F91;line-height:1.7}
