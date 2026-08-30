@@ -26,9 +26,11 @@ site/
 │   └── 10-quiz.html                    (page optionnelle)
 ├── a-coller/ ......................... LE contenu à copier dans WordPress
 │   └── (mêmes noms de fichiers)        un fichier = une page, rien à trier
+├── import-wordpress.xml .............. les 10 pages en un seul fichier à importer
 ├── quiz/index.html ................... le quiz interactif complet
 ├── maquette-originale.html ........... votre maquette, conservée telle quelle
-└── build.sh .......................... régénère a-coller/ après une modification
+├── build.sh .......................... régénère a-coller/ et le fichier d'import
+└── import-wordpress.py ............... fabrique import-wordpress.xml
 ```
 
 **La règle à retenir :** on regarde dans `pages/`, on copie depuis `a-coller/`.
@@ -66,10 +68,56 @@ faut revenir voir.
 
 ---
 
-## Étape 2 — Créer les pages vides (10 min)
+## Étape 2 — Importer les 10 pages en une seule fois (10 min)
 
-Dans **Pages › Ajouter**, créez ces neuf pages. Le *titre* est ce que vous tapez en haut ;
-la *permalink* (adresse) se règle dans le panneau de droite, onglet **Page › Permalien**.
+C'est la voie rapide : un seul fichier crée les neuf pages du site (plus celle du quiz),
+avec leurs titres, leurs adresses et tout leur contenu déjà en place.
+
+1. Récupérez le fichier **`site/import-wordpress.xml`**.
+2. Dans WordPress : **Outils › Importer › WordPress** › *Lancer l'importateur*.
+   (S'il n'est pas encore là, WordPress vous propose de l'installer en un clic.)
+3. Choisissez le fichier, puis **Téléverser et importer**.
+4. À l'écran suivant, WordPress demande à qui attribuer le contenu : choisissez
+   **votre compte** dans la liste déroulante « ou attribuer les articles à un utilisateur existant ».
+5. Ne cochez pas « Télécharger et importer les fichiers joints » : il n'y a aucune image
+   dans ce fichier, vos photos s'ajoutent à l'étape 5.
+
+**Les 10 pages arrivent en brouillon**, volontairement : rien ne devient public tant que
+vous ne l'avez pas décidé. Vous les publierez une par une depuis **Pages**, quand leur
+contenu sera complété.
+
+Vérifiez ensuite dans **Pages** que vous avez bien :
+
+| Titre de la page | Adresse | État |
+|---|---|---|
+| Accueil | `accueil` | brouillon |
+| Mon approche | `mon-approche` | brouillon |
+| Accompagnements | `accompagnements` | brouillon |
+| L'Atelier nomade | `atelier-nomade` | brouillon |
+| À propos | `a-propos` | brouillon |
+| Contact | `contact` | brouillon |
+| Questions fréquentes | `faq` | brouillon |
+| Mentions légales | `mentions-legales` | brouillon |
+| Politique de confidentialité | `politique-de-confidentialite` | brouillon |
+| Le quiz | `quiz` | brouillon |
+
+> **Ce que l'import ne fait pas** — et qui reste à faire ensuite : la charte graphique
+> (étape 1, à faire avant sinon les pages s'affichent sans mise en forme), les photos
+> (étape 5), le menu et la page d'accueil (étape 4), le lien Calendly (étape 7),
+> et toutes les informations entre crochets (étape 9).
+
+> **Si l'import échoue** (fichier refusé, formule qui ne propose pas l'importateur) :
+> passez à l'étape 3, la voie manuelle. Elle donne exactement le même résultat,
+> en une trentaine de minutes de copier-coller.
+
+---
+
+## Étape 3 — La voie manuelle (uniquement si l'import n'a pas fonctionné)
+
+**Si l'étape 2 a réussi, sautez directement à l'étape 4.**
+
+D'abord créer les pages vides, dans **Pages › Ajouter**. Le *titre* est ce que vous tapez
+en haut ; l'*adresse* se règle dans le panneau de droite, onglet **Page › Permalien**.
 
 | # | Titre de la page | Adresse (permalien) | Fichier source |
 |---|---|---|---|
@@ -88,11 +136,7 @@ dessus. Une adresse différente = un bouton qui mène à une page « introuvable
 
 *(Page 10, le quiz, est optionnelle — voir l'étape 8.)*
 
----
-
-## Étape 3 — Coller le contenu de chaque page (30 min)
-
-Pour **chaque** page, toujours le même geste :
+Puis coller le contenu. Pour **chaque** page, toujours le même geste :
 
 1. Ouvrez le fichier correspondant dans `a-coller/`, sélectionnez tout, copiez.
 2. Dans WordPress, ouvrez la page, cliquez dans la zone de contenu.
@@ -170,6 +214,14 @@ ralentissent le site, ce que Google pénalise.
 
 Un formulaire écrit en HTML brut **n'enverrait aucun message** : il faut le bloc natif de
 WordPress, seul capable de vous transmettre les demandes.
+
+**Si vous avez utilisé l'import (étape 2)**, le formulaire est déjà en place, réglé sur
+`latelier.decouvertedesoi@gmail.com` et sur le fond turquoise pâle. Ouvrez la page Contact
+et vérifiez qu'il s'affiche normalement. S'il apparaît en erreur (« ce bloc contient un
+contenu inattendu »), supprimez-le et reconstruisez-le à la main en suivant la liste
+ci-dessous — c'est l'affaire de deux minutes. Passez ensuite directement au point 7.
+
+**Si vous avez collé les pages à la main :**
 
 1. Sur la page Contact, collez d'abord le **BLOC HTML n°1**.
 2. En dessous, **+** › cherchez **Formulaire** (ou « Formulaire de contact ») › insérez-le.
@@ -296,8 +348,12 @@ Modifiez le fichier concerné dans `pages/`, puis lancez :
 bash site/build.sh
 ```
 
-Le dossier `a-coller/` est régénéré, et vous n'avez plus qu'à recoller la page concernée
-dans WordPress. Le script vérifie au passage que les repères DÉBUT/FIN sont cohérents.
+Le dossier `a-coller/` **et** le fichier `import-wordpress.xml` sont régénérés, et le script
+vérifie au passage la cohérence des repères DÉBUT/FIN.
+
+Pour une retouche ponctuelle, le plus simple reste de modifier directement le bloc dans
+l'éditeur WordPress. Ne réimportez pas le fichier XML sur un site déjà en ligne : l'import
+créerait des doublons au lieu de mettre à jour les pages existantes.
 
 ---
 

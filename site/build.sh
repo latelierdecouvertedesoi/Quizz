@@ -2,6 +2,7 @@
 # Reconstruit les fichiers du site.
 #   1. injecte l'en-tête et le pied d'APERÇU dans chaque page (pages/_nav.html, pages/_pied.html)
 #   2. extrait, pour chaque page, le seul contenu à coller dans WordPress -> a-coller/
+#   3. régénère le fichier d'import WordPress -> import-wordpress.xml
 # Usage :  bash build.sh
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -54,3 +55,6 @@ for f in sorted(pages.glob("[0-9]*.html")):
 
 print(f"\n{total} page(s) prêtes dans a-coller/")
 PY
+
+echo
+python3 import-wordpress.py

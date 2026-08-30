@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>L'Atelier Découverte de Soi</title>
+    <link>https://latelierdecouvertedesoi.com</link>
+    <description>Connaissance de soi &amp; gestion des émotions par le corps</description>
+    <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+    <language>fr-FR</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <wp:base_site_url>https://latelierdecouvertedesoi.com</wp:base_site_url>
+    <wp:base_blog_url>https://latelierdecouvertedesoi.com</wp:base_blog_url>
+    <wp:author>
+      <wp:author_id>1</wp:author_id>
+      <wp:author_login><![CDATA[veronique]]></wp:author_login>
+      <wp:author_email><![CDATA[latelier.decouvertedesoi@gmail.com]]></wp:author_email>
+      <wp:author_display_name><![CDATA[Véronique]]></wp:author_display_name>
+      <wp:author_first_name><![CDATA[Véronique]]></wp:author_first_name>
+      <wp:author_last_name></wp:author_last_name>
+    </wp:author>
+    <item>
+      <title>Accueil</title>
+      <link>https://latelierdecouvertedesoi.com/accueil/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=101</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Connaissance de soi &amp; gestion des émotions</span>
+      <h1>Vous avez déjà beaucoup réfléchi. Et pourtant, rien ne change vraiment.</h1>
+      <p class="ads-chapo">Vous comprenez à peu près ce qui coince. Vous avez lu, écouté, analysé. Mais face à la même situation, la même émotion revient, la même réaction se rejoue.</p>
+      <p>C'est souvent le signe que la réponse ne se trouve pas uniquement dans la tête. Je vous accompagne à explorer ce qui se joue aussi dans le corps — les tensions, les réactions, les sensations — pour mieux comprendre vos émotions et, peu à peu, y répondre autrement.</p>
+      <div class="ads-hero-actions">
+        <a class="ads-btn" href="/contact">Réserver un appel découverte</a>
+        <a class="ads-lien" href="/mon-approche">Découvrir mon approche →</a>
+      </div>
+      <p class="ads-sous">20 minutes, gratuites et sans engagement, pour voir si mon accompagnement correspond à votre situation.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Ce qui amène les personnes que j'accompagne</h2>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Des émotions qui débordent</h3><p>Colère, larmes, angoisse qui montent plus vite que vous ne voudriez.</p></div>
+        <div class="ads-carte"><h3>Une fatigue qui s'installe</h3><p>Sans que rien ne l'explique vraiment.</p></div>
+        <div class="ads-carte"><h3>Des schémas qui se répètent</h3><p>Les mêmes situations, les mêmes relations, les mêmes impasses.</p></div>
+        <div class="ads-carte"><h3>Du mal à dire non</h3><p>Et le sentiment de passer après tout le monde.</p></div>
+        <div class="ads-carte"><h3>Une période de transition</h3><p>Séparation, reconversion, remise en question.</p></div>
+        <div class="ads-carte"><h3>L'envie de mieux se comprendre</h3><p>Sans forcément savoir par où commencer.</p></div>
+      </div>
+      <p style="margin-top:26px">Vous vous reconnaissez dans une ou plusieurs de ces situations ? C'est exactement là que je peux vous être utile.</p>
+      <a class="ads-lien" href="/accompagnements">Voir les accompagnements →</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Le corps sait souvent avant les mots</h2>
+      <p>On croit que comprendre suffit à changer. L'expérience montre que non : les émotions ne se raisonnent pas, elles se traversent. Et elles passent par le corps — une gorge qui se serre, un ventre qui se noue, une fatigue qui parle.</p>
+      <p>Dans mon accompagnement, on part de là. On observe ce que le corps exprime, on met des mots dessus, on fait des liens avec votre histoire et vos façons de réagir. Comprendre ce qui se rejoue en vous — et ne plus seulement le subir.</p>
+      <blockquote>Je ne vous aide pas à faire plus. Je vous aide à comprendre ce qui agit en vous.</blockquote>
+      <div style="margin-top:26px"><a class="ads-lien" href="/mon-approche">Comment je travaille →</a></div>
+    </div>
+  </section>
+
+  <section class="ads-creme">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Concrètement, comment ça se passe</h2>
+      <div class="ads-etapes">
+        <div class="ads-etape"><div class="ads-num">1</div><div><h3>Un premier appel gratuit</h3><p>20 minutes. Vous m'expliquez votre situation, je vous dis honnêtement si je peux vous aider.</p></div></div>
+        <div class="ads-etape"><div class="ads-num">2</div><div><h3>Une première séance</h3><p>On pose ce qui vous amène, à votre rythme. Il n'y a rien à préparer.</p></div></div>
+        <div class="ads-etape"><div class="ads-num">3</div><div><h3>Des séances d'1h30</h3><p>Un temps long, pour ne pas rester en surface. En cabinet à Rennes, à Retiers, en visio, ou en pleine nature.</p></div></div>
+        <div class="ads-etape"><div class="ads-num">4</div><div><h3>Un accompagnement ajusté</h3><p>Ponctuel ou suivi, selon votre besoin. Tarif : [90 €] la séance, formules adaptées selon les situations.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Qui vous accompagne</h2>
+      <!-- PHOTO 1 — remplacez ce bloc pointillé par votre portrait (voir le guide, étape 5) -->
+      <div class="ads-photo"><b>Emplacement photo — portrait</b><span>Vous en extérieur, lumière douce du matin, regard caméra, sourire naturel, fond végétal flou. Cadrage buste.</span></div>
+      <p>Je suis <strong>Véronique</strong>. Avant d'accompagner, j'ai passé plus de 25 ans dans l'assurance — un monde de dossiers, de procédures et de rationnel. Et puis la vie m'a mise face à ma propre spirale : familiale, professionnelle, émotionnelle. Pour en sortir, j'ai dû apprendre à me connaître vraiment, au-delà de ce que je croyais savoir de moi.</p>
+      <p>Ce chemin est devenu mon métier. J'y ai gardé deux choses : le goût du concret, et la conviction qu'on ne change pas en s'analysant seulement — mais en s'écoutant autrement.</p>
+      <a class="ads-lien" href="/a-propos">Mon parcours →</a>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <blockquote>Véronique a su toucher juste, avec clarté et rapidité. Tu as mis du fluo là où j'en avais besoin.<cite>Véronique B.</cite></blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Vos questions, avant de vous lancer</h2>
+      <details open><summary>Faut-il « croire » à quelque chose pour venir ?</summary><p>Non. Mon accompagnement s'appuie sur l'écoute du corps, des émotions et de vos schémas de fonctionnement. Certains outils symboliques comme le tarot ou la numérologie peuvent servir de support de réflexion — uniquement si cela vous parle, jamais comme une vérité.</p></details>
+      <details><summary>Est-ce une thérapie ?</summary><p>Non. Je ne suis ni médecin ni psychothérapeute, et mes séances ne remplacent ni un diagnostic ni un traitement. C'est un accompagnement au mieux-être et à la connaissance de soi. Si votre situation relève du soin, je vous orienterai vers un professionnel de santé.</p></details>
+      <details><summary>Et si je ne sais pas par où commencer ?</summary><p>C'est le cas de presque tout le monde. C'est justement à ça que sert l'appel découverte : poser votre situation, sans engagement, et voir ensemble si mon accompagnement y répond.</p></details>
+      <div style="margin-top:22px"><a class="ads-lien" href="/faq">Toutes les questions fréquentes →</a></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="ads-wrap"><div class="ads-final">
+      <h2>Le premier pas est un simple échange</h2>
+      <p>20 minutes au téléphone, gratuites et sans engagement. Vous repartez au minimum avec un regard plus clair sur votre situation.</p>
+      <a class="ads-btn" href="/contact">Réserver mon appel découverte</a>
+    </div></div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>101</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[accueil]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>1</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Mon approche</title>
+      <link>https://latelierdecouvertedesoi.com/mon-approche/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=102</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Mon approche</span>
+      <h1>Un pont entre l'invisible et le palpable</h1>
+      <p class="ads-chapo">Beaucoup de ce qui nous fait réagir ne se voit pas : des habitudes émotionnelles installées de longue date, des croyances qu'on ne questionne plus, des façons de se protéger devenues des automatismes.</p>
+      <p>Mon travail consiste à rendre tout cela visible — pas pour vous juger, mais pour vous redonner le choix.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Le corps et les émotions sont liés</h2>
+      <p>Une émotion n'est pas qu'une idée : c'est aussi une réaction physique. Le souffle qui se raccourcit, les épaules qui montent, l'estomac qui se serre. Souvent, le corps réagit avant même que le mental ait compris ce qui se passe.</p>
+      <p>C'est pour cela que réfléchir ne suffit pas toujours. En séance, on prend le temps d'observer ces réactions corporelles, de les nommer, de comprendre à quoi elles répondent. Ce simple travail d'observation change déjà beaucoup : ce qu'on peut nommer, on peut commencer à l'apprivoiser.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Repérer ses schémas pour ne plus les subir</h2>
+      <p>Nous avons tous des scénarios qui se rejouent : toujours dire oui puis s'épuiser, fuir le conflit puis exploser, choisir des situations qui se ressemblent. Ces schémas ne sont pas des défauts — ce sont d'anciennes solutions, construites à une époque où elles étaient utiles.</p>
+      <p>Mon accompagnement aide à repérer ces mécanismes, à comprendre ce qu'ils ont protégé, et à explorer d'autres façons de répondre. Pas en forçant : en comprenant.</p>
+    </div>
+  </section>
+
+  <section class="ads-creme">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Favoriser une meilleure régulation émotionnelle</h2>
+      <p>Réguler ses émotions, ce n'est pas les contrôler ni les faire taire. C'est apprendre à les reconnaître plus tôt, à leur laisser une juste place, et à retrouver de la stabilité plus rapidement après une vague. Cela se travaille — par l'attention au corps, par la mise en mots, par la répétition d'expériences plus sécurisantes.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>La place de l'intuition et du symbolique</h2>
+      <p>Je travaille aussi avec des grilles de lecture symboliques — le tarot et la numérologie — et avec mon écoute intuitive : ce que j'entends entre les lignes, ce qui se dit sans se dire. Soyons claires sur ce que c'est, et ce que ce n'est pas :</p>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Le tarot</h3><p>Un support d'images qui aide à formuler ce qui est difficile à dire. Il ne prédit rien.</p></div>
+        <div class="ads-carte"><h3>La numérologie</h3><p>Une grille de lecture qui ouvre des questions sur votre fonctionnement. Ce n'est pas une vérité scientifique, et je ne la présente pas comme telle.</p></div>
+        <div class="ads-carte"><h3>L'intuition</h3><p>Une qualité d'écoute, pas un pouvoir. Elle propose des pistes ; vous seul·e savez si elles résonnent.</p></div>
+      </div>
+      <p style="margin-top:24px">Ces outils ne sont jamais imposés. Certaines personnes n'y touchent jamais ; d'autres y trouvent un déclencheur précieux. Les deux sont très bien.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Ce que mon accompagnement n'est pas</h2>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Ce n'est pas une thérapie</h3><p>Je ne pose aucun diagnostic et je ne traite aucune maladie. Si votre situation relève du soin — physique ou psychique — je vous orienterai vers un professionnel de santé.</p></div>
+        <div class="ads-carte"><h3>Ce n'est pas de la voyance</h3><p>Personne ne lira votre avenir ici.</p></div>
+        <div class="ads-carte"><h3>Ce n'est pas une méthode miracle</h3><p>Je ne promets ni libération définitive, ni transformation en trois séances. Ce que je propose : un cadre, une écoute, des outils, et un travail réel — le vôtre, accompagné.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <blockquote>J'ai apprécié tout particulièrement ton écoute.<cite>Mariane C.</cite></blockquote>
+      <div class="ads-final" style="margin-top:44px">
+        <h2>Envie de voir si cette approche vous correspond ?</h2>
+        <a class="ads-btn" href="/contact">Réserver un appel découverte</a>
+        <div style="margin-top:16px"><a class="ads-lien" href="/accompagnements">Voir les accompagnements →</a></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>102</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[mon-approche]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>2</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Accompagnements</title>
+      <link>https://latelierdecouvertedesoi.com/accompagnements/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=103</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Accompagnements</span>
+      <h1>Un accompagnement qui part de vous, pas d'une méthode</h1>
+      <p class="ads-chapo">Il n'y a pas de programme standard ici. On part de ce que vous vivez, et j'ajuste les outils à votre situation — jamais l'inverse.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Les situations que j'accompagne le plus souvent</h2>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Des émotions qui débordent</h3><p>Quand la colère, l'angoisse ou les larmes prennent trop de place, l'objectif n'est pas de les faire taire, mais de comprendre ce qu'elles signalent et de retrouver de la stabilité.</p></div>
+        <div class="ads-carte"><h3>Des schémas qui se répètent</h3><p>Mêmes disputes, mêmes types de relations, mêmes impasses. On repère ensemble le scénario, ce qu'il a protégé, et ce qui devient possible quand on le voit clairement.</p></div>
+        <div class="ads-carte"><h3>La confiance et les limites</h3><p>Dire non sans culpabiliser, prendre sa place, arrêter de passer en dernier. Un travail sur les croyances qui vous freinent et sur la sécurité intérieure.</p></div>
+        <div class="ads-carte"><h3>Les transitions de vie</h3><p>Séparation, reconversion, déménagement. Les périodes de bascule remuent tout — c'est inconfortable, et c'est aussi le meilleur moment pour faire le point.</p></div>
+        <div class="ads-carte"><h3>Mieux se connaître, simplement</h3><p>Pas besoin d'aller mal pour venir. Comprendre son fonctionnement, ses besoins, ses élans : c'est même la plus belle des raisons.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Les outils, au service de l'accompagnement</h2>
+      <p>Selon votre situation et vos affinités, je peux m'appuyer sur le travail psychocorporel et l'écoute des sensations, des techniques de régulation émotionnelle, des outils de compréhension des croyances et des schémas (dont la PNL et le Psych-K®, auxquels je suis formée), et des supports symboliques de réflexion — tarot, numérologie — pour celles et ceux à qui cela parle.</p>
+      <p><strong>Aucun outil n'est systématique.</strong> Le fil conducteur reste toujours le même : vous comprendre, pour retrouver du choix.</p>
+      <a class="ads-lien" href="/mon-approche">En savoir plus sur mon approche →</a>
+    </div>
+  </section>
+
+  <section class="ads-creme">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>À la carte — le soin énergétique LaHoChi</h2>
+      <p>En complément, et uniquement à la demande, je propose des séances de LaHoChi : un temps de détente profonde par apposition des mains, pour les moments où le besoin est simplement de se poser et de relâcher.</p>
+      <p style="font-size:15px;font-style:italic">C'est une pratique de bien-être et de relaxation — elle ne soigne pas et ne remplace aucun suivi médical.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Informations pratiques</h2>
+      <dl class="ads-infos">
+        <div><dt>Durée</dt><dd>Séances d'1h30 — un temps long, pour ne pas rester en surface</dd></div>
+        <div><dt>Tarif</dt><dd>[90 €] la séance</dd></div>
+        <div><dt>Formules</dt><dd>Tarifs ajustés selon les situations ; une séance offerte pour les suivis intensifs — on en parle lors de l'appel découverte</dd></div>
+        <div><dt>Où</dt><dd>Cabinet à Rennes (Cours de Bilbao) · Retiers · Visioconférence · En pleine nature avec l'Atelier nomade</dd></div>
+        <div><dt>Premier pas</dt><dd>Appel découverte de 20 min, gratuit et sans engagement</dd></div>
+      </dl>
+      <div style="margin-top:22px"><a class="ads-lien" href="/atelier-nomade">Découvrir l'Atelier nomade →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <blockquote>Aujourd'hui, je me sens plus confiante, reboostée.<cite>Nathalie J.</cite></blockquote>
+      <div class="ads-final" style="margin-top:44px">
+        <h2>Vous vous demandez si c'est adapté à votre situation ?</h2>
+        <p>Posez-moi la question directement.</p>
+        <a class="ads-btn" href="/contact">Réserver un appel découverte</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>103</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[accompagnements]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>3</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>L’Atelier nomade</title>
+      <link>https://latelierdecouvertedesoi.com/atelier-nomade/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=104</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">L'Atelier nomade</span>
+      <h1>L'Atelier vient à vous — en van, en forêt, face à la mer</h1>
+      <p class="ads-chapo">Je suis de nature exploratrice. Ce goût du mouvement fait partie de ma façon d'accompagner.</p>
+      <p>Certaines choses se disent plus facilement en marchant dans une forêt qu'assises face à face, et un horizon de mer aide parfois à prendre le recul qu'un bureau ne permet pas. Alors j'ai aménagé mon van pour faire de l'Atelier un espace mobile.</p>
+      <!-- PHOTO 4 — LA photo différenciante du site. À remplacer en priorité. -->
+      <div class="ads-photo"><b>Emplacement photo — LA photo différenciante</b><span>Le van posé face à la mer ou en lisière de forêt, portes ouvertes, ambiance accueillante. Lumière naturelle, pas de filtre saturé.</span></div>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Trois façons de sortir des murs</h2>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Les séances en pleine nature</h3><p>Une séance individuelle d'1h30, en marchant ou posées dans un lieu choisi ensemble — forêt, bord de mer, campagne. Le corps en mouvement, l'attention qui se dépose : pour beaucoup de personnes, c'est là que les choses se dénouent.</p></div>
+        <div class="ads-carte"><h3>Les séances en van, près de chez vous</h3><p>Le van aménagé est un petit cocon : chaleureux, confidentiel, posé là où c'est pratique pour vous. Utile si vous êtes loin de Rennes ou de Retiers, ou simplement si l'idée vous plaît.</p></div>
+        <div class="ads-carte"><h3>Les événements en cadre atypique</h3><p>Ponctuellement, j'organise des temps collectifs — ateliers de connaissance de soi, cercles de parole, journées à thème — dans des lieux choisis pour ce qu'ils font vivre.</p></div>
+      </div>
+      <!-- PHOTO 5 -->
+      <div class="ads-photo" style="border-color:#9CCFCF"><b>Emplacement photo — intérieur du van</b><span>L'espace de séance : plaid, deux places assises, lumière chaleureuse.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Où je me déplace</h2>
+      <p>Autour de Rennes et de Retiers, et plus largement en Ille-et-Vilaine et en Bretagne selon les demandes.</p>
+      <p>Les frais de déplacement sont précisés à l'avance, sans surprise — parlons-en lors de l'appel découverte.</p>
+      <div class="ads-final" style="margin-top:36px">
+        <h2>Une séance ailleurs que dans un bureau, ça vous parle ?</h2>
+        <a class="ads-btn" href="/contact">Réserver un appel découverte</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>104</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[atelier-nomade]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>4</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>À propos</title>
+      <link>https://latelierdecouvertedesoi.com/a-propos/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=105</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">À propos</span>
+      <h1>Avant d'accompagner, j'ai d'abord dû me sortir de ma propre spirale</h1>
+      <!-- PHOTO 2 -->
+      <div class="ads-photo"><b>Emplacement photo — portrait intime</b><span>Plus proche que celui de l'accueil. En train de marcher, ou assise dans le van. Lumière latérale.</span></div>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>D'où je viens</h2>
+      <p>Pendant plus de 25 ans, j'ai travaillé dans l'assurance et la gestion de dossiers. Un métier de rigueur, de procédures, de faits. J'y ai appris à être fiable, structurée, efficace — des qualités que je n'ai pas laissées derrière moi.</p>
+      <p>Et puis il y a eu cette période où tout s'est emmêlé : le familial, le professionnel, l'émotionnel. Une spirale dont je ne voyais pas la sortie, parce que je cherchais la solution là où je l'avais toujours cherchée — dans ma tête, en analysant, en tenant bon.</p>
+      <p><strong>Ça ne suffisait plus.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Ce que j'ai trouvé en cherchant la sortie</h2>
+      <p>Pour m'en sortir, j'ai dû explorer autrement. Aller regarder mes croyances, mes comportements, mes schémas — pas comme des idées abstraites, mais comme des mécanismes bien réels qui décidaient à ma place. Apprendre à écouter ce que mon corps disait depuis longtemps. Me connaître, vraiment.</p>
+      <p>Ce chemin m'a transformée. Pas en une autre personne — en moi, avec de la place en plus.</p>
+      <blockquote>On ne sort pas d'une spirale en faisant plus d'efforts. On en sort en comprenant ce qui la fait tourner.</blockquote>
+    </div>
+  </section>
+
+  <section class="ads-creme">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Comment ce chemin est devenu un métier</h2>
+      <p>En explorant, je me suis formée — sérieusement, parce que c'est ma nature. La PNL et le Psych-K® pour le travail sur les croyances et les schémas de pensée. Les approches psychocorporelles, dont le Somatic Experiencing et l'ISP, pour l'écoute du corps et la régulation émotionnelle. La numérologie créative et le tarot comme grilles de lecture symboliques. Et j'ai appris à faire confiance à mon écoute intuitive.</p>
+      <p>Aucune de ces formations, prise seule, ne définit ce que je fais. C'est leur articulation — le concret et le symbolique, le corps et le sens — qui constitue ma façon d'accompagner.</p>
+      <p>J'ai appelé cet espace <strong>L'Atelier Découverte de Soi</strong> : un atelier, parce qu'on y travaille pour de vrai ; découverte de soi, parce que c'est le seul programme.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Ce que je vous propose aujourd'hui</h2>
+      <p>Ce que ce chemin m'a offert, je veux le rendre accessible aux personnes qui me sollicitent : un espace pour se comprendre, se retrouver, et cesser de subir ce qui se rejoue. À Rennes, à Retiers, en visio — et parfois en pleine nature, parce que je reste une exploratrice.</p>
+      <a class="ads-lien" href="/atelier-nomade">Découvrir l'Atelier nomade →</a>
+      <div class="ads-final" style="margin-top:40px">
+        <h2>Faisons connaissance de vive voix</h2>
+        <a class="ads-btn" href="/contact">Réserver un appel découverte</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>105</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[a-propos]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>5</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://latelierdecouvertedesoi.com/contact/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=106</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Contact</span>
+      <h1>Le premier pas est un simple échange</h1>
+      <p class="ads-chapo">20 minutes au téléphone, gratuites et sans engagement. Vous me racontez ce qui vous amène ; je vous dis honnêtement si mon accompagnement peut vous aider — et si ce n'est pas le cas, je vous le dis aussi.</p>
+      
+      <a class="ads-btn ads-block" style="max-width:340px" href="https://calendly.com/[VOTRE-LIEN-CALENDLY]">Choisir mon créneau</a>
+      <p class="ads-sous">Vous choisissez directement dans mon agenda, sans échange de mails.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale" style="padding-bottom:24px">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Ou écrivez-moi directement</h2>
+      <p>Je réponds sous 48 heures ouvrées. Dites-moi en quelques lignes ce qui vous amène : c'est déjà un bon début.</p>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->
+
+<!-- wp:jetpack/contact-form {"subject":"Nouvelle demande depuis le site","to":"latelier.decouvertedesoi@gmail.com","style":{"color":{"background":"#DBEEEE"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"24px","right":"24px"}}}} -->
+<div class="wp-block-jetpack-contact-form" style="background-color:#DBEEEE;padding-top:32px;padding-right:24px;padding-bottom:32px;padding-left:24px"><!-- wp:jetpack/field-name {"required":true,"label":"Prénom et nom"} /-->
+
+<!-- wp:jetpack/field-email {"required":true,"label":"E-mail"} /-->
+
+<!-- wp:jetpack/field-telephone {"label":"Téléphone (facultatif)"} /-->
+
+<!-- wp:jetpack/field-textarea {"required":true,"label":"Votre message"} /-->
+
+<!-- wp:jetpack/field-checkbox {"required":true,"label":"J’accepte que mes données soient utilisées pour répondre à ma demande."} /-->
+
+<!-- wp:jetpack/button {"element":"button","text":"Envoyer mon message","borderRadius":9} /--></div>
+<!-- /wp:jetpack/contact-form -->
+
+<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-pale" style="padding-top:24px">
+    <div class="ads-wrap">
+      <p style="font-size:15.5px">
+        📞 <a href="tel:+33783604308">07 83 60 43 08</a>
+        &nbsp;·&nbsp;
+        ✉️ <a href="mailto:latelier.decouvertedesoi@gmail.com">latelier.decouvertedesoi@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Où se déroulent les séances</h2>
+      <dl class="ads-infos">
+        <div><dt>Rennes</dt><dd>Cabinet, Cours de Bilbao, 35200 Rennes</dd></div>
+        <div><dt>Retiers</dt><dd>[lieu exact à préciser] — sur rendez-vous</dd></div>
+        <div><dt>En visio</dt><dd>Le lien vous est envoyé après réservation</dd></div>
+        <div><dt>En déplacement</dt><dd>En van aménagé ou en pleine nature</dd></div>
+      </dl>
+      <div class="ads-emplacement" style="margin-top:26px">
+        <b>Emplacement de la carte</b>
+        Insérez ici le bloc natif « Carte » de WordPress, centré sur le cabinet Cours de Bilbao à Rennes.
+      </div>
+      <div style="margin-top:22px"><a class="ads-lien" href="/faq">Vos questions avant de venir →</a></div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>106</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[contact]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>6</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Questions fréquentes</title>
+      <link>https://latelierdecouvertedesoi.com/faq/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=107</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Questions fréquentes</span>
+      <h1>Vos questions, mes réponses</h1>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="ads-wrap">
+      <details open><summary>Combien coûte une séance ?</summary><p>[90 €] la séance d'1h30. Des formules ajustées existent selon les situations, et une séance est offerte dans le cadre des suivis intensifs. Le plus simple : on en parle lors de l'appel découverte, gratuit.</p></details>
+      <details><summary>Combien de séances faut-il prévoir ?</summary><p>Cela dépend entièrement de votre demande. Certaines personnes viennent pour une séance ponctuelle, d'autres pour un suivi de quelques mois. Je ne vends pas de « programme » : on ajuste au fil du chemin, et vous restez libre à chaque étape.</p></details>
+      <details><summary>Comment se déroule une première séance ?</summary><p>On prend le temps de poser ce qui vous amène : votre situation, ce que vous vivez, ce que vous aimeriez voir bouger. J'explique comment je travaille, et on avance à votre rythme. Il n'y a rien à préparer.</p></details>
+      <details><summary>Est-ce que ça remplace une thérapie ou un suivi médical ?</summary><p>Non. Je ne suis ni médecin ni psychothérapeute. Mes séances soutiennent le bien-être et la connaissance de soi ; elles ne remplacent ni diagnostic, ni traitement, ni psychothérapie. Si votre situation le nécessite, je vous orienterai vers un professionnel de santé — les deux démarches peuvent d'ailleurs très bien coexister.</p></details>
+      <details><summary>Faut-il être « sensible au spirituel » pour venir ?</summary><p>Pas du tout. Le cœur de mon travail, c'est le lien entre le corps, les émotions et les schémas de fonctionnement. Les supports symboliques (tarot, numérologie) ne sont utilisés que si cela vous parle.</p></details>
+      <details><summary>Les séances en visio sont-elles aussi efficaces ?</summary><p>Elles fonctionnent très bien pour la plupart des accompagnements. Il vous faut simplement un endroit calme où vous ne serez pas dérangé·e pendant 1h30.</p></details>
+      <details><summary>Vous déplacez-vous ?</summary><p>Oui — c'est même une de mes particularités. Je peux venir à vous en van aménagé, ou proposer des séances en pleine nature.</p></details>
+      <details><summary>Comment réserver ?</summary><p>Le plus simple est de commencer par l'appel découverte gratuit de 20 minutes. Vous pouvez aussi m'écrire via la <a href="/contact">page contact</a>.</p></details>
+      <div class="ads-final" style="margin-top:44px">
+        <h2>Une question qui n'est pas ici ?</h2>
+        <a class="ads-btn" href="/contact">Écrivez-moi</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>107</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[faq]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>7</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Mentions légales</title>
+      <link>https://latelierdecouvertedesoi.com/mentions-legales/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=108</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Informations légales</span>
+      <h1>Mentions légales</h1>
+      <p class="ads-maj">Dernière mise à jour : [JJ/MM/AAAA]</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="ads-wrap ads-legal">
+
+      <h2>Éditeur du site</h2>
+      <p>
+        Le présent site est édité par&nbsp;:<br>
+        <strong>[Prénom NOM complet]</strong>, entrepreneur individuel, exerçant sous le nom commercial
+        <strong>L'Atelier Découverte de Soi</strong>.
+      </p>
+      <ul>
+        <li>Adresse professionnelle : [adresse complète], 35200 Rennes</li>
+        <li>Téléphone : 07 83 60 43 08</li>
+        <li>E-mail : latelier.decouvertedesoi@gmail.com</li>
+        <li>SIRET : [numéro à 14 chiffres]</li>
+        <li>Code APE / NAF : [code], [libellé de l'activité]</li>
+        <li>Statut : [micro-entreprise / entreprise individuelle]</li>
+        <li>TVA : [numéro de TVA intracommunautaire] <em>ou</em> « TVA non applicable, article 293 B du Code général des impôts »</li>
+      </ul>
+
+      <h2>Directrice de la publication</h2>
+      <p>[Prénom NOM], en qualité d'éditrice du site.</p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé par <strong>Automattic Inc. (WordPress.com)</strong><br>
+        60 29th Street #343, San Francisco, CA 94110, États-Unis<br>
+        <a href="https://wordpress.com" rel="noopener">wordpress.com</a>
+      </p>
+      <p class="ads-maj">Si vous changez d'hébergeur un jour, pensez à mettre ce paragraphe à jour.</p>
+
+      <h2>Nature de l'activité</h2>
+      <p>
+        Les prestations proposées relèvent de l'accompagnement au développement personnel, à la
+        connaissance de soi et au mieux-être. <strong>Elles ne constituent ni un acte médical,
+        ni un acte de psychothérapie</strong>, et ne remplacent en aucun cas un diagnostic,
+        un traitement ou un suivi assuré par un professionnel de santé.
+      </p>
+      <p>
+        Aucun diagnostic n'est posé, aucun traitement n'est prescrit, et il n'est jamais demandé
+        d'interrompre un traitement médical en cours. En cas de situation relevant du soin,
+        vous serez orientée vers un professionnel de santé.
+      </p>
+
+      <h2>Assurance professionnelle</h2>
+      <p>
+        Responsabilité civile professionnelle souscrite auprès de [nom de l'assureur],
+        contrat n° [numéro] — couverture géographique : [France / Union européenne].
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble des contenus de ce site — textes, photographies, illustrations, identité
+        visuelle, structure — est la propriété de [Prénom NOM], sauf mention contraire, et est
+        protégé par le droit d'auteur. Toute reproduction, représentation ou adaptation, totale
+        ou partielle, sans autorisation écrite préalable, est interdite.
+      </p>
+      <p>Crédits photographiques : [nom du photographe ou de la banque d'images].</p>
+
+      <h2>Liens vers d'autres sites</h2>
+      <p>
+        Ce site peut contenir des liens vers des sites tiers (agenda de réservation, réseaux
+        sociaux). Leur contenu n'engage que leurs éditeurs respectifs.
+      </p>
+
+      <h2>Médiation de la consommation</h2>
+      <p>
+        Conformément à l'article L.612-1 du Code de la consommation, tout client
+        particulier a le droit de recourir gratuitement à un médiateur de la consommation
+        en vue de la résolution amiable d'un litige.<br>
+        Médiateur désigné : [nom du médiateur] — [adresse postale] — [site internet].
+      </p>
+      <p class="ads-maj">
+        Adhésion obligatoire pour toute activité auprès de particuliers : si ce n'est pas
+        encore fait, c'est à régler avant la mise en ligne.
+      </p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Le traitement des données recueillies sur ce site est détaillé dans la
+        <a href="/politique-de-confidentialite">politique de confidentialité</a>.
+      </p>
+
+      <h2>Droit applicable</h2>
+      <p>
+        Le présent site et les prestations proposées sont soumis au droit français.
+        En cas de litige, et après tentative de résolution amiable, les tribunaux français
+        sont seuls compétents.
+      </p>
+
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>108</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[mentions-legales]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>8</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Politique de confidentialité</title>
+      <link>https://latelierdecouvertedesoi.com/politique-de-confidentialite/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=109</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Vos données</span>
+      <h1>Politique de confidentialité</h1>
+      <p class="ads-chapo">Ce que je recueille, pourquoi, combien de temps je le garde, et comment reprendre la main dessus.</p>
+      <p class="ads-maj">Dernière mise à jour : [JJ/MM/AAAA]</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="ads-wrap ads-legal">
+
+      <h2>Qui est responsable de vos données</h2>
+      <p>
+        [Prénom NOM], entrepreneur individuel exerçant sous le nom L'Atelier Découverte de Soi,
+        [adresse], 35200 Rennes — latelier.decouvertedesoi@gmail.com — 07 83 60 43 08.
+      </p>
+
+      <h2>Les données que je recueille</h2>
+      <ul>
+        <li><strong>Via le formulaire de contact :</strong> vos nom et prénom, votre e-mail, votre téléphone si vous le renseignez, et le contenu de votre message.</li>
+        <li><strong>Via la prise de rendez-vous en ligne :</strong> les informations transmises à l'agenda de réservation (nom, e-mail, créneau choisi).</li>
+        <li><strong>Dans le cadre d'un accompagnement :</strong> les éléments que vous me confiez en séance et mes notes de suivi.</li>
+        <li><strong>Statistiques de visite :</strong> des données de fréquentation anonymisées, sans identification personnelle.</li>
+      </ul>
+
+      <h2>Pourquoi je les recueille</h2>
+      <ul>
+        <li>Répondre à votre demande de contact et organiser l'appel découverte&nbsp;;</li>
+        <li>assurer le suivi de votre accompagnement&nbsp;;</li>
+        <li>établir la facturation et respecter mes obligations comptables&nbsp;;</li>
+        <li>améliorer le site à partir de statistiques anonymes.</li>
+      </ul>
+      <p>
+        Base légale : votre consentement pour la prise de contact, l'exécution du contrat pour
+        l'accompagnement, l'obligation légale pour la comptabilité.
+      </p>
+
+      <h2>Combien de temps je les conserve</h2>
+      <ul>
+        <li>Demande de contact restée sans suite : [3] ans à compter du dernier échange&nbsp;;</li>
+        <li>notes de suivi d'accompagnement : [durée à définir] après la dernière séance&nbsp;;</li>
+        <li>documents comptables et factures : 10 ans, conformément à la loi.</li>
+      </ul>
+
+      <h2>Qui y a accès</h2>
+      <p>
+        Vos données ne sont ni vendues, ni louées, ni transmises à des tiers à des fins
+        commerciales. Y ont accès&nbsp;: moi-même, ainsi que les prestataires techniques
+        strictement nécessaires au fonctionnement du site&nbsp;:
+      </p>
+      <ul>
+        <li>l'hébergeur du site, Automattic Inc. (WordPress.com)&nbsp;;</li>
+        <li>[l'outil de prise de rendez-vous, ex. Calendly]&nbsp;;</li>
+        <li>[la messagerie utilisée pour recevoir vos messages]&nbsp;;</li>
+        <li>[le cas échéant, l'outil d'envoi de newsletter].</li>
+      </ul>
+      <p>
+        Certains de ces prestataires sont situés hors de l'Union européenne&nbsp;; les transferts
+        sont alors encadrés par les clauses contractuelles types de la Commission européenne.
+      </p>
+
+      <h2>Confidentialité des séances</h2>
+      <p>
+        Tout ce qui se dit en séance reste strictement confidentiel. Aucune information vous
+        concernant n'est partagée avec un tiers sans votre accord écrit préalable.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Ce site utilise les cookies techniques nécessaires à son fonctionnement, ainsi que
+        [le cas échéant : des cookies de mesure d'audience]. Vous pouvez à tout moment
+        configurer votre navigateur pour les refuser. [Si vous ajoutez un outil de statistiques
+        ou de publicité, un bandeau de consentement devient obligatoire.]
+      </p>
+
+      <h2>Vos droits</h2>
+      <p>
+        Conformément au Règlement général sur la protection des données (RGPD) et à la loi
+        Informatique et Libertés, vous disposez d'un droit d'accès, de rectification,
+        d'effacement, de limitation, d'opposition et de portabilité de vos données.
+      </p>
+      <p>
+        Pour les exercer, écrivez-moi à
+        <a href="mailto:latelier.decouvertedesoi@gmail.com">latelier.decouvertedesoi@gmail.com</a>.
+        Je vous réponds sous un mois.
+      </p>
+      <p>
+        Si ma réponse ne vous satisfait pas, vous pouvez saisir la CNIL —
+        3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 —
+        <a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>.
+      </p>
+
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>109</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[politique-de-confidentialite]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>9</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+    <item>
+      <title>Le quiz</title>
+      <link>https://latelierdecouvertedesoi.com/quiz/</link>
+      <pubDate>Sun, 30 Aug 2026 01:24:49 +0000</pubDate>
+      <dc:creator><![CDATA[veronique]]></dc:creator>
+      <guid isPermaLink="false">https://latelierdecouvertedesoi.com/?page_id=110</guid>
+      <description />
+      <content:encoded><![CDATA[<!-- wp:html -->
+<div class="ads">
+
+  <section class="ads-hero">
+    <div class="ads-wrap">
+      <span class="ads-eyebrow">Deux minutes, sept questions</span>
+      <h1>Est-ce que mon accompagnement est fait pour vous&nbsp;?</h1>
+      <p class="ads-chapo">Je préfère vous dire honnêtement que ce n'est pas pour vous plutôt que de vous accompagner à contretemps.</p>
+      <p>Sept questions sur ce que vous vivez en ce moment, votre rapport à vos émotions et à votre corps, et ce que vous attendez d'un accompagnement. À la fin, une réponse franche — y compris quand c'est «&nbsp;non&nbsp;».</p>
+      <div class="ads-hero-actions">
+        
+        <a class="ads-btn" href="[ADRESSE_DU_QUIZ]">Commencer le quiz</a>
+        <a class="ads-lien" href="/contact">Ou réserver directement un appel →</a>
+      </div>
+      <p class="ads-sous">Gratuit, anonyme, sans inscription et sans e-mail à laisser.</p>
+    </div>
+  </section>
+
+  <section class="ads-pale">
+    <div class="ads-wrap">
+      <div class="ads-fil"></div>
+      <h2>Pourquoi ce quiz existe</h2>
+      <div class="ads-cartes">
+        <div class="ads-carte"><h3>Pour vous éviter de vous tromper de porte</h3><p>Tous les accompagnements ne se valent pas selon les situations. Autant le savoir avant.</p></div>
+        <div class="ads-carte"><h3>Pour mettre des mots</h3><p>Beaucoup de personnes repartent du quiz en ayant simplement mieux formulé ce qui les amène.</p></div>
+        <div class="ads-carte"><h3>Parce que je préfère la franchise</h3><p>Si votre besoin relève d'autre chose, le quiz vous le dira — et moi aussi, lors de l'appel.</p></div>
+      </div>
+      <p style="margin-top:26px">Ce quiz est un repère, pas un diagnostic. Il ne remplace ni un avis médical, ni un suivi psychologique.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="ads-wrap">
+      <div class="ads-final">
+        <h2>Vous préférez en parler de vive voix&nbsp;?</h2>
+        <p>L'appel découverte de 20 minutes répond à la même question, en mieux : avec vos nuances à vous.</p>
+        <a class="ads-btn" href="/contact">Réserver mon appel découverte</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- /wp:html -->]]></content:encoded>
+      <excerpt:encoded></excerpt:encoded>
+      <wp:post_id>110</wp:post_id>
+      <wp:post_date><![CDATA[2026-08-30 01:24:49]]></wp:post_date>
+      <wp:post_date_gmt><![CDATA[2026-08-30 01:24:49]]></wp:post_date_gmt>
+      <wp:comment_status><![CDATA[closed]]></wp:comment_status>
+      <wp:ping_status><![CDATA[closed]]></wp:ping_status>
+      <wp:post_name><![CDATA[quiz]]></wp:post_name>
+      <wp:status><![CDATA[draft]]></wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>10</wp:menu_order>
+      <wp:post_type><![CDATA[page]]></wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+    </item>
+  </channel>
+</rss>
