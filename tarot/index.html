@@ -1,0 +1,1544 @@
+<title>Le Miroir des Arcanes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Archivo:wght@400;500;600&display=swap">
+<style>
+/* ── Encres du pochoir marseillais ───────────────────────────────── */
+:root{
+  --ground:#E9E3D4;
+  --surface:#F6F1E4;
+  --surface-2:#FCF9F1;
+  --ink:#191A26;
+  --ink-2:#4C4D60;
+  --ink-3:#7B7B8D;
+  --line:#CBC1A9;
+  --line-2:#DFD6C1;
+  --rouge:#B03428;
+  --bleu:#2A4E93;
+  --ocre:#B0821B;
+  --vert:#4A7A46;
+  --chair:#C08A5E;
+  --accent:var(--rouge);
+  --halo:rgba(176,52,40,.10);
+  --shadow:0 1px 0 rgba(25,26,38,.05), 0 10px 26px -16px rgba(25,26,38,.45);
+  --radius:3px;
+  --tapis:#DCD4C0;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#111220;
+    --surface:#1A1C2B;
+    --surface-2:#232637;
+    --ink:#ECE6D7;
+    --ink-2:#AAA8BB;
+    --ink-3:#7C7A8D;
+    --line:#33364C;
+    --line-2:#282B3D;
+    --rouge:#E07868;
+    --bleu:#82A6E4;
+    --ocre:#DDB04B;
+    --vert:#7FB179;
+    --chair:#E0B78F;
+    --halo:rgba(224,120,104,.12);
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 12px 30px -18px rgba(0,0,0,.9);
+    --tapis:#191B29;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111220; --surface:#1A1C2B; --surface-2:#232637;
+  --ink:#ECE6D7; --ink-2:#AAA8BB; --ink-3:#7C7A8D;
+  --line:#33364C; --line-2:#282B3D;
+  --rouge:#E07868; --bleu:#82A6E4; --ocre:#DDB04B; --vert:#7FB179; --chair:#E0B78F;
+  --halo:rgba(224,120,104,.12);
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 12px 30px -18px rgba(0,0,0,.9);
+  --tapis:#191B29;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-size:16px;
+  line-height:1.6;
+  font-weight:400;
+}
+img{max-width:100%}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+/* ── Typographie ─────────────────────────────────────────────────── */
+.display{font-family:"IM Fell French Canon",Georgia,serif;font-weight:400;letter-spacing:.01em}
+h1,h2,h3,h4{font-family:"IM Fell French Canon",Georgia,serif;font-weight:400;text-wrap:balance;margin:0;line-height:1.18}
+h1{font-size:clamp(1.9rem,4.4vw,2.7rem)}
+h2{font-size:clamp(1.35rem,2.8vw,1.75rem)}
+h3{font-size:1.15rem}
+p{margin:0 0 .85em}
+.lede{font-size:1.06rem;color:var(--ink-2);max-width:64ch}
+.eyebrow{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.ui{font-family:"Archivo",system-ui,sans-serif}
+small,.small{font-size:.83rem}
+.muted{color:var(--ink-2)}
+.faint{color:var(--ink-3)}
+
+/* ── Ossature ────────────────────────────────────────────────────── */
+.wrap{max-width:1220px;margin:0 auto;padding-inline:18px}
+header.top{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(var(--surface),var(--ground));
+}
+.topgrid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 26px;padding-block:26px 18px}
+.brandmark{
+  width:44px;height:44px;flex:none;border:1.5px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;font-family:"IM Fell French Canon",serif;font-size:1.25rem;
+  background:var(--surface-2);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand p{margin:0}
+nav.tabs{
+  display:flex;gap:2px;flex-wrap:wrap;margin-left:auto;
+  border-bottom:none;
+}
+nav.tabs button{
+  font-family:"Archivo",system-ui,sans-serif;font-size:.78rem;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:none;border:1px solid transparent;border-bottom:none;
+  color:var(--ink-2);padding:9px 14px 8px;cursor:pointer;border-radius:2px 2px 0 0;
+  position:relative;top:1px;
+}
+nav.tabs button:hover{color:var(--ink);background:var(--halo)}
+nav.tabs button[aria-selected="true"]{
+  color:var(--ink);background:var(--ground);border-color:var(--line);
+}
+main{padding-block:26px 60px;min-height:60vh}
+section.panel[hidden]{display:none}
+
+/* ── Boutons & champs ────────────────────────────────────────────── */
+.btn{
+  font-family:"Archivo",system-ui,sans-serif;font-size:.82rem;font-weight:500;
+  letter-spacing:.03em;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+  padding:9px 15px;border-radius:var(--radius);cursor:pointer;
+  transition:background .15s,border-color .15s,transform .08s;
+}
+.btn:hover{border-color:var(--ink-3);background:var(--surface)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:var(--rouge);border-color:var(--rouge);color:#FCF9F1;font-weight:600;
+}
+:root[data-theme="dark"] .btn-primary,
+:root:not([data-theme="light"]) .btn-primary{color:#15111A}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .btn-primary{color:#FCF9F1}}
+.btn-primary:hover{background:var(--rouge);filter:brightness(1.08);border-color:var(--rouge)}
+.btn-ghost{background:transparent}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+label.field{display:block}
+label.field>span{display:block;margin-bottom:5px}
+input[type="text"],input[type="date"],textarea,select{
+  width:100%;font-family:"Spectral",Georgia,serif;font-size:.95rem;
+  background:var(--surface-2);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--radius);padding:9px 11px;
+}
+textarea{resize:vertical;min-height:76px;line-height:1.55}
+select{font-family:"Archivo",system-ui,sans-serif;font-size:.85rem}
+.switch{display:flex;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;width:fit-content}
+.switch button{
+  font-family:"Archivo",sans-serif;font-size:.75rem;letter-spacing:.04em;
+  background:var(--surface-2);border:none;color:var(--ink-2);padding:7px 12px;cursor:pointer;
+}
+.switch button+button{border-left:1px solid var(--line)}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+</style>
+<style>
+/* ── La lame ─────────────────────────────────────────────────────── */
+.lame{
+  position:relative;display:block;width:100%;aspect-ratio:.575;
+  background:var(--surface-2);
+  border:1.5px solid var(--ink);border-radius:2px;
+  padding:5px;cursor:pointer;text-align:center;
+  font-family:"IM Fell French Canon",Georgia,serif;color:var(--ink);
+  box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.lame::after{
+  content:"";position:absolute;inset:3px;border:1px solid var(--line);
+  border-radius:1px;pointer-events:none;
+}
+.lame:hover{transform:translateY(-3px);box-shadow:0 1px 0 rgba(0,0,0,.05),0 16px 30px -16px rgba(25,26,38,.55)}
+.lame .grain{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;border-radius:2px;
+  background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(120,105,80,.055) 2px 3px);
+}
+:root[data-theme="dark"] .lame .grain,
+:root:not([data-theme="light"]) .lame .grain{background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.03) 2px 3px)}
+.lame-inner{position:relative;height:100%;display:flex;flex-direction:column;padding:7px 4px 5px}
+.lame-num{
+  font-size:.78rem;letter-spacing:.09em;line-height:1;
+  color:var(--ink-2);min-height:1em;
+}
+.lame-art{flex:1;display:grid;place-items:center;padding:5px 2px;min-height:0}
+.lame-nom{
+  font-size:.7rem;line-height:1.12;text-transform:uppercase;letter-spacing:.04em;
+  padding-top:4px;border-top:1px solid var(--line-2);
+  overflow-wrap:anywhere;
+}
+.lame[data-suite] .lame-nom{font-size:.62rem}
+/* bandes d'encres (arcanes majeurs) */
+.encres{display:flex;flex-direction:column;gap:3px;width:78%;}
+.encres i{display:block;height:9px;border:.5px solid rgba(0,0,0,.35);border-radius:1px}
+:root[data-theme="dark"] .encres i,
+:root:not([data-theme="light"]) .encres i{border-color:rgba(255,255,255,.28)}
+.roman{font-size:1.5rem;line-height:1;letter-spacing:.03em;margin-bottom:7px;display:block}
+/* pips (arcanes mineurs) */
+.pips{display:flex;flex-wrap:wrap;gap:4px 6px;justify-content:center;align-content:center;width:100%;max-width:86%}
+.pips svg{display:block;width:15px;height:auto;flex:none;stroke-width:1.6}
+.figglyph{display:flex;flex-direction:column;align-items:center;gap:5px}
+.figglyph svg{width:22px;height:auto}
+.figlettre{font-size:1.35rem;line-height:1}
+/* dos de carte */
+.lame.dos{cursor:default;background:var(--tapis)}
+.lame.dos .lame-inner{display:grid;place-items:center;padding:0}
+.lame.dos .motif{
+  width:100%;height:100%;border-radius:1px;opacity:.85;
+  background:
+    repeating-linear-gradient(45deg,transparent 0 6px,var(--halo) 6px 7px),
+    repeating-linear-gradient(-45deg,transparent 0 6px,var(--halo) 6px 7px);
+}
+.lame.vide{
+  border-style:dashed;border-color:var(--line);box-shadow:none;background:transparent;cursor:default;
+}
+.lame.vide:hover{transform:none}
+.lame.vide .lame-inner{display:grid;place-items:center}
+.lame.sel{box-shadow:0 0 0 2px var(--rouge),var(--shadow)}
+@keyframes pose{from{opacity:0;transform:translateY(9px) rotate(-1.4deg)}to{opacity:1;transform:none}}
+.lame.pose{animation:pose .42s cubic-bezier(.2,.7,.3,1) backwards}
+
+/* ── Le tapis ────────────────────────────────────────────────────── */
+.tapis-layout{display:grid;grid-template-columns:minmax(0,272px) minmax(0,1fr);gap:26px;align-items:start}
+@media (max-width:900px){.tapis-layout{grid-template-columns:1fr}}
+.rail{
+  display:flex;flex-direction:column;gap:16px;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);padding:16px;
+}
+.rail h2{font-size:1.2rem}
+.choix{display:flex;flex-direction:column;gap:5px}
+.choix button{
+  text-align:left;font-family:"Archivo",sans-serif;font-size:.82rem;
+  background:transparent;border:1px solid transparent;color:var(--ink-2);
+  padding:8px 10px;border-radius:var(--radius);cursor:pointer;line-height:1.35;
+}
+.choix button:hover{background:var(--surface-2);color:var(--ink)}
+.choix button[aria-pressed="true"]{
+  background:var(--surface-2);border-color:var(--line);color:var(--ink);font-weight:600;
+}
+.choix button em{display:block;font-style:normal;font-weight:400;font-size:.72rem;color:var(--ink-3);margin-top:2px}
+
+.tapis{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--tapis);
+  padding:22px 18px;
+  background-image:radial-gradient(ellipse at 50% 0%,var(--halo),transparent 62%);
+}
+.tapis-tete{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;margin-bottom:18px}
+.tapis-tete h2{font-size:1.35rem}
+.jeu{display:grid;gap:12px 10px;justify-content:center;margin-inline:auto}
+.slot{display:flex;flex-direction:column;gap:6px;min-width:0}
+.slot-lab{
+  font-family:"Archivo",sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);text-align:center;line-height:1.25;
+}
+.slot-lab b{display:block;font-weight:600;color:var(--ink-2)}
+.jeu.l-croix{grid-template-columns:repeat(3,minmax(74px,124px))}
+.jeu.l-ligne3{grid-template-columns:repeat(3,minmax(78px,140px))}
+.jeu.l-ligne4{grid-template-columns:repeat(4,minmax(74px,124px))}
+.jeu.l-un{grid-template-columns:minmax(120px,180px)}
+.jeu.l-sept{grid-template-columns:repeat(7,minmax(0,1fr));max-width:100%}
+@media (max-width:700px){
+  .jeu.l-ligne4{grid-template-columns:repeat(2,minmax(74px,130px))}
+  .jeu.l-sept{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:430px){
+  .jeu.l-sept{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tapis{padding:16px 12px}
+}
+.synthese-note{
+  font-size:.85rem;color:var(--ink-2);text-align:center;margin-top:14px;
+  font-style:italic;
+}
+
+/* ── Blocs de lecture ────────────────────────────────────────────── */
+.grille{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:24px}
+.bloc{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:16px 17px}
+.bloc h3{margin-bottom:9px}
+.bloc.souligne{border-left:3px solid var(--rouge)}
+.etapes{counter-reset:e;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+.etapes li{counter-increment:e;display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start}
+.etapes li::before{
+  content:counter(e);font-family:"IM Fell French Canon",serif;font-size:1.05rem;
+  color:var(--rouge);border:1px solid var(--line);border-radius:50%;
+  width:26px;height:26px;display:grid;place-items:center;line-height:1;
+}
+.etapes b{display:block;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.etapes p{margin:0;font-size:.93rem;color:var(--ink-2)}
+
+/* ── Fiche d'arcane (tiroir) ─────────────────────────────────────── */
+.tiroir{
+  position:fixed;inset:0;z-index:40;display:flex;justify-content:flex-end;
+  background:rgba(12,12,20,.5);backdrop-filter:blur(2px);
+}
+.tiroir[hidden]{display:none}
+.fiche{
+  width:min(520px,100%);height:100%;overflow-y:auto;background:var(--surface);
+  border-left:1px solid var(--line);padding:20px 22px 60px;
+  animation:glisse .28s cubic-bezier(.2,.7,.3,1);
+}
+@keyframes glisse{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+.fiche-tete{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.fiche-tete .mini{width:88px;flex:none}
+.fiche h2{font-size:1.6rem;margin-bottom:3px}
+.fermer{
+  position:sticky;top:0;float:right;margin:-8px -8px 0 0;
+  background:var(--surface);border:1px solid var(--line);border-radius:50%;
+  width:32px;height:32px;font-size:1.1rem;line-height:1;cursor:pointer;color:var(--ink-2);
+}
+.champ{margin-bottom:15px}
+.champ>.eyebrow{margin-bottom:4px;display:block}
+.champ p{margin:0;font-size:.96rem}
+.champ.elan{border-left:2px solid var(--vert);padding-left:11px}
+.champ.tension{border-left:2px solid var(--ocre);padding-left:11px}
+.champ.question{
+  background:var(--surface-2);border:1px solid var(--line-2);border-radius:var(--radius);
+  padding:12px 13px;
+}
+.champ.question p{font-family:"IM Fell French Canon",serif;font-size:1.1rem;line-height:1.4}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{
+  font-family:"Archivo",sans-serif;font-size:.7rem;letter-spacing:.05em;
+  border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--ink-2);
+  background:var(--surface-2);
+}
+.chip.on{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.swatches{display:flex;flex-wrap:wrap;gap:8px}
+.swatch{display:flex;align-items:center;gap:7px;font-size:.8rem;color:var(--ink-2)}
+.swatch i{width:15px;height:15px;border-radius:2px;border:1px solid rgba(120,110,90,.55);display:block}
+
+/* ── Bibliothèque ────────────────────────────────────────────────── */
+.filtres{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:20px}
+.galerie{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+@media (min-width:700px){.galerie{grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}}
+.rangee-titre{
+  grid-column:1/-1;display:flex;align-items:baseline;gap:12px;
+  border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:14px;
+}
+.rangee-titre h3{font-size:1.05rem}
+.rangee-titre span{font-size:.8rem;color:var(--ink-3)}
+
+/* ── Grammaire ───────────────────────────────────────────────────── */
+.deux-col{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+table.tab{width:100%;border-collapse:collapse;font-size:.92rem}
+table.tab th,table.tab td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line-2);vertical-align:top}
+table.tab th{
+  font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);border-bottom-color:var(--line);
+}
+table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon",serif;font-size:1.05rem}
+.tab-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.colonnes{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;font-size:.72rem}
+@media (max-width:760px){.colonnes{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:430px){.colonnes{grid-template-columns:repeat(2,1fr)}}
+.colonnes div{border:1px solid var(--line-2);border-radius:var(--radius);padding:8px 7px;background:var(--surface-2)}
+.colonnes b{display:block;font-family:"IM Fell French Canon",serif;font-size:.95rem;font-weight:400;color:var(--rouge)}
+.colonnes span{display:block;color:var(--ink-2);line-height:1.3;margin-top:3px}
+
+/* ── Carnet ──────────────────────────────────────────────────────── */
+.entree{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  padding:14px 16px;display:flex;flex-direction:column;gap:9px;
+}
+.entree-tete{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.entree-cartes{display:flex;flex-wrap:wrap;gap:6px}
+.pile{display:flex;flex-direction:column;gap:12px}
+.vide-etat{
+  border:1px dashed var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center;color:var(--ink-2);
+}
+.badge{
+  font-family:"Archivo",sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;border-radius:2px;padding:3px 7px;
+  background:var(--halo);color:var(--rouge);border:1px solid var(--rouge);
+}
+.rule{height:1px;background:var(--line);border:none;margin:34px 0 26px}
+.note-source{font-size:.85rem;color:var(--ink-3);max-width:70ch}
+.pense{display:flex;gap:9px;align-items:center;color:var(--ink-2);font-style:italic;font-size:.92rem}
+.pense i{width:8px;height:8px;border-radius:50%;background:var(--rouge);display:block;animation:pulse 1.1s infinite}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+.tissage{white-space:pre-wrap;font-size:.98rem}
+.tissage p{margin:0 0 .7em}
+</style>
+
+<header class="top">
+  <div class="wrap topgrid">
+    <div class="brand">
+      <div class="brandmark display" aria-hidden="true">✳</div>
+      <div>
+        <h1>Le Miroir des Arcanes</h1>
+        <p class="small muted">Atelier de lecture du Tarot de Marseille — dans la voie d'Alejandro Jodorowsky</p>
+      </div>
+    </div>
+    <nav class="tabs ui" role="tablist" aria-label="Sections">
+      <button role="tab" id="t-tapis" aria-controls="p-tapis" aria-selected="true">Le tapis</button>
+      <button role="tab" id="t-lames" aria-controls="p-lames" aria-selected="false">Les 78 lames</button>
+      <button role="tab" id="t-gram" aria-controls="p-gram" aria-selected="false">Grammaire</button>
+      <button role="tab" id="t-carnet" aria-controls="p-carnet" aria-selected="false">Carnet</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ══ LE TAPIS ══════════════════════════════════════════════════ -->
+<section class="panel" id="p-tapis" role="tabpanel" aria-labelledby="t-tapis">
+  <div class="tapis-layout">
+
+    <aside class="rail">
+      <div>
+        <span class="eyebrow">Avant de battre</span>
+        <h2>La demande</h2>
+      </div>
+      <label class="field">
+        <span class="eyebrow">Question du consultant</span>
+        <textarea id="question" placeholder="Formulée à la première personne, ouverte, au présent. Ex. : « Comment est-ce que je me place dans ma nouvelle activité ? »"></textarea>
+      </label>
+      <p class="small faint" style="margin:-6px 0 0">Le Tarot ne répond pas par oui ou par non. Reformulez « est-ce que… » en « où en suis-je de… », « qu'est-ce qui… ».</p>
+
+      <div>
+        <span class="eyebrow">Le tirage</span>
+        <div class="choix" id="choix-tirage" role="group" aria-label="Choisir un tirage"></div>
+      </div>
+
+      <div>
+        <span class="eyebrow">Le jeu</span>
+        <div class="switch" role="group" aria-label="Jeu utilisé">
+          <button id="j-majeurs" aria-pressed="true">22 majeurs</button>
+          <button id="j-tout" aria-pressed="false">78 lames</button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="battre" style="font-size:.9rem;padding:12px">Battre et tirer</button>
+      <button class="btn btn-ghost" id="ranger">Ranger le jeu</button>
+    </aside>
+
+    <div>
+      <div class="tapis">
+        <div class="tapis-tete">
+          <div>
+            <span class="eyebrow" id="tapis-eyebrow">Exemple de tirage</span>
+            <h2 id="tapis-titre">Le tirage en croix</h2>
+          </div>
+          <p class="small muted" id="tapis-desc" style="margin:0;flex:1;min-width:220px"></p>
+        </div>
+        <div class="jeu" id="jeu"></div>
+        <p class="synthese-note" id="synthese-note" hidden></p>
+      </div>
+
+      <div class="grille">
+        <div class="bloc souligne" id="bloc-lecture">
+          <span class="eyebrow">Ce que dit le tapis</span>
+          <h3 style="margin-top:4px">Lecture d'ensemble</h3>
+          <div id="lecture-corps"></div>
+        </div>
+        <div class="bloc">
+          <span class="eyebrow">Méthode</span>
+          <h3 style="margin-top:4px">Lire pas à pas</h3>
+          <ol class="etapes" id="etapes"></ol>
+        </div>
+      </div>
+
+      <div class="grille" style="margin-top:18px">
+        <div class="bloc">
+          <span class="eyebrow">Aller plus loin</span>
+          <h3 style="margin-top:4px">Tisser la lecture</h3>
+          <p class="small muted">Demander à Claude de relier les lames tirées à votre question, dans l'esprit non divinatoire : des pistes et des questions, jamais un verdict.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" id="tisser">Tisser une lecture</button>
+            <button class="btn" id="exporter">Exporter en note</button>
+            <button class="btn" id="garder">Garder dans le carnet</button>
+          </div>
+          <div id="tissage" class="tissage" style="margin-top:14px"></div>
+        </div>
+        <div class="bloc">
+          <span class="eyebrow">Repères</span>
+          <h3 style="margin-top:4px">Arcane de naissance &amp; de l'année</h3>
+          <p class="small muted">Somme réduite des chiffres de la date. L'arcane de naissance décrit une tonalité de fond ; l'arcane de l'année, la couleur du cycle en cours.</p>
+          <label class="field"><span class="eyebrow">Date de naissance</span>
+            <input type="date" id="ddn" value="1978-05-12"></label>
+          <div id="naissance-res" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LES 78 LAMES ═════════════════════════════════════════════ -->
+<section class="panel" id="p-lames" role="tabpanel" aria-labelledby="t-lames" hidden>
+  <h2>Les 78 lames</h2>
+  <p class="lede">Chaque fiche donne l'iconographie à observer, le sens en élan et le sens en tension, le centre concerné et la question ouverte à rendre au consultant. Cliquez une lame.</p>
+  <div class="filtres ui" style="margin-top:18px">
+    <input type="text" id="rech" placeholder="Chercher une lame, un mot-clé…" style="max-width:280px" aria-label="Chercher">
+    <div class="switch" role="group" aria-label="Filtrer">
+      <button data-f="tout" aria-pressed="true">Tout</button>
+      <button data-f="majeurs" aria-pressed="false">Majeurs</button>
+      <button data-f="batons" aria-pressed="false">Bâtons</button>
+      <button data-f="coupes" aria-pressed="false">Coupes</button>
+      <button data-f="epees" aria-pressed="false">Épées</button>
+      <button data-f="deniers" aria-pressed="false">Deniers</button>
+    </div>
+  </div>
+  <div class="galerie" id="galerie"></div>
+</section>
+
+<!-- ══ GRAMMAIRE ════════════════════════════════════════════════ -->
+<section class="panel" id="p-gram" role="tabpanel" aria-labelledby="t-gram" hidden>
+  <h2>La grammaire du Tarot</h2>
+  <p class="lede">Le Tarot n'est pas une liste de significations à mémoriser : c'est une langue. Quatre axes — la couleur, le nombre, la série, la place — suffisent à lire n'importe quelle lame dans n'importe quelle position.</p>
+
+  <hr class="rule">
+  <div class="deux-col">
+    <div>
+      <span class="eyebrow">Axe 1</span>
+      <h3 style="margin:4px 0 10px">Les encres</h3>
+      <p class="muted small">Le Tarot de Marseille est imprimé au pochoir : chaque couleur est posée à plat, sans dégradé. Elle est donc un signe, pas un effet. Repérez d'abord quelle encre domine la lame — c'est le niveau où la question se joue.</p>
+      <div id="tab-couleurs"></div>
+    </div>
+    <div>
+      <span class="eyebrow">Axe 2</span>
+      <h3 style="margin:4px 0 10px">Les nombres</h3>
+      <p class="muted small">De 1 à 10, un même mouvement se répète dans les quatre séries : une unité de base (l'As), trois couples (2/3, 4/5, 6/7) et une tierce finale (8/9/10). Le nombre dit <em>où en est</em> le processus, la série dit <em>de quoi</em> il s'agit.</p>
+      <div id="tab-nombres"></div>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <div class="deux-col">
+    <div>
+      <span class="eyebrow">Axe 3</span>
+      <h3 style="margin:4px 0 10px">Les quatre séries, les quatre centres</h3>
+      <p class="muted small">Les séries recouvrent les quatre centres de l'être. Un tirage qui n'appelle qu'une seule série signale un déséquilibre : la vie s'est concentrée sur un seul étage.</p>
+      <div id="tab-series"></div>
+      <h3 style="margin:22px 0 10px">Les figures</h3>
+      <div id="tab-figures"></div>
+    </div>
+    <div>
+      <span class="eyebrow">Axe 4</span>
+      <h3 style="margin:4px 0 10px">Les trois septénaires</h3>
+      <p class="muted small">Les 22 majeurs se lisent en trois rangées de sept. Le Mat, sans nombre, circule librement : il peut se placer avant le I comme après le XXI.</p>
+      <div id="septs"></div>
+      <h3 style="margin:22px 0 10px">Les sept colonnes</h3>
+      <p class="muted small">Lues verticalement, les trois septénaires font apparaître sept mouvements qui se répètent à trois niveaux. C'est l'outil le plus puissant pour situer une lame : le III, le X et le XVII disent tous les trois « ça sort », mais dans trois mondes différents.</p>
+      <div class="colonnes" id="colonnes"></div>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <div class="deux-col">
+    <div>
+      <span class="eyebrow">Technique</span>
+      <h3 style="margin:4px 0 10px">Les regards et les gestes</h3>
+      <p class="muted small">Les personnages ne sont pas immobiles : ils regardent quelque part, ils tendent la main, ils tournent le dos. Une fois les lames posées côte à côte, ces directions deviennent une syntaxe.</p>
+      <ul class="muted" style="font-size:.93rem;padding-left:1.1em;display:flex;flex-direction:column;gap:7px">
+        <li>Une lame qui <b>regarde une autre lame</b> lui porte de l'intérêt, du désir, ou de la crainte : il y a une relation à nommer.</li>
+        <li>Deux lames qui <b>se tournent le dos</b> parlent d'un divorce intérieur, d'une part de soi qu'on ne veut pas voir.</li>
+        <li>Une lame qui <b>regarde hors du tirage</b> désigne ce qui n'a pas encore été dit : quelqu'un, un passé, un ailleurs qui manque.</li>
+        <li>Une lame qui <b>regarde le consultant</b> (La Justice, Le Diable, La Papesse) le met en face de lui-même : c'est souvent là que se joue la séance.</li>
+        <li>Un <b>objet tendu</b> vers une autre lame est une offre ; un objet retenu contre soi, une réserve.</li>
+      </ul>
+      <p class="note-source" style="margin-top:12px">Les orientations décrites suivent la restauration Camoin–Jodorowsky. D'une édition à l'autre les gravures diffèrent : vérifiez toujours sur le jeu que vous avez en main — c'est lui qui fait autorité, pas le commentaire.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Technique</span>
+      <h3 style="margin:4px 0 10px">Faire parler les nombres</h3>
+      <ul class="muted" style="font-size:.93rem;padding-left:1.1em;display:flex;flex-direction:column;gap:7px">
+        <li><b>La progression.</b> Les nombres montent-ils (un processus qui avance) ou descendent-ils (un retour en arrière, une régression nécessaire) ?</li>
+        <li><b>La répétition.</b> Deux fois le même nombre dans deux séries : la même étape se joue simultanément à deux étages de la vie.</li>
+        <li><b>Le saut.</b> Un écart brutal (un 2 puis un 9) signale une étape sautée : ce qui n'a pas été vécu revient réclamer sa place.</li>
+        <li><b>La somme.</b> Additionnez les nombres des majeurs présents ; si le total dépasse 22, additionnez ses chiffres jusqu'à obtenir 22 ou moins. L'arcane obtenu est la clé du tirage — il n'est pas tiré, il est <em>déduit</em>.</li>
+        <li><b>Le manque.</b> Quelle série est absente ? Quel étage de la vie n'est pas convoqué ? Le silence du tirage est une information.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <div class="deux-col">
+    <div class="bloc souligne">
+      <span class="eyebrow">Cadre</span>
+      <h3 style="margin:4px 0 10px">Ce que cet outil n'est pas</h3>
+      <ul class="muted" style="font-size:.93rem;padding-left:1.1em;display:flex;flex-direction:column;gap:7px">
+        <li><b>Ni prédiction, ni diagnostic.</b> Jodorowsky récuse la voyance : « le Tarot est un miroir, pas une boule de cristal ». Il ne dit pas ce qui arrivera, il dit où la personne en est.</li>
+        <li><b>Pas de soin.</b> Une lecture ne remplace jamais un accompagnement médical ou psychothérapeutique, et ne se substitue pas à un avis professionnel.</li>
+        <li><b>Pas de verdict.</b> Le tirage se rend au consultant sous forme de questions ouvertes. C'est lui qui reconnaît, ou non, ce que la lame lui montre.</li>
+        <li><b>Pas de cartes négatives.</b> Le XIII sans nom nettoie, La Maison Dieu libère, Le Diable donne de la puissance. Une lame dite « dure » signale une énergie disponible, pas un malheur annoncé.</li>
+        <li><b>Consentement et cadre.</b> Annoncez la durée, la place du tarot dans la séance, et ce que vous ne ferez pas (annoncer une maladie, une mort, une rupture, une date).</li>
+      </ul>
+    </div>
+    <div class="bloc">
+      <span class="eyebrow">Pour approfondir</span>
+      <h3 style="margin:4px 0 10px">Sources</h3>
+      <ul class="muted" style="font-size:.93rem;padding-left:1.1em;display:flex;flex-direction:column;gap:7px">
+        <li>Alejandro Jodorowsky &amp; Marianne Costa, <em>La Voie du Tarot</em>, Albin Michel, 2004 — l'ouvrage de référence de cette approche.</li>
+        <li>Alejandro Jodorowsky, <em>L'Art du Tarot</em>, livret accompagnant le Tarot de Marseille restauré (Camoin–Jodorowsky, 1997).</li>
+        <li>Marianne Costa, <em>Le Tarot conjugal</em> et ses séminaires, pour la lecture relationnelle et généalogique.</li>
+        <li>Alejandro Jodorowsky, <em>Psychomagie</em> et <em>Métagénéalogie</em>, pour le prolongement en acte après la lecture.</li>
+      </ul>
+      <p class="note-source" style="margin-top:10px">Les textes de cet outil sont des synthèses rédigées dans l'esprit de cette approche, destinées à votre pratique. Ils ne reproduisent pas les ouvrages : gardez-les ouverts à côté de vous, et confrontez toujours au jeu que vous tenez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CARNET ═══════════════════════════════════════════════════ -->
+<section class="panel" id="p-carnet" role="tabpanel" aria-labelledby="t-carnet" hidden>
+  <h2>Le carnet</h2>
+  <p class="lede">Les tirages gardés, avec leur question et vos notes. Relire trois mois plus tard ce qu'une lame avait dit est le meilleur exercice de formation qui soit.</p>
+  <div id="carnet-etat" class="small faint ui" style="margin:10px 0 18px"></div>
+  <div class="pile" id="carnet"></div>
+</section>
+
+</main>
+
+<div class="tiroir" id="tiroir" hidden>
+  <div class="fiche" id="fiche" role="dialog" aria-modal="true" aria-label="Fiche d'arcane"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   LE MIROIR DES ARCANES — données
+   Synthèses rédigées dans la voie de La Voie du Tarot
+   (A. Jodorowsky & M. Costa, Albin Michel, 2004) et de L'Art du Tarot.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Encres réelles du pochoir marseillais — valeurs fixes : elles
+   représentent un pigment, pas un rôle d'interface. */
+const PIGMENT = {
+  rouge:"#B23A2C", bleu:"#2C4E8F", jaune:"#D8A72A", vert:"#5B8A4A",
+  chair:"#E2B48C", noir:"#1C1A1B", blanc:"#F6F1E4"
+};
+const ENCRES = [
+  ["rouge","Rouge","La libido, l'action, l'incarnation. Là où le rouge domine, l'énergie est engagée dans la matière et dans le désir."],
+  ["bleu","Bleu","La réceptivité, l'émotion, l'espace intérieur. Le bleu accueille, contient, gestate. C'est la couleur de la matrice et de la spiritualité."],
+  ["jaune","Jaune","L'intelligence agissante, la lumière consciente, l'or. Le jaune éclaire et comprend ; il transforme l'énergie en acte lucide."],
+  ["vert","Vert","La vie végétale, ce qui pousse, ce qui est encore en germe. Le vert annonce une action naissante, pas encore accomplie."],
+  ["chair","Chair","L'humain, le corps vivant. La chair signale ce qui est déjà incarné, sensible, vulnérable."],
+  ["noir","Noir","Non pas le mal, mais l'inconnu : ce qui n'est pas encore venu à la conscience. Le noir est un réceptacle, jamais une condamnation."],
+  ["blanc","Blanc","La conscience pure, la lumière sans forme, la disponibilité. Le blanc est le vide fertile d'où tout peut surgir."]
+];
+
+const CENTRES = {
+  "Corps & matière":"Ce qui se joue dans le concret : le corps, l'argent, le lieu, la santé, le temps qui passe.",
+  "Cœur & émotion":"Ce qui se joue dans le lien : l'amour, la famille, ce qu'on ressent et ce qu'on n'ose pas ressentir.",
+  "Élan créateur":"Ce qui se joue dans le désir : la sexualité, la création, l'envie, la force qui pousse.",
+  "Esprit & parole":"Ce qui se joue dans la tête : les idées, les décisions, ce qu'on dit et ce qu'on tait."
+};
+
+/* ── Les 22 arcanes majeurs ─────────────────────────────────────── */
+const MAJEURS = [
+{n:1,r:"I",nom:"Le Bateleur",sept:1,col:1,centre:"Élan créateur",encres:["chair","rouge","jaune","bleu"],
+ mots:["potentiel","commencement","disponibilité","éparpillement"],
+ icono:"Une table à trois pieds — le quatrième manque, rien n'est encore stabilisé. Des objets épars : dés, gobelet, couteau, pièces. Un chapeau en forme de lemniscate, signe de l'infini. La baguette jaune est levée, la main gauche tient une pièce. Il est jeune, debout, entièrement disponible.",
+ elan:"Tout est possible et rien n'est encore choisi. L'énergie est intacte, curieuse, joueuse : c'est l'arcane du démarrage. Les outils sont sur la table, l'habileté est dans les mains, l'infini au-dessus de la tête. Il autorise le premier geste sans exiger la maîtrise.",
+ tension:"Le potentiel qui ne s'incarne jamais : tout essayer, ne rien terminer. L'éternel débutant, le bonimenteur qui séduit sans s'engager, la peur de choisir parce que choisir, c'est renoncer aux autres possibles.",
+ q:"Qu'est-ce qui est posé sur votre table en ce moment, et que vous n'avez pas encore pris en main ?"},
+
+{n:2,r:"II",nom:"La Papesse",sept:1,col:2,centre:"Esprit & parole",encres:["bleu","blanc","jaune","chair"],
+ mots:["gestation","étude","attente","recueillement"],
+ icono:"Assise, immobile, un livre ouvert sur les genoux mais que l'on ne voit pas fini de lire. Un voile derrière elle cache ce qui n'est pas encore révélé. Tiare à trois étages. Le bleu domine largement : réceptivité et gestation.",
+ elan:"L'accumulation silencieuse. Étudier, se recueillir, laisser mûrir, ne pas agir tout de suite. C'est la mère intérieure, la gardienne d'un savoir qui n'est pas encore dit. Elle légitime le temps de l'attente, si rare et si nécessaire.",
+ tension:"L'attente qui se fige : la théorie sans pratique, la pureté qui devient froideur, le refus de sortir du livre. Ce qui gestate trop longtemps finit par pourrir sur place.",
+ q:"Qu'êtes-vous en train d'accumuler sans encore l'utiliser ? De quoi avez-vous besoin d'attendre la maturation ?"},
+
+{n:3,r:"III",nom:"L'Impératrice",sept:1,col:3,centre:"Élan créateur",encres:["jaune","rouge","bleu","chair"],
+ mots:["créativité","fécondité","expression","dispersion"],
+ icono:"Assise mais prête à se lever, sceptre en main, l'écu à l'aigle posé de côté, couronne sur la tête, un dossier ailé derrière elle. Le jaune éclate : l'intelligence passe à l'acte. Le 3 est l'explosion de ce que le 2 avait accumulé.",
+ elan:"La créativité qui sort enfin, la fécondité, l'intelligence joyeuse, la parole qui rayonne. Elle produit — des idées, des projets, des enfants, des œuvres. C'est le passage du possible à l'acte.",
+ tension:"L'explosion qui se disperse : trop d'idées, trop de projets, une brillance superficielle, la séduction comme fuite. Ou la créativité stérile, l'agitation prise pour de la création.",
+ q:"Qu'est-ce qui demande à sortir de vous maintenant — et à qui, ou à quoi, le donnez-vous ?"},
+
+{n:4,r:"IIII",nom:"L'Empereur",sept:1,col:4,centre:"Corps & matière",encres:["chair","rouge","bleu","jaune"],
+ mots:["structure","cadre","autorité","rigidité"],
+ icono:"De profil, jambes croisées en forme de 4, assis de biais sur un trône massif, sceptre à globe, casque plutôt que couronne. Le 4 est la carte de la stabilité : quatre pieds, quatre murs, quatre points cardinaux.",
+ elan:"La structure, la loi, le cadre, le territoire, la construction durable. Il donne un contenant à l'énergie du III. Poser ses limites, tenir ses engagements, bâtir sur du solide, exercer une autorité juste.",
+ tension:"Le cadre qui devient prison : rigidité, autoritarisme, matérialisme, refus du changement — le père qui écrase. Ou son revers : l'incapacité à se donner une structure, à dire non, à occuper sa place.",
+ q:"Quel cadre vous tient debout en ce moment — et lequel vous tient enfermé ?"},
+
+{n:5,r:"V",nom:"Le Pape",sept:1,col:5,centre:"Esprit & parole",encres:["bleu","rouge","jaune","chair","blanc"],
+ mots:["transmission","lien","enseignement","dogme"],
+ icono:"Deux mains : l'une bénit, trois doigts levés ; l'autre tient une croix à trois barres. Deux personnages de dos reçoivent l'enseignement — on ne voit pas leur visage. Le 5 ouvre une brèche dans le 4 : il fait sortir du cadre par le haut.",
+ elan:"Le passeur : le lien entre ce qui est en haut et ce qui est en bas. La transmission, la parole qui relie, la reconnaissance donnée et reçue. C'est l'arcane de l'accompagnement — et donc, très souvent, celui du formateur et du thérapeute.",
+ tension:"Le dogme, la parole qui enferme, le gourou, la dépendance au maître. Ou le doute qui ne trouve plus aucun appui et cherche une autorité extérieure pour n'avoir pas à décider.",
+ q:"Qui vous transmet quelque chose en ce moment, et à qui transmettez-vous ? Est-ce que cela vous grandit, ou vous tient en dépendance ?"},
+
+{n:6,r:"VI",nom:"L'Amoureux",sept:1,col:6,centre:"Cœur & émotion",encres:["rouge","bleu","jaune","vert","chair"],
+ mots:["choix","lien","désir","indécision"],
+ icono:"Un jeune homme entre deux femmes : son corps part d'un côté, sa tête se tourne de l'autre. Au-dessus, un ange tire une flèche. Trois personnages, trois directions. Le sol est vert : quelque chose pousse là-dessous.",
+ elan:"L'amour, le désir, le lien — mais surtout le choix, celui qui engage tout l'être et non la seule raison. Se laisser toucher, dire oui. La beauté du 6 : le plaisir, la fleur, l'harmonie trouvée.",
+ tension:"L'indécision qui paralyse, le tiraillement entre deux loyautés — très souvent entre la mère et l'amour —, le refus de trancher pour ne blesser personne, qui finit par blesser tout le monde.",
+ q:"Entre quoi et quoi êtes-vous tiraillé ? Que choisiriez-vous si personne ne devait être déçu ?"},
+
+{n:7,r:"VII",nom:"Le Chariot",sept:1,col:7,centre:"Corps & matière",encres:["rouge","bleu","jaune","chair"],
+ mots:["départ","conquête","direction","fuite en avant"],
+ icono:"Un char tiré par deux chevaux qui regardent chacun d'un côté. Le conducteur est jeune, couronné, sans rênes visibles : il ne tient qu'un sceptre. Le dais repose sur quatre colonnes. Il part — mais on ne voit pas vers où.",
+ elan:"La mise en route, le départ, le succès dans le monde. Le premier septénaire s'achève : la personnalité est constituée et sort au-dehors. Assumer sa direction, prendre le pouvoir sur sa propre vie.",
+ tension:"Partir sans savoir où : fuite en avant, agitation, victoire sans objet. Les deux chevaux tirent en sens contraire et le char n'avance pas. Ou l'ego triomphant qui écrase ce qu'il traverse.",
+ q:"Vers où allez-vous, et est-ce bien vous qui tenez les rênes ?"},
+
+{n:8,r:"VIII",nom:"La Justice",sept:2,col:1,centre:"Esprit & parole",encres:["rouge","bleu","jaune","chair"],
+ mots:["équilibre","décision","lucidité","jugement"],
+ icono:"Frontale, immobile, glaive levé d'une main, balance de l'autre. C'est l'une des rares lames qui regarde le consultant droit dans les yeux. Le 8 : équilibre parfait, aucune ouverture, aucun mouvement possible sans rompre.",
+ elan:"La mesure, la lucidité, la décision juste. Trancher ce qui doit l'être. Voir les choses telles qu'elles sont, sans complaisance ni accusation. Et d'abord : se rendre justice à soi-même.",
+ tension:"La rigidité du jugement : se condamner, condamner l'autre, la culpabilité, le perfectionnisme, la comptabilité permanente des torts. Un équilibre si parfait qu'il interdit tout mouvement.",
+ q:"Qu'est-ce qui, chez vous, attend d'être reconnu comme juste — et qu'est-ce que vous continuez de juger ?"},
+
+{n:9,r:"VIIII",nom:"L'Ermite",sept:2,col:2,centre:"Esprit & parole",encres:["bleu","chair","jaune","rouge"],
+ mots:["retrait","quête","maturité","isolement"],
+ icono:"Un vieillard marche, la lanterne à demi voilée par son manteau, un bâton dans l'autre main. Il éclaire peu, et ne montre pas tout. Le 9 : la crise qui précède la mutation, la fin d'un cycle.",
+ elan:"Le retrait volontaire, la solitude féconde, la quête, la maturité. Ralentir, sortir du bruit, chercher sa propre lumière plutôt que celle des autres. Il est aussi le temps lui-même : la patience du long chemin.",
+ tension:"L'isolement subi, la nostalgie, le repli, la lumière gardée pour soi, le refus de transmettre. Ou l'attente sans fin d'un guide qui ne viendra pas.",
+ q:"De quoi avez-vous besoin de vous retirer, et qu'est-ce que votre lanterne éclaire vraiment ?"},
+
+{n:10,r:"X",nom:"La Roue de Fortune",sept:2,col:3,centre:"Corps & matière",encres:["jaune","rouge","bleu","vert","chair"],
+ mots:["cycle","répétition","chance","schéma"],
+ icono:"Une roue à six rayons, une manivelle que personne ne tourne, trois animaux : l'un monte, l'un descend, un sphinx couronné trône au sommet. Ni début ni fin visibles. Le 10 : le passage à un autre niveau.",
+ elan:"Le cycle, le mouvement de la vie, la chance qui tourne, la répétition qui devient apprentissage. Accepter que tout monte et que tout redescende. Voir le motif qui se répète — et cesser de le subir.",
+ tension:"Tourner en rond : la répétition compulsive, le schéma familial rejoué de génération en génération, la roue du hamster. Ou se croire installé au sommet en oubliant que la roue tourne.",
+ q:"Quel cycle se répète dans votre vie ? Êtes-vous sur la roue, ou êtes-vous celui qui la fait tourner ?"},
+
+{n:11,r:"XI",nom:"La Force",sept:2,col:4,centre:"Élan créateur",encres:["chair","rouge","bleu","jaune"],
+ mots:["maîtrise douce","instinct","courage","refoulement"],
+ icono:"Une femme au chapeau en lemniscate ouvre — ou referme ? — la gueule d'un lion, à mains nues, sans effort visible. Elle ne le combat pas : elle le tient. Le 11, c'est le 1 redoublé : une force qui vient du dedans.",
+ elan:"L'apprivoisement de l'énergie animale : désir, colère, instinct. Ni refoulement ni débordement — le lion vit, et il est tenu. La douceur qui maîtrise mieux que la violence. Le courage ordinaire, celui de tous les jours.",
+ tension:"La domestication excessive : étouffer sa propre bête, se croire au-dessus de ses pulsions. Ou l'inverse, la force employée à contraindre autrui. Dans les deux cas, une lutte permanente et épuisante contre soi.",
+ q:"Quelle part animale de vous tenez-vous à la gueule — et qu'est-ce qu'elle voudrait dire ?"},
+
+{n:12,r:"XII",nom:"Le Pendu",sept:2,col:5,centre:"Cœur & émotion",encres:["bleu","rouge","jaune","chair","vert"],
+ mots:["renversement","suspension","don","sacrifice"],
+ icono:"Un homme suspendu par un pied à une potence faite de deux arbres taillés ; l'autre jambe croisée en 4 derrière lui, les mains dans le dos. Il ne se débat pas. Sa tête est en bas, et pourtant son visage est serein.",
+ elan:"Le renversement volontaire du point de vue, le renoncement fécond, la gestation à l'envers. On lâche, on suspend, on cesse de forcer. Souvent la lame de celui qui se donne à plus grand que lui — ou qui accepte une pause imposée.",
+ tension:"Le sacrifice inutile, le martyre, l'attente passive, la position bloquée qu'on refuse de quitter. Se punir. Ou rester la tête en bas en attendant que le monde, lui, se remette à l'endroit.",
+ q:"Qu'est-ce que vous tenez suspendu ? Et si vous regardiez cette situation à l'envers, que verriez-vous ?"},
+
+{n:13,r:"XIII",nom:"L'Arcane sans nom",sept:2,col:6,centre:"Corps & matière",encres:["noir","blanc","chair","rouge","bleu"],
+ mots:["mutation","nettoyage","fin","deuil"],
+ icono:"Un squelette fauche un sol noir d'où émergent des mains, des pieds, des têtes couronnées. Aucun nom n'est écrit sur la carte : ce qui n'a pas de nom ne peut pas être fixé. La faux est rouge et jaune — c'est une énergie active, pas une fatalité.",
+ elan:"La transformation, le nettoyage, la fin nécessaire. Ce n'est pas la mort : c'est ce qui coupe pour que cela repousse. Faire le tri, quitter, terminer, se débarrasser de ce qui est déjà mort en soi. Une lame profondément libératrice.",
+ tension:"Couper trop, couper tout, la table rase permanente. Ou refuser la fin : rester attaché à ce qui est mort — une relation, un métier, une image de soi. Le deuil qui n'a pas été fait.",
+ q:"Qu'est-ce qui est déjà mort dans votre vie et que vous continuez de porter ?"},
+
+{n:14,r:"XIIII",nom:"Tempérance",sept:2,col:7,centre:"Cœur & émotion",encres:["bleu","rouge","jaune","chair","blanc"],
+ mots:["circulation","guérison","fluidité","tiédeur"],
+ icono:"Un ange verse un liquide d'un vase dans l'autre, à l'horizontale — et le liquide ne tombe pas. Une fleur à cinq pétales au front. Les ailes sont rouges : l'énergie est là, mais elle circule au lieu d'exploser.",
+ elan:"La circulation retrouvée après la coupe du XIII. Le passage de l'énergie d'un vase à l'autre : entre le passé et l'avenir, entre soi et l'autre, entre le haut et le bas. L'ange gardien, le soin, le juste dosage.",
+ tension:"La tiédeur : tout mélanger pour ne rien risquer, éviter les extrêmes par peur, la modération qui devient fadeur. Ou verser sans fin dans l'autre sans jamais se remplir — la fatigue de ceux qui donnent.",
+ q:"Entre quels deux vases votre énergie circule-t-elle ? Est-ce qu'elle revient jusqu'à vous ?"},
+
+{n:15,r:"XV",nom:"Le Diable",sept:3,col:1,centre:"Élan créateur",encres:["chair","rouge","bleu","jaune","noir"],
+ mots:["puissance","désir","attachement","dépendance"],
+ icono:"Une figure androgyne et ailée, debout sur un socle, torche levée. Deux petits êtres sont attachés au socle — mais les cordes sont lâches et leurs mains restent libres. Il regarde droit devant lui. Le 15 : l'énergie du 1 poussée par la tentation du 5.",
+ elan:"La force vitale à l'état brut : désir, passion, ambition, créativité, humour, argent, sexualité. Rien de plus puissant dans le Tarot. C'est l'arcane de ce qui n'est pas encore sublimé — donc de ce qui a le plus d'énergie disponible.",
+ tension:"L'attachement pris pour de l'amour, la dépendance, la fascination, le pouvoir exercé sur l'autre, la répétition compulsive. Les cordes sont lâches : c'est le consultant qui choisit de rester attaché.",
+ q:"Qu'est-ce qui vous lie et que vous n'avez pas vraiment envie de quitter ? Quelle puissance y a-t-il là-dedans ?"},
+
+{n:16,r:"XVI",nom:"La Maison Dieu",sept:3,col:2,centre:"Corps & matière",encres:["rouge","bleu","jaune","chair","vert"],
+ mots:["libération","éclatement","ouverture","chaos"],
+ icono:"Une tour dont la couronne saute sous un jet de lumière ; deux personnages tombent — ou sortent. Des boules colorées volent partout. Le toit n'est pas détruit : il est ouvert. Le 16 : l'énergie du 1 qui fait éclater le plaisir figé du 6.",
+ elan:"La libération, l'ouverture forcée, l'éclat de rire, l'orgasme, l'illumination. Ce qui était enfermé sort. Très souvent une bonne nouvelle brutale : la structure devenue trop étroite cède, et la vie déborde.",
+ tension:"L'écroulement subi, l'accident, la rupture non choisie, le chaos. Le vrai danger n'est pas la chute : c'est de vouloir reconstruire la tour exactement à l'identique.",
+ q:"Qu'est-ce qui a éclaté — et qu'est-ce qui, enfin, peut sortir ?"},
+
+{n:17,r:"XVII",nom:"L'Étoile",sept:3,col:3,centre:"Cœur & émotion",encres:["bleu","chair","jaune","rouge","vert"],
+ mots:["don","vocation","nudité","épuisement"],
+ icono:"Une femme nue, agenouillée, verse deux vases : l'un dans l'eau, l'autre sur la terre. Huit étoiles, dont une plus grande. Un oiseau posé sur un arbuste. Elle ne se cache pas et ne se regarde pas : elle donne.",
+ elan:"Le don, la générosité naturelle, l'espérance, la nudité assumée, le lien retrouvé avec la nature. Après l'éclatement du XVI, l'énergie se répand doucement. C'est la lame de la vocation : ce que l'on donne au monde sans effort.",
+ tension:"Se vider : donner jusqu'à l'épuisement, s'exposer sans protection, la naïveté. Ou l'espoir qui remplace l'action — attendre son étoile au lieu de verser ses vases.",
+ q:"Qu'est-ce que vous donnez naturellement, sans même le compter ? Et qui remplit vos vases ?"},
+
+{n:18,r:"XVIII",nom:"La Lune",sept:3,col:4,centre:"Cœur & émotion",encres:["bleu","jaune","chair","rouge","vert"],
+ mots:["inconscient","intuition","rêve","confusion"],
+ icono:"Deux tours, deux chiens qui aboient, une écrevisse au fond d'un bassin, des gouttes qui montent vers la lune au lieu de tomber. C'est la seule lame où la vie vient d'en bas, de l'eau. La lune a un visage humain.",
+ elan:"L'inconscient, le rêve, l'intuition, la mémoire ancienne, la matrice. Ce qui remonte du fond. Une lame de grande fécondité psychique : c'est là que naissent les images, les symboles, les créations profondes. Elle demande de faire confiance à ce qu'on ne comprend pas encore.",
+ tension:"Le trouble, l'illusion, la nostalgie, la confusion émotionnelle, les peurs nocturnes — et tout ce qui aboie autour de soi. Ou la fuite dans le rêve : attendre indéfiniment que cela remonte tout seul.",
+ q:"Qu'est-ce qui remonte en vous sans que vous puissiez encore le nommer ?"},
+
+{n:19,r:"XVIIII",nom:"Le Soleil",sept:3,col:5,centre:"Élan créateur",encres:["jaune","chair","rouge","bleu"],
+ mots:["joie","relation","spontanéité","fusion"],
+ icono:"Deux enfants nus devant un muret ; l'un pose la main sur la nuque de l'autre. Au-dessus, un soleil à visage humain d'où tombent des gouttes jaunes. Le muret est bas : on peut le franchir quand on veut.",
+ elan:"La relation vivante, la joie simple, la fraternité, la construction à deux. La lumière consciente qui succède à la nuit du XVIII. Le retour au jeu, à la spontanéité, au corps sans honte.",
+ tension:"L'enfance qui refuse de grandir, la fusion, la dépendance affective déguisée en complicité. Ou la lumière écrasante qui ne laisse aucune ombre : l'obligation d'être heureux.",
+ q:"Avec qui construisez-vous, à hauteur d'enfant ? Qu'est-ce qui, en vous, a envie de jouer ?"},
+
+{n:20,r:"XX",nom:"Le Jugement",sept:3,col:6,centre:"Esprit & parole",encres:["bleu","jaune","chair","rouge","blanc"],
+ mots:["appel","renaissance","vocation","attente"],
+ icono:"Un ange sonne de la trompette dans un nuage ; trois personnages sortent d'une fosse — un homme, une femme, et un troisième vu de dos, entre eux, dont on ne voit jamais le visage. Une naissance à trois.",
+ elan:"L'appel, la vocation, la renaissance, la révélation. Quelque chose vous appelle et vous y répondez. Le troisième surgit du couple : c'est l'arcane de ce qui naît d'une relation — un enfant, une œuvre, une famille recomposée. La bonne nouvelle.",
+ tension:"Attendre d'être appelé. Prendre le jugement des autres pour une vérité. Ou la renaissance sans cesse annoncée et jamais vécue.",
+ q:"Qu'est-ce qui vous appelle en ce moment ? Êtes-vous prêt à sortir de la fosse ?"},
+
+{n:21,r:"XXI",nom:"Le Monde",sept:3,col:7,centre:"Corps & matière",encres:["bleu","rouge","jaune","chair","vert"],
+ mots:["accomplissement","intégration","naissance","clôture"],
+ icono:"Une figure féminine danse dans une mandorle — une amande —, entourée des quatre vivants : l'ange, l'aigle, le lion, le taureau. Un pied replié, elle est en mouvement. Les quatre coins tiennent le cadre : les quatre centres sont enfin réunis.",
+ elan:"L'accomplissement, l'intégration, la réalisation. Tout ce qui était séparé se retrouve ensemble. C'est aussi une naissance : la mandorle est une vulve, la danseuse sort au monde. Fin d'un cycle et entrée réelle dans la vie.",
+ tension:"Se croire arrivé. Le monde clos sur lui-même, la réussite qui enferme. Ou rester dans l'amande : le confort d'un contenant qu'on n'ose plus quitter.",
+ q:"Qu'est-ce qui est accompli — et qu'est-ce que cet accomplissement rend maintenant possible ?"},
+
+{n:0,r:"",nom:"Le Mat",sept:0,col:0,centre:"Élan créateur",encres:["chair","rouge","bleu","jaune","vert"],
+ mots:["liberté","mouvement","folie","errance"],
+ icono:"Un homme marche, un bâton à la main, un baluchon jaune sur l'épaule ; un animal lui déchire la culotte et découvre sa cuisse. Il ne s'arrête pas pour autant. Aucun nombre ne lui est attribué : il ne se laisse pas compter.",
+ elan:"La liberté, le mouvement pur, l'énergie qui ne se fixe nulle part, le voyage, la folie créatrice, la confiance. Il peut se placer avant le I — l'innocence d'avant — ou après le XXI — la liberté d'après. Il traverse tout sans rien posséder.",
+ tension:"La fuite, l'errance, l'irresponsabilité, l'incapacité à se poser. Ou l'inverse, plus fréquent : refuser en soi ce Mat, ne jamais s'autoriser à partir, à ne pas savoir, à être ridicule.",
+ q:"Où avez-vous envie d'aller sans savoir pourquoi ? Que seriez-vous prêt à laisser derrière vous ?"}
+];
+
+/* ── Les quatre séries ──────────────────────────────────────────── */
+const SERIES = {
+  batons:{nom:"Bâtons",centre:"Élan créateur",el:"Feu",
+    txt:"L'énergie créatrice et sexuelle : le désir, l'élan, l'envie de faire. Ce qui pousse, ce qui brûle, ce qui veut sortir. C'est la série du projet, de l'atelier, du lit, de la scène."},
+  coupes:{nom:"Coupes",centre:"Cœur & émotion",el:"Eau",
+    txt:"L'émotion et le lien : l'amour, la famille, l'amitié, ce que l'on ressent. La coupe est un contenant — elle se remplit, se vide, se partage ou se garde."},
+  epees:{nom:"Épées",centre:"Esprit & parole",el:"Air",
+    txt:"L'intellect et la parole : les idées, les décisions, les conflits, le discernement. L'épée tranche : elle sépare le vrai du faux, mais elle peut aussi blesser."},
+  deniers:{nom:"Deniers",centre:"Corps & matière",el:"Terre",
+    txt:"Le concret : l'argent, le corps, le travail, la maison, la santé. Le denier est rond et complet — il circule, se thésaurise ou fructifie."}
+};
+
+/* ── Les dix nombres ────────────────────────────────────────────── */
+const NOMBRES = {
+ 1:{t:"Le potentiel",d:"La graine, le don initial, l'énergie pure. Tout est disponible, rien n'est encore réalisé. Un début — ou un rappel de ce qui, à l'origine, était intact."},
+ 2:{t:"L'accumulation",d:"La gestation passive, la réserve, le doute, la dualité. Ça se prépare dans l'ombre et ça ne bouge pas encore. Nécessaire — jusqu'à ce que ça devienne un refuge."},
+ 3:{t:"L'explosion",d:"Ce qui était accumulé sort. Premier acte, première fois, éclosion. L'énergie jaillit, joyeuse et un peu maladroite ; elle peut aussi se disperser."},
+ 4:{t:"La stabilité",d:"La structure, les fondations, le cadre acquis. On tient debout. C'est solide — et c'est précisément là que peut commencer la stagnation."},
+ 5:{t:"La mise en question",d:"Le 4 ne suffit plus. Tentation, appel d'un idéal, ouverture d'une brèche vers le haut. Une crise saine : celle qui empêche la vie de se figer."},
+ 6:{t:"Le plaisir",d:"La fleur, la beauté, l'harmonie, le lien savoureux. Un repos mérité. Le risque : s'y installer et ne plus jamais rien risquer."},
+ 7:{t:"La mise en marche",d:"L'énergie sort vers le monde : on ose, on montre, on part, on affronte. Le passage à l'extérieur, avec ce qu'il comporte de crise et de franchissement."},
+ 8:{t:"La perfection",d:"L'équilibre accompli, la maîtrise, la forme achevée. Rien ne dépasse. Le danger est le durcissement : une perfection qui n'admet plus de désordre ne peut plus évoluer."},
+ 9:{t:"La crise féconde",d:"La fissure avant la mutation. Fin de cycle, usure, dernier effort. Ce n'est pas un échec : c'est le moment où la forme doit céder pour que la vie passe."},
+ 10:{t:"Le passage",d:"Le maximum atteint. L'accomplissement devient une nouvelle graine : soit l'énergie passe à un autre niveau, soit elle sature et bloque tout."}
+};
+
+const FIGURES = {
+ valet:{nom:"Valet",d:"L'apprenti, le réceptif, ce qui est en formation. Il commence, il sert, il ne maîtrise pas encore — et c'est sa force : il est disponible."},
+ cavalier:{nom:"Cavalier",d:"Le mouvement, le départ, la transition. Ce qui quitte un lieu pour un autre. Une énergie qui se déplace — élan ou fuite, selon ce qui l'entoure."},
+ reine:{nom:"Reine",d:"La maturité réceptive : la puissance intérieure, ce qui contient et fait grandir. Elle n'a pas besoin de montrer sa force pour l'exercer."},
+ roi:{nom:"Roi",d:"La maturité active : le pouvoir dans le monde, la réalisation extérieure, la responsabilité assumée. L'aboutissement social de la série."}
+};
+
+/* ── Les 56 arcanes mineurs : synthèses ─────────────────────────── */
+const MINEURS_SYN = {
+ batons:{1:"Une poussée de vie disponible : envie, désir, projet en germe. Rien n'est fait, tout brûle.",
+  2:"Deux forces qui se croisent et se retiennent. Le désir est là, il attend : tension féconde ou blocage.",
+  3:"L'élan sort enfin : premier geste créateur, première fois, un peu maladroite et pleine de vie.",
+  4:"Le désir a trouvé son cadre — atelier, couple, métier. Stabilité créatrice, ou routine du désir.",
+  5:"L'ennui du cadre : besoin d'autre chose, tentation, remise en jeu de l'élan. Une crise saine.",
+  6:"Le plaisir de créer, la jouissance du faire. Danger : s'y installer et ne plus rien risquer.",
+  7:"L'énergie se met en marche vers l'extérieur : oser montrer, publier, séduire, se lancer.",
+  8:"Une créativité maîtrisée, une technique acquise. Le risque : la virtuosité fermée sur elle-même.",
+  9:"L'élan touche sa limite : usure, dernier effort. Le désir demande à changer de forme.",
+  10:"L'énergie créatrice à son maximum : elle passe à un autre niveau, ou elle brûle. Une charge à transmettre."},
+ coupes:{1:"Une coupe unique, temple de l'émotion : une source affective s'ouvre. Amour naissant, accueil de soi.",
+  2:"Deux coupes face à face : le lien se forme, encore muet. Attente, retenue, promesse.",
+  3:"L'émotion déborde et se dit : joie partagée, déclaration, amitié qui éclot.",
+  4:"Le lien s'installe : foyer, famille, couple. Sécurité affective — ou confort qui endort.",
+  5:"Le cœur cherche plus grand : lassitude du lien acquis, appel d'un amour plus vaste, tentation.",
+  6:"La tendresse, la beauté du sentiment, le plaisir d'aimer. Le risque : s'y complaire et ne plus grandir.",
+  7:"L'amour se met en mouvement : aller vers l'autre, s'engager, quitter le nid.",
+  8:"Un équilibre affectif accompli. Attention à la perfection qui n'admet plus aucun désordre.",
+  9:"La crise du cœur : ce lien doit muter ou finir. Solitude féconde, deuil amoureux.",
+  10:"L'émotion à sa plénitude et qui se donne : un amour qui déborde vers le collectif, l'œuvre, l'enfant."},
+ epees:{1:"Une seule épée, couronnée : la lucidité qui tranche. Une idée juste, une décision nette, un mot vrai.",
+  2:"Deux pensées qui se croisent : doute, dilemme, réflexion qui s'accumule sans conclure.",
+  3:"La pensée sort — elle blesse ou elle libère. La parole est dite, le premier conflit assumé.",
+  4:"Une pensée structurée : méthode, savoir organisé, système qui tient. Ou dogme installé.",
+  5:"La remise en question intellectuelle : ce que je croyais ne tient plus. Un doute nécessaire.",
+  6:"L'intelligence devient belle : compréhension, plaisir de penser, échange fécond.",
+  7:"La pensée passe à l'acte : prendre position, défendre, écrire, affronter.",
+  8:"Une construction mentale parfaite — et peut-être une prison. Le mental qui tourne rond.",
+  9:"La crise du mental : insomnie, rumination, ce que la tête ne peut plus résoudre seule.",
+  10:"Le mental à saturation. Soit la pensée s'ouvre à autre chose qu'elle-même, soit elle se retourne contre soi."},
+ deniers:{1:"Un denier unique et complet : un capital de départ, un corps donné, une valeur à faire fructifier.",
+  2:"Deux deniers reliés par un ruban : l'échange commence, l'argent circule, rien n'est stabilisé.",
+  3:"La matière se met à produire : premier revenu, premier résultat concret, preuve par le réel.",
+  4:"L'assise matérielle : la maison, le contrat, le corps posé. Sécurité — ou avarice.",
+  5:"Le confort ne suffit plus : envie d'investir, de risquer, de donner un sens à la matière.",
+  6:"Le plaisir du corps et des biens : santé, bien-être, abondance tranquille.",
+  7:"L'argent et le corps se mettent au travail : entreprise, effort concret, mise en circulation.",
+  8:"Une réussite matérielle accomplie, un métier maîtrisé. Risque : ne plus faire que cela.",
+  9:"La crise de la matière : ce que je possède m'encombre, ou me manque. Le corps réclame un changement.",
+  10:"La matière à son maximum : héritage, patrimoine, transmission. Cela passe à la suite, ou cela bloque tout."}
+};
+const FIGURES_SYN = {
+ batons:{valet:"Apprenti du désir : la créativité qui commence, l'envie sans savoir-faire encore. Se former, oser un premier projet.",
+  cavalier:"Le désir qui part : rencontre, aventure, projet lancé ailleurs. Mouvement — parfois fuite en avant.",
+  reine:"La créativité intérieure et mûre : elle porte le feu sans le montrer. Fécondité, autorité naturelle, patience du désir.",
+  roi:"La créativité réalisée dans le monde : entreprendre, diriger, assumer sa puissance. Attention à la tyrannie de l'élan."},
+ coupes:{valet:"Apprenti du sentiment : premier amour, cœur qui s'ouvre, disponibilité affective à protéger.",
+  cavalier:"L'émotion en mouvement : la déclaration, la proposition, le lien qu'on va chercher ailleurs.",
+  reine:"La profondeur affective : elle contient, elle accueille, elle fait grandir. Risque : porter les émotions de tous.",
+  roi:"L'affectivité qui prend place au-dehors : reconnaître ses sentiments, en faire un métier, une œuvre, un engagement."},
+ epees:{valet:"Apprenti de la pensée : l'étude, la curiosité, la parole encore maladroite. Apprendre à dire.",
+  cavalier:"La pensée qui fonce : décision rapide, franchise, confrontation. Parfois la parole qui blesse.",
+  reine:"La lucidité intérieure : elle voit clair et se tait quand il le faut. Discernement — parfois froideur.",
+  roi:"La parole qui fait autorité : trancher, décider, structurer par le verbe. Attention au verdict."},
+ deniers:{valet:"Apprenti du concret : le premier emploi, le premier budget, le corps qu'on apprend à habiter.",
+  cavalier:"La matière en mouvement : déménagement, investissement, changement de travail. Le concret se déplace.",
+  reine:"L'abondance intérieure : elle gère, elle nourrit, elle fait durer. Le corps comme maison. Risque : tout retenir.",
+  roi:"La réussite matérielle assumée : gérer, employer, transmettre. Ou l'identification à ce que l'on possède."}
+};
+
+const SEPTENAIRES = [
+ {n:1,t:"Se construire",r:"I → VII",d:"La constitution de la personne dans le monde : prendre ses outils, apprendre, créer, se donner un cadre, se relier, choisir, partir. Ce qui se joue ici est social et matériel — la place que l'on prend parmi les autres."},
+ {n:2,t:"Se transformer",r:"VIII → XIIII",d:"Le travail intérieur et émotionnel. On tranche, on se retire, on voit ses cycles, on apprivoise sa bête, on se renverse, on coupe, on retrouve la circulation. Ici, ce n'est plus le monde qu'on conquiert : c'est soi que l'on traverse."},
+ {n:3,t:"S'ouvrir",r:"XV → XXI",d:"L'essentiel, l'impersonnel, le spirituel. L'énergie brute, l'éclatement, le don, la nuit, la lumière partagée, l'appel, l'accomplissement. On ne se construit plus : on se laisse traverser par plus grand que soi."}
+];
+const COLONNES = [
+ {n:1,t:"Le potentiel",c:"I · VIII · XV",d:"L'énergie disponible, non encore employée."},
+ {n:2,t:"L'accumulation",c:"II · VIIII · XVI",d:"Ce qui se garde en réserve — et finit par sortir."},
+ {n:3,t:"L'expression",c:"III · X · XVII",d:"Ce qui sort, se donne, se met à tourner."},
+ {n:4,t:"La forme",c:"IIII · XI · XVIII",d:"Ce qui contient, maîtrise ou enfante."},
+ {n:5,t:"Le lien",c:"V · XII · XVIIII",d:"La relation à l'autre et à plus haut que soi."},
+ {n:6,t:"Le passage",c:"VI · XIII · XX",d:"Le choix, la coupe, l'appel : ce qui fait basculer."},
+ {n:7,t:"L'accomplissement",c:"VII · XIIII · XXI",d:"La sortie dans le monde, à trois niveaux."}
+];
+</script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   LE MIROIR DES ARCANES — application
+   ═══════════════════════════════════════════════════════════════════ */
+const $ = (s,r)=> (r||document).querySelector(s);
+const $$ = (s,r)=> Array.from((r||document).querySelectorAll(s));
+const esc = t => String(t==null?"":t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ── Construction du jeu ────────────────────────────────────────── */
+const SUITES = ["batons","coupes","epees","deniers"];
+const ORDRE_FIG = ["valet","cavalier","reine","roi"];
+const JEU = [];
+MAJEURS.forEach(m=>JEU.push(Object.assign({id:"M"+m.n,type:"majeur"},m)));
+SUITES.forEach(s=>{
+  for(let i=1;i<=10;i++){
+    JEU.push({id:s+"-"+i,type:"mineur",suite:s,n:i,
+      nom:(i===1?"As":i)+" de "+SERIES[s].nom, centre:SERIES[s].centre,
+      syn:MINEURS_SYN[s][i]});
+  }
+  ORDRE_FIG.forEach(f=>{
+    JEU.push({id:s+"-"+f,type:"figure",suite:s,fig:f,n:null,
+      nom:FIGURES[f].nom+" de "+SERIES[s].nom, centre:SERIES[s].centre,
+      syn:FIGURES_SYN[s][f]});
+  });
+});
+const PARID = Object.fromEntries(JEU.map(c=>[c.id,c]));
+const MAJEURS_SEULS = JEU.filter(c=>c.type==="majeur");
+const parNum = n => MAJEURS.find(m=>m.n===n);
+
+/* ── Dessin des lames ───────────────────────────────────────────── */
+const PIPS = {
+  deniers:'<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="10" cy="10" r="8.3"/><circle cx="10" cy="10" r="3.6"/></svg>',
+  coupes:'<svg viewBox="0 0 20 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3.4 3.5h13.2l-1.4 6.6a5.3 5.3 0 0 1-10.4 0Z"/><path d="M10 16.7v4.6"/><path d="M5.6 23.4h8.8"/></svg>',
+  epees:'<svg viewBox="0 0 20 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M10 1.4C15.6 7 15.6 18.4 10 24.6"/><path d="M4.6 17.6h8"/></svg>',
+  batons:'<svg viewBox="0 0 20 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M3.6 24 16.4 2"/><path d="M6.1 19.6l3.3 1.9"/><path d="M10.6 11.8l3.3 1.9"/></svg>'
+};
+const LETTRE_FIG = {valet:"V",cavalier:"C",reine:"R",roi:"K"};
+const TEINTE = {batons:"var(--rouge)",coupes:"var(--bleu)",epees:"var(--ink-2)",deniers:"var(--ocre)"};
+
+function artHTML(c){
+  if(c.type==="majeur"){
+    const bandes = c.encres.map(e=>`<i style="background:${PIGMENT[e]}"></i>`).join("");
+    return `<span class="roman">${c.r||"✳"}</span><span class="encres">${bandes}</span>`;
+  }
+  if(c.type==="figure"){
+    return `<span class="figglyph" style="color:${TEINTE[c.suite]}">${PIPS[c.suite]}<span class="figlettre">${LETTRE_FIG[c.fig]}</span></span>`;
+  }
+  const n = c.n, pips = new Array(n).fill(PIPS[c.suite]).join("");
+  return `<span class="pips" style="color:${TEINTE[c.suite]}">${pips}</span>`;
+}
+function lameHTML(c,{tag="button",cls="",attrs=""}={}){
+  const num = c.type==="majeur" ? (c.r ? "" : "sans nombre")
+            : c.type==="figure" ? SERIES[c.suite].nom.toLowerCase()
+            : (c.n===1?"as":c.n);
+  return `<${tag} class="lame ${cls}" data-id="${c.id}" ${c.suite?`data-suite="${c.suite}"`:""} ${attrs} aria-label="${esc(c.nom)}">
+    <span class="grain"></span>
+    <span class="lame-inner">
+      <span class="lame-num">${esc(String(num))}</span>
+      <span class="lame-art">${artHTML(c)}</span>
+      <span class="lame-nom">${esc(c.nom)}</span>
+    </span></${tag}>`;
+}
+const lameVide = () => `<span class="lame vide"><span class="lame-inner"><span class="faint display" style="font-size:1.6rem">✳</span></span></span>`;
+
+/* ── Les tirages ────────────────────────────────────────────────── */
+const TIRAGES = {
+  croix:{nom:"Le tirage en croix",layout:"l-croix",
+    desc:"Quatre lames autour d'un centre déduit. La croix ne prédit rien : elle déplie une situation sur ses quatre faces et laisse la cinquième lame — obtenue par addition, non par hasard — nommer le nœud.",
+    pos:[
+      {lab:"Le ciel",sub:"Ce que je crois vouloir",gc:2,gr:1},
+      {lab:"La racine",sub:"Ce qui est déjà là",gc:1,gr:2},
+      {lab:"Le nœud",sub:"Déduit, non tiré",gc:2,gr:2,synth:true},
+      {lab:"L'appel",sub:"Ce qui vient vers moi",gc:3,gr:2},
+      {lab:"Le dessous",sub:"Ce qui agit sans moi",gc:2,gr:3}
+    ]},
+  miroir:{nom:"La lame-miroir",layout:"l-un",
+    desc:"Une seule lame, tirée le matin ou en ouverture de séance. Elle ne dit pas la journée : elle propose un angle de regard à tenir jusqu'au soir.",
+    pos:[{lab:"Le miroir",sub:"Ce qui vous regarde aujourd'hui"}]},
+  temps:{nom:"Les trois temps",layout:"l-ligne3",
+    desc:"Ni passé, ni présent, ni avenir au sens de la voyance : ce qui a mené ici, ce qui se joue maintenant, et ce vers quoi cela pousse si rien ne change. Le troisième temps est une tendance, pas un destin.",
+    pos:[
+      {lab:"La racine",sub:"Ce qui a mené ici"},
+      {lab:"Le présent",sub:"Où j'en suis vraiment"},
+      {lab:"Le devenir",sub:"Ce qui pousse si rien ne change"}
+    ]},
+  centres:{nom:"Les quatre centres",layout:"l-ligne4",
+    desc:"Une lame par étage de l'être. Le tirage le plus utile en accompagnement : il montre d'un coup d'œil quel centre est nourri, lequel est en crise, lequel est oublié.",
+    pos:[
+      {lab:"Corps & matière",sub:"Le concret, l'argent, la santé"},
+      {lab:"Cœur & émotion",sub:"Les liens, ce qui est ressenti"},
+      {lab:"Élan créateur",sub:"Le désir, la création"},
+      {lab:"Esprit & parole",sub:"Les idées, les décisions"}
+    ]},
+  pont:{nom:"Le pont",layout:"l-ligne3",
+    desc:"Pour une relation — couple, famille, équipe, client. La lame du milieu n'appartient à personne : elle dit ce qui circule, ou ne circule plus, entre les deux.",
+    pos:[
+      {lab:"Ma place",sub:"Comment je me tiens dans ce lien"},
+      {lab:"Le pont",sub:"Ce qui circule entre nous"},
+      {lab:"L'autre",sub:"Ce que je perçois de l'autre"}
+    ]},
+  chemin:{nom:"Le septénaire",layout:"l-sept",
+    desc:"Sept lames sur les sept mouvements d'un cycle complet, du potentiel à l'accomplissement. Pour un projet, une formation, une traversée longue : on voit à quelle étape l'énergie s'arrête.",
+    pos:COLONNES.map(c=>({lab:c.t,sub:c.c.split(" · ")[0]+"…"}))}
+};
+
+/* ── État ───────────────────────────────────────────────────────── */
+let etat = {
+  tirage:"croix",
+  jeuComplet:false,
+  cartes:[],          /* {posIndex, id, deduite:bool} */
+  exemple:true,
+  question:""
+};
+
+/* ── Rendu du rail ──────────────────────────────────────────────── */
+function renderChoix(){
+  $("#choix-tirage").innerHTML = Object.entries(TIRAGES).map(([k,t])=>{
+    const n = t.pos.filter(p=>!p.synth).length;
+    return `<button data-t="${k}" aria-pressed="${k===etat.tirage}">${esc(t.nom)}<em>${n} lame${n>1?"s":""}${t.pos.some(p=>p.synth)?" + 1 déduite":""}</em></button>`;
+  }).join("");
+}
+
+/* ── Tirage ─────────────────────────────────────────────────────── */
+function melanger(a){const b=a.slice();for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function reduire(s){while(s>22){s=String(s).split("").reduce((a,d)=>a+ +d,0);}return s;}
+
+function tirer(){
+  const t = TIRAGES[etat.tirage];
+  const pioche = melanger(etat.jeuComplet ? JEU : MAJEURS_SEULS);
+  const cartes = []; let k = 0;
+  t.pos.forEach((p,i)=>{ if(!p.synth) cartes.push({posIndex:i,id:pioche[k++].id}); });
+  const iSynth = t.pos.findIndex(p=>p.synth);
+  if(iSynth>=0){
+    const tirees = cartes.map(c=>PARID[c.id]);
+    if(tirees.every(c=>c.type==="majeur")){
+      const somme = tirees.reduce((a,c)=>a+c.n,0);
+      const red = reduire(somme);
+      cartes.push({posIndex:iSynth,id:"M"+red,deduite:true,somme,red});
+    } else {
+      cartes.push({posIndex:iSynth,id:pioche[k++].id,deduite:false});
+    }
+  }
+  cartes.sort((a,b)=>a.posIndex-b.posIndex);
+  etat.cartes = cartes;
+  etat.exemple = false;
+  etat.question = $("#question").value.trim();
+  $("#tissage").innerHTML = "";
+  renderTapis(true);
+}
+
+function ranger(){
+  etat.cartes = []; etat.exemple = false; $("#tissage").innerHTML="";
+  renderTapis(false);
+}
+
+/* ── Rendu du tapis ─────────────────────────────────────────────── */
+function renderTapis(anime){
+  const t = TIRAGES[etat.tirage];
+  $("#tapis-titre").textContent = t.nom;
+  $("#tapis-desc").textContent = t.desc;
+  $("#tapis-eyebrow").textContent = etat.exemple ? "Exemple de tirage" :
+    (etat.cartes.length ? (etat.jeuComplet?"Tiré dans les 78 lames":"Tiré dans les 22 majeurs") : "Le jeu est rangé");
+
+  const jeu = $("#jeu");
+  jeu.className = "jeu "+t.layout;
+  jeu.innerHTML = t.pos.map((p,i)=>{
+    const c = etat.cartes.find(x=>x.posIndex===i);
+    const carte = c ? PARID[c.id] : null;
+    const style = (p.gc?`grid-column:${p.gc};grid-row:${p.gr};`:"");
+    const corps = carte
+      ? lameHTML(carte,{cls:(anime?"pose":"")+(c.deduite?" sel":""),attrs:anime?`style="animation-delay:${i*90}ms"`:""})
+      : lameVide();
+    return `<div class="slot" style="${style}">
+      <span class="slot-lab"><b>${esc(p.lab)}</b>${esc(p.sub)}</span>${corps}</div>`;
+  }).join("");
+
+  const synth = etat.cartes.find(c=>c.deduite);
+  const note = $("#synthese-note");
+  if(synth){
+    note.hidden = false;
+    note.textContent = `Somme des quatre nombres : ${synth.somme} → réduite à ${synth.red}. Le nœud est ${PARID[synth.id].nom} — il n'a pas été tiré, il découle du tirage.`;
+  } else note.hidden = true;
+
+  renderLecture();
+  renderEtapes();
+}
+
+/* ── Lecture d'ensemble automatique ─────────────────────────────── */
+function renderLecture(){
+  const box = $("#lecture-corps");
+  if(!etat.cartes.length){
+    box.innerHTML = `<p class="muted">Posez une question, choisissez un tirage, puis battez le jeu. Les observations d'ensemble — centres convoqués, séries absentes, mouvement des nombres — s'écriront ici.</p>`;
+    return;
+  }
+  const cs = etat.cartes.map(c=>Object.assign({},PARID[c.id],{deduite:c.deduite}));
+  const obs = [];
+
+  if(etat.question) obs.push(`<p><span class="eyebrow">La demande</span><br>« ${esc(etat.question)} »</p>`);
+
+  /* centres */
+  const parCentre = {};
+  cs.forEach(c=>{parCentre[c.centre]=(parCentre[c.centre]||0)+1});
+  const centres = Object.keys(CENTRES);
+  const presents = centres.filter(k=>parCentre[k]);
+  const absents = centres.filter(k=>!parCentre[k]);
+  const dominant = presents.sort((a,b)=>parCentre[b]-parCentre[a])[0];
+  let tc = `<p><span class="eyebrow">Les centres convoqués</span><br>`;
+  tc += presents.map(k=>`<b>${k}</b> (${parCentre[k]})`).join(" · ");
+  if(parCentre[dominant]>1) tc += `<br><span class="muted small">La question se joue surtout dans « ${dominant} ». ${CENTRES[dominant]}</span>`;
+  if(absents.length) tc += `<br><span class="muted small">Absent${absents.length>1?"s":""} du tapis : ${absents.join(", ")}. Le silence du tirage est une information — demandez ce qui s'y passe.</span>`;
+  obs.push(tc+"</p>");
+
+  /* séries */
+  if(etat.jeuComplet){
+    const suites = {}; cs.forEach(c=>{if(c.suite) suites[c.suite]=(suites[c.suite]||0)+1});
+    const maj = cs.filter(c=>c.type==="majeur").length;
+    let ts = `<p><span class="eyebrow">Majeurs et mineurs</span><br>`;
+    ts += `${maj} arcane${maj>1?"s":""} majeur${maj>1?"s":""} sur ${cs.length}. `;
+    ts += maj > cs.length/2
+      ? `<span class="muted small">Une majorité de majeurs : ce qui se joue dépasse l'anecdote, c'est une étape de vie.</span>`
+      : `<span class="muted small">Une majorité de mineurs : la question se règle dans le quotidien, par des gestes concrets.</span>`;
+    const noms = Object.keys(suites).map(s=>`${SERIES[s].nom} (${suites[s]})`).join(" · ");
+    if(noms) ts += `<br><span class="muted small">Séries présentes : ${noms}.</span>`;
+    obs.push(ts+"</p>");
+  }
+
+  /* nombres */
+  const nums = cs.filter(c=>c.type!=="figure" && typeof c.n==="number" && c.n>0).map(c=>c.n);
+  if(nums.length>1){
+    const suite = etat.cartes.filter(c=>!c.deduite).map(c=>PARID[c.id]).filter(c=>typeof c.n==="number"&&c.n>0).map(c=>c.n);
+    let tn = `<p><span class="eyebrow">Le mouvement des nombres</span><br>`;
+    tn += `<span class="ui" style="font-variant-numeric:tabular-nums">${suite.join(" · ")}</span><br>`;
+    const monte = suite.every((v,i)=>i===0||v>=suite[i-1]);
+    const descend = suite.every((v,i)=>i===0||v<=suite[i-1]);
+    if(monte) tn += `<span class="muted small">Les nombres montent : le processus avance, quelque chose se construit dans l'ordre.</span>`;
+    else if(descend) tn += `<span class="muted small">Les nombres descendent : un retour en arrière est à l'œuvre — régression nécessaire, ou refus d'avancer ? C'est au consultant de le dire.</span>`;
+    else tn += `<span class="muted small">Les nombres alternent : le processus n'est pas linéaire. Repérez où se situe le saut le plus brutal — une étape a peut-être été sautée.</span>`;
+    const doubles = suite.filter((v,i)=>suite.indexOf(v)!==i);
+    if(doubles.length) tn += `<br><span class="muted small">Répétition du ${[...new Set(doubles)].join(" et du ")} : la même étape se rejoue simultanément à deux étages de la vie.</span>`;
+    const s = nums.reduce((a,b)=>a+b,0), red = reduire(s);
+    const cle = parNum(red);
+    if(cle && !etat.cartes.some(c=>c.deduite)) tn += `<br><span class="muted small">Somme des nombres : ${s} → ${red}. La clé du tirage serait <b>${cle.nom}</b>.</span>`;
+    obs.push(tn+"</p>");
+  }
+
+  /* septénaires */
+  const sept = {}; cs.filter(c=>c.type==="majeur"&&c.sept).forEach(c=>{sept[c.sept]=(sept[c.sept]||0)+1});
+  const clefs = Object.keys(sept);
+  if(clefs.length){
+    const dom = clefs.sort((a,b)=>sept[b]-sept[a])[0];
+    const S = SEPTENAIRES.find(x=>x.n===+dom);
+    obs.push(`<p><span class="eyebrow">Septénaire dominant</span><br><b>${S.t}</b> <span class="faint small">(${S.r})</span><br><span class="muted small">${S.d}</span></p>`);
+  }
+
+  /* rendu au consultant */
+  const qs = cs.filter(c=>c.q).slice(0,3).map(c=>`<li><b>${esc(c.nom)}</b> — ${esc(c.q)}</li>`).join("");
+  if(qs) obs.push(`<p><span class="eyebrow">À rendre en questions</span></p><ul class="muted" style="font-size:.93rem;padding-left:1.1em;margin:0;display:flex;flex-direction:column;gap:6px">${qs}</ul>`);
+
+  box.innerHTML = obs.join("");
+}
+
+const ETAPES = [
+ ["Regarder sans nommer","Avant toute interprétation, décrivez ce que vous voyez : les couleurs qui dominent, les directions, ce qui saute aux yeux. Faites décrire au consultant lui-même — c'est déjà la moitié de la séance."],
+ ["Situer chaque lame","Nom, nombre, série. Dans quel centre la lame parle-t-elle ? À quelle étape du processus le nombre situe-t-il la question ?"],
+ ["Lire les nombres ensemble","Montent-ils, descendent-ils ? Un nombre se répète-t-il ? Manque-t-il une étape ? Additionnez les majeurs pour trouver la clé."],
+ ["Lire les regards et les gestes","Qui regarde qui ? Qui tourne le dos ? Quel objet est tendu vers quelle lame ? Ce que les personnages font entre eux raconte la dynamique réelle."],
+ ["Faire parler les lames entre elles","Une lame propose, l'autre répond, une troisième empêche. Racontez le tapis comme une scène — pas comme une addition de définitions."],
+ ["Rendre en questions","Ne concluez jamais à la place du consultant. Transformez chaque observation en question ouverte, et laissez-le reconnaître, corriger ou refuser. Ce qu'il refuse est aussi précieux que ce qu'il accepte."]
+];
+function renderEtapes(){
+  $("#etapes").innerHTML = ETAPES.map(([t,d])=>`<li><div><b>${t}</b><p>${d}</p></div></li>`).join("");
+}
+
+/* ── Fiche d'arcane ─────────────────────────────────────────────── */
+function ouvrirFiche(id){
+  const c = PARID[id]; if(!c) return;
+  let h = `<button class="fermer" id="fermer" aria-label="Fermer">×</button>`;
+  h += `<div class="fiche-tete"><div class="mini">${lameHTML(c,{tag:"span",cls:"",attrs:'style="cursor:default"'})}</div><div>`;
+  h += `<span class="eyebrow">${c.type==="majeur"?"Arcane majeur"+(c.r?" · "+c.r:" · sans nombre"):"Arcane mineur · "+SERIES[c.suite].nom}</span>`;
+  h += `<h2>${esc(c.nom)}</h2>`;
+  h += `<p class="small muted" style="margin:0">${esc(c.centre)} — ${esc(CENTRES[c.centre])}</p></div></div>`;
+
+  if(c.type==="majeur"){
+    const S = SEPTENAIRES.find(s=>s.n===c.sept);
+    const K = COLONNES.find(k=>k.n===c.col);
+    h += `<div class="champ"><span class="eyebrow">Mots-clés</span><div class="chips">${c.mots.map(m=>`<span class="chip">${esc(m)}</span>`).join("")}</div></div>`;
+    h += `<div class="champ"><span class="eyebrow">Les encres</span><div class="swatches">${c.encres.map(e=>{
+      const E = ENCRES.find(x=>x[0]===e);
+      return `<span class="swatch" title="${esc(E[2])}"><i style="background:${PIGMENT[e]}"></i>${E[1]}</span>`;
+    }).join("")}</div></div>`;
+    h += `<div class="champ"><span class="eyebrow">À observer sur la lame</span><p>${esc(c.icono)}</p></div>`;
+    h += `<div class="champ elan"><span class="eyebrow">En élan</span><p>${esc(c.elan)}</p></div>`;
+    h += `<div class="champ tension"><span class="eyebrow">En tension</span><p>${esc(c.tension)}</p></div>`;
+    h += `<div class="champ question"><span class="eyebrow">À rendre au consultant</span><p>${esc(c.q)}</p></div>`;
+    if(S) h += `<div class="champ"><span class="eyebrow">Septénaire ${S.n} · ${S.t}</span><p class="small muted">${esc(S.d)}</p></div>`;
+    if(K) h += `<div class="champ"><span class="eyebrow">Colonne ${K.n} · ${K.t}</span><p class="small muted">${esc(K.d)} Les trois lames de cette colonne : ${K.c}. Elles disent le même mouvement à trois niveaux — comparez-les.</p></div>`;
+  } else {
+    const S = SERIES[c.suite];
+    h += `<div class="champ"><span class="eyebrow">Synthèse</span><p>${esc(c.syn)}</p></div>`;
+    h += `<div class="champ elan"><span class="eyebrow">La série · ${S.nom} (${S.el})</span><p>${esc(S.txt)}</p></div>`;
+    if(c.type==="mineur"){
+      const N = NOMBRES[c.n];
+      h += `<div class="champ tension"><span class="eyebrow">Le nombre ${c.n} · ${N.t}</span><p>${esc(N.d)}</p></div>`;
+      h += `<div class="champ"><span class="eyebrow">Croiser les deux axes</span><p class="small muted">Cette lame se lit toujours en croisant « ${S.nom} » et « ${N.t} » : ${esc(S.centre.toLowerCase())} au stade ${c.n}. Aucune formule ne remplace ce croisement — c'est lui qui permet de lire n'importe quelle lame sans l'avoir apprise par cœur.</p></div>`;
+    } else {
+      const F = FIGURES[c.fig];
+      h += `<div class="champ tension"><span class="eyebrow">La figure · ${F.nom}</span><p>${esc(F.d)}</p></div>`;
+      h += `<div class="champ"><span class="eyebrow">Personne ou part de soi ?</span><p class="small muted">Une figure désigne rarement quelqu'un d'autre. Demandez d'abord : « quelle part de vous se tient ainsi ? » — et seulement ensuite, si le consultant l'amène, de qui il s'agit.</p></div>`;
+    }
+  }
+  const f = $("#fiche"); f.innerHTML = h; f.scrollTop = 0;
+  $("#tiroir").hidden = false;
+  $("#fermer").focus();
+}
+function fermerFiche(){ $("#tiroir").hidden = true; }
+</script>
+
+<script>
+/* ── Bibliothèque ───────────────────────────────────────────────── */
+let filtre = "tout", recherche = "";
+function renderGalerie(){
+  const g = $("#galerie");
+  const q = recherche.trim().toLowerCase();
+  const match = c => {
+    if(!q) return true;
+    const champs = [c.nom, c.centre, c.syn, c.elan, c.tension, c.icono, (c.mots||[]).join(" ")].join(" ").toLowerCase();
+    return champs.includes(q);
+  };
+  const groupes = [];
+  if(filtre==="tout"||filtre==="majeurs")
+    groupes.push(["Les 22 arcanes majeurs","Le grand récit — les étapes d'une vie",MAJEURS_SEULS.filter(match)]);
+  SUITES.forEach(s=>{
+    if(filtre==="tout"||filtre===s){
+      const l = JEU.filter(c=>c.suite===s).filter(match);
+      groupes.push([SERIES[s].nom+" — les 14 lames",SERIES[s].centre+" · "+SERIES[s].el,l]);
+    }
+  });
+  const html = groupes.filter(([,,l])=>l.length).map(([t,st,l])=>
+    `<div class="rangee-titre"><h3>${t}</h3><span>${st}</span></div>`+
+    l.map(c=>lameHTML(c)).join("")).join("");
+  g.innerHTML = html || `<div class="vide-etat" style="grid-column:1/-1">Aucune lame ne correspond à « ${esc(recherche)} ».</div>`;
+}
+
+/* ── Grammaire ──────────────────────────────────────────────────── */
+function renderGrammaire(){
+  $("#tab-couleurs").innerHTML = `<div class="tab-wrap"><table class="tab"><thead><tr><th>Encre</th><th>Ce qu'elle dit</th></tr></thead><tbody>`+
+    ENCRES.map(([k,n,d])=>`<tr><td><span class="swatch"><i style="background:${PIGMENT[k]}"></i>${n}</span></td><td class="muted">${esc(d)}</td></tr>`).join("")+
+    `</tbody></table></div>`;
+  $("#tab-nombres").innerHTML = `<div class="tab-wrap"><table class="tab"><thead><tr><th>N°</th><th>Étape</th><th>Ce qui se joue</th></tr></thead><tbody>`+
+    Object.entries(NOMBRES).map(([n,v])=>`<tr><td>${n}</td><td><b>${v.t}</b></td><td class="muted">${esc(v.d)}</td></tr>`).join("")+
+    `</tbody></table></div>`;
+  $("#tab-series").innerHTML = `<div class="tab-wrap"><table class="tab"><thead><tr><th>Série</th><th>Centre</th><th>Ce qu'elle recouvre</th></tr></thead><tbody>`+
+    SUITES.map(s=>`<tr><td><span style="color:${TEINTE[s]}">${SERIES[s].nom}</span></td><td class="ui small">${SERIES[s].centre}<br><span class="faint">${SERIES[s].el}</span></td><td class="muted">${esc(SERIES[s].txt)}</td></tr>`).join("")+
+    `</tbody></table></div>`;
+  $("#tab-figures").innerHTML = `<div class="tab-wrap"><table class="tab"><thead><tr><th>Figure</th><th>Ce qu'elle dit</th></tr></thead><tbody>`+
+    ORDRE_FIG.map(f=>`<tr><td>${FIGURES[f].nom}</td><td class="muted">${esc(FIGURES[f].d)}</td></tr>`).join("")+
+    `</tbody></table></div>`;
+  $("#septs").innerHTML = SEPTENAIRES.map(s=>
+    `<div class="bloc" style="margin-bottom:12px"><span class="eyebrow">Septénaire ${s.n} · ${s.r}</span><h3 style="margin:3px 0 7px">${s.t}</h3><p class="muted small" style="margin:0">${esc(s.d)}</p></div>`).join("");
+  $("#colonnes").innerHTML = COLONNES.map(c=>
+    `<div><b>${c.c}</b><span><b style="color:var(--ink)">${c.t}</b><br>${esc(c.d)}</span></div>`).join("");
+}
+
+/* ── Arcane de naissance ────────────────────────────────────────── */
+function sommeChiffres(s){return String(s).replace(/\D/g,"").split("").reduce((a,d)=>a+ +d,0);}
+function arcaneDe(str){let v=sommeChiffres(str);while(v>22)v=sommeChiffres(v);return v;}
+function renderNaissance(){
+  const v = $("#ddn").value;
+  const box = $("#naissance-res");
+  if(!v){ box.innerHTML = `<p class="small faint" style="margin:0">Indiquez une date.</p>`; return; }
+  const [y,m,d] = v.split("-");
+  const nN = arcaneDe(d+m+y);
+  const nA = arcaneDe(d+m+String(new Date().getFullYear()));
+  const cN = parNum(nN)||parNum(0), cA = parNum(nA)||parNum(0);
+  box.innerHTML = `<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+    <div><span class="eyebrow">Arcane de naissance</span>
+      <p style="margin:4px 0 0"><b class="display" style="font-size:1.15rem">${esc(cN.nom)}</b><br>
+      <span class="small muted">${esc(cN.mots.slice(0,3).join(" · "))}</span></p></div>
+    <div><span class="eyebrow">Arcane de l'année ${new Date().getFullYear()}</span>
+      <p style="margin:4px 0 0"><b class="display" style="font-size:1.15rem">${esc(cA.nom)}</b><br>
+      <span class="small muted">${esc(cA.mots.slice(0,3).join(" · "))}</span></p></div></div>
+    <p class="small faint" style="margin:10px 0 0">Une tonalité de fond, pas une étiquette. À proposer, jamais à imposer.</p>`;
+}
+
+/* ── Note exportable ────────────────────────────────────────────── */
+function noteTexte(){
+  const t = TIRAGES[etat.tirage];
+  const l = [];
+  l.push("LE MIROIR DES ARCANES — "+t.nom);
+  l.push(new Date().toLocaleString("fr-FR"));
+  l.push("");
+  if(etat.question){ l.push("Question : "+etat.question); l.push(""); }
+  etat.cartes.slice().sort((a,b)=>a.posIndex-b.posIndex).forEach(c=>{
+    const p = t.pos[c.posIndex], k = PARID[c.id];
+    l.push("• "+p.lab+" — "+p.sub);
+    l.push("  "+k.nom+(c.deduite?"  (déduite : somme "+c.somme+" → "+c.red+")":""));
+    l.push("  Centre : "+k.centre);
+    if(k.type==="majeur"){
+      l.push("  En élan : "+k.elan);
+      l.push("  En tension : "+k.tension);
+      l.push("  Question : "+k.q);
+    } else l.push("  "+k.syn);
+    l.push("");
+  });
+  l.push("— Lecture non divinatoire, dans la voie de Jodorowsky. À rendre en questions ouvertes.");
+  return l.join("\n");
+}
+
+/* ── Carnet : stockage ──────────────────────────────────────────── */
+let DB = null, DOWNLOADS = null, SAMPLE = null, desabonner = null;
+const LS = "miroir-arcanes-carnet";
+function lsLire(){ try{ return JSON.parse(localStorage.getItem(LS)||"[]"); }catch(e){ return []; } }
+function lsEcrire(a){ try{ localStorage.setItem(LS,JSON.stringify(a.slice(0,200))); }catch(e){} }
+
+async function garder(){
+  if(!etat.cartes.length){ etat.msg = "Il n'y a rien sur le tapis."; return renderCarnetEtat("Il n'y a rien sur le tapis à garder."); }
+  const doc = {
+    ts: Date.now(),
+    date: new Date().toISOString(),
+    question: etat.question || $("#question").value.trim(),
+    tirage: etat.tirage,
+    tirageNom: TIRAGES[etat.tirage].nom,
+    cartes: etat.cartes.map(c=>({posIndex:c.posIndex,id:c.id,deduite:!!c.deduite})),
+    notes: ""
+  };
+  if(DB){
+    try{ await DB.collection("carnet").doc(String(doc.ts)).set(doc); renderCarnetEtat("Tirage gardé dans le carnet."); return; }
+    catch(e){ /* on retombe sur le stockage local */ }
+  }
+  const a = lsLire(); a.unshift(doc); lsEcrire(a);
+  renderCarnet(a); renderCarnetEtat("Tirage gardé (dans ce navigateur uniquement).");
+}
+function renderCarnetEtat(m){
+  const base = DB ? "Carnet enregistré côté serveur : vos tirages vous suivent d'un appareil à l'autre."
+                  : "Carnet enregistré dans ce navigateur.";
+  $("#carnet-etat").textContent = m ? m+" — "+base : base;
+}
+function renderCarnet(liste){
+  const box = $("#carnet");
+  if(!liste.length){
+    box.innerHTML = `<div class="vide-etat">Aucun tirage gardé pour l'instant.<br><span class="small">Sur le tapis, « Garder dans le carnet » archive le tirage avec sa question.</span></div>`;
+    return;
+  }
+  box.innerHTML = liste.map(e=>{
+    const t = TIRAGES[e.tirage] || TIRAGES.croix;
+    const cartes = (e.cartes||[]).map(c=>{
+      const k = PARID[c.id]; if(!k) return "";
+      const p = t.pos[c.posIndex] || {lab:""};
+      return `<span class="chip">${esc(p.lab)} : <b>${esc(k.nom)}</b></span>`;
+    }).join("");
+    return `<article class="entree">
+      <div class="entree-tete">
+        <b class="display" style="font-size:1.15rem">${esc(e.tirageNom||t.nom)}</b>
+        <span class="small faint ui">${new Date(e.ts).toLocaleString("fr-FR")}</span>
+        ${e.cartes&&e.cartes.some(c=>c.deduite)?'<span class="badge">avec nœud déduit</span>':''}
+      </div>
+      ${e.question?`<p style="margin:0;font-style:italic">« ${esc(e.question)} »</p>`:''}
+      <div class="entree-cartes">${cartes}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-ghost small" data-rappel="${e.ts}">Remettre sur le tapis</button>
+        <button class="btn btn-ghost small" data-suppr="${e.ts}">Supprimer</button>
+      </div>
+    </article>`;
+  }).join("");
+}
+async function chargerCarnet(){
+  if(DB){
+    try{
+      if(desabonner) desabonner();
+      desabonner = DB.collection("carnet").orderBy("ts","desc").limit(100)
+        .onSnapshot(snap=>{
+          renderCarnet(snap.docs.map(d=>d.data()).filter(Boolean));
+        }, ()=>renderCarnet(lsLire()));
+      renderCarnetEtat("");
+      return;
+    }catch(e){ DB = null; }
+  }
+  renderCarnetEtat("");
+  renderCarnet(lsLire());
+}
+async function supprimer(ts){
+  if(DB){ try{ await DB.collection("carnet").doc(String(ts)).delete(); return; }catch(e){} }
+  const a = lsLire().filter(x=>String(x.ts)!==String(ts)); lsEcrire(a); renderCarnet(a);
+}
+async function rappeler(ts){
+  let e = null;
+  if(DB){ try{ const s = await DB.collection("carnet").doc(String(ts)).get(); if(s.exists) e = s.data(); }catch(err){} }
+  if(!e) e = lsLire().find(x=>String(x.ts)===String(ts));
+  if(!e) return;
+  etat.tirage = e.tirage in TIRAGES ? e.tirage : "croix";
+  etat.cartes = e.cartes.map(c=>Object.assign({},c));
+  etat.question = e.question||"";
+  etat.exemple = false;
+  $("#question").value = etat.question;
+  renderChoix(); renderTapis(true); allerA("tapis");
+}
+
+/* ── Exporter ───────────────────────────────────────────────────── */
+async function exporter(){
+  if(!etat.cartes.length) return;
+  const txt = noteTexte();
+  const nom = "tirage-"+new Date().toISOString().slice(0,10)+".md";
+  if(DOWNLOADS){
+    try{ await DOWNLOADS.save({filename:nom,data:txt}); return; }catch(e){}
+  }
+  const z = $("#tissage");
+  z.innerHTML = `<p class="small faint">Le téléchargement n'est pas disponible ici — voici la note, à copier :</p>
+    <textarea id="note-copie" rows="10" readonly></textarea>`;
+  const ta = $("#note-copie"); ta.value = txt; ta.focus(); ta.select();
+}
+
+/* ── Tisser la lecture (Claude) ─────────────────────────────────── */
+let enCours = null;
+async function tisser(){
+  if(!etat.cartes.length) return;
+  if(!SAMPLE){
+    $("#tissage").innerHTML = `<p class="small faint">Cette fonction demande à Claude de relier les lames ; elle n'est pas disponible dans cette vue.</p>`;
+    return;
+  }
+  if(enCours) enCours.abort();
+  enCours = new AbortController();
+  const z = $("#tissage");
+  z.innerHTML = `<p class="pense"><i></i>Claude regarde le tapis…</p>`;
+  const t = TIRAGES[etat.tirage];
+  const desc = etat.cartes.slice().sort((a,b)=>a.posIndex-b.posIndex).map(c=>{
+    const p = t.pos[c.posIndex], k = PARID[c.id];
+    return `- ${p.lab} (${p.sub}) : ${k.nom}${c.deduite?" [lame déduite par addition, non tirée]":""} — centre : ${k.centre}`;
+  }).join("\n");
+  const prompt = `Tu accompagnes une praticienne qui lit le Tarot de Marseille dans la voie d'Alejandro Jodorowsky : lecture NON divinatoire. Tu ne prédis jamais rien, tu ne donnes aucun verdict, aucune date, aucun diagnostic. Tu ne parles pas de maladie, de mort ni de rupture comme d'événements à venir.
+
+Tirage : ${t.nom}
+${etat.question?`Question du consultant : « ${etat.question} »`:`Aucune question n'a été formulée.`}
+Lames posées :
+${desc}
+
+Écris en français, en 4 paragraphes courts, sans titres ni listes :
+1. Ce que raconte l'ensemble du tapis comme une scène (les lames se parlent, se tournent le dos, se répondent).
+2. Le point le plus vivant du tirage, et pourquoi.
+3. Ce qui semble coincé, formulé sans jugement, comme une hypothèse à vérifier.
+4. Termine par exactement trois questions ouvertes à poser au consultant, une par ligne, précédées d'un tiret.
+
+Ton : sobre, incarné, jamais ésotérique ni grandiloquent. Vouvoie le consultant. N'invente pas de lames qui ne sont pas listées.`;
+  try{
+    const r = await SAMPLE(prompt,{modelTier:"default",signal:enCours.signal,
+      onText:u=>{ z.innerHTML = u.text.split(/\n{2,}/).map(p=>`<p>${esc(p)}</p>`).join(""); }});
+    z.innerHTML = r.text.split(/\n{2,}/).map(p=>`<p>${esc(p)}</p>`).join("")+
+      `<p class="small faint" style="margin-top:10px">Une proposition, pas une lecture. C'est vous qui tenez la séance.</p>`;
+  }catch(e){
+    if(e && e.code==="cancelled") return;
+    z.innerHTML = `<p class="small faint">La lecture n'a pas pu être tissée${e&&e.code?" ("+esc(e.code)+")":""}. Le tapis, lui, se lit très bien sans.</p>`;
+  }
+}
+
+/* ── Navigation ─────────────────────────────────────────────────── */
+const PANNEAUX = {tapis:"p-tapis",lames:"p-lames",gram:"p-gram",carnet:"p-carnet"};
+function allerA(k){
+  Object.entries(PANNEAUX).forEach(([key,id])=>{
+    $("#"+id).hidden = key!==k;
+    $("#t-"+key).setAttribute("aria-selected", String(key===k));
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ── Câblage ────────────────────────────────────────────────────── */
+document.addEventListener("click", ev=>{
+  const tab = ev.target.closest("nav.tabs button");
+  if(tab){ allerA(tab.id.replace("t-","")); return; }
+
+  const ch = ev.target.closest("#choix-tirage button");
+  if(ch){
+    etat.tirage = ch.dataset.t; etat.cartes = []; etat.exemple=false;
+    renderChoix(); renderTapis(false); return;
+  }
+  const f = ev.target.closest(".filtres .switch button");
+  if(f){
+    filtre = f.dataset.f;
+    $$(".filtres .switch button").forEach(b=>b.setAttribute("aria-pressed",String(b===f)));
+    renderGalerie(); return;
+  }
+  const lame = ev.target.closest("button.lame");
+  if(lame && !ev.target.closest("#fiche")){ ouvrirFiche(lame.dataset.id); return; }
+
+  if(ev.target.closest("#fermer") || ev.target.id==="tiroir"){ fermerFiche(); return; }
+  const sup = ev.target.closest("[data-suppr]"); if(sup){ supprimer(sup.dataset.suppr); return; }
+  const rap = ev.target.closest("[data-rappel]"); if(rap){ rappeler(rap.dataset.rappel); return; }
+});
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") fermerFiche(); });
+
+$("#battre").addEventListener("click", tirer);
+$("#ranger").addEventListener("click", ranger);
+$("#garder").addEventListener("click", garder);
+$("#exporter").addEventListener("click", exporter);
+$("#tisser").addEventListener("click", tisser);
+$("#ddn").addEventListener("change", renderNaissance);
+$("#rech").addEventListener("input", e=>{ recherche = e.target.value; renderGalerie(); });
+$("#j-majeurs").addEventListener("click", ()=>{ etat.jeuComplet=false; $("#j-majeurs").setAttribute("aria-pressed","true"); $("#j-tout").setAttribute("aria-pressed","false"); });
+$("#j-tout").addEventListener("click", ()=>{ etat.jeuComplet=true; $("#j-tout").setAttribute("aria-pressed","true"); $("#j-majeurs").setAttribute("aria-pressed","false"); });
+
+/* ── Démarrage : un tirage d'exemple, déjà posé ─────────────────── */
+function exemple(){
+  etat.tirage = "croix"; etat.exemple = true;
+  etat.question = "Comment est-ce que je prends ma place de formatrice ?";
+  $("#question").value = etat.question;
+  const tirees = {0:"M5",1:"M2",3:"M17",4:"M15"};      /* ciel, racine, appel, dessous */
+  const somme = 5+2+17+15, red = reduire(somme);       /* 39 → 12, Le Pendu */
+  etat.cartes = Object.entries(tirees).map(([i,id])=>({posIndex:+i,id}))
+    .concat([{posIndex:2,id:"M"+red,deduite:true,somme,red}])
+    .sort((a,b)=>a.posIndex-b.posIndex);
+}
+renderChoix(); exemple(); renderTapis(false);
+renderGalerie(); renderGrammaire(); renderNaissance(); renderCarnet(lsLire()); renderCarnetEtat("");
+
+/* ── Capacités du viewer, si elles arrivent ─────────────────────── */
+(async ()=>{
+  const c = window.claude;
+  if(!c || typeof c.use !== "function") return;
+  try{ DB = await c.use("db"); }catch(e){ DB = null; }
+  try{ DOWNLOADS = await c.use("downloads"); }catch(e){ DOWNLOADS = null; }
+  try{ SAMPLE = await c.use("sample"); }catch(e){ SAMPLE = null; }
+  if(!SAMPLE) $("#tisser").disabled = true;
+  chargerCarnet();
+})();
+</script>
