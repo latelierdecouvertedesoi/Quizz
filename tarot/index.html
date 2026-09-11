@@ -76,8 +76,8 @@ img{max-width:100%}
 }
 
 /* ── Typographie ─────────────────────────────────────────────────── */
-.display{font-family:"IM Fell French Canon",Georgia,serif;font-weight:400;letter-spacing:.01em}
-h1,h2,h3,h4{font-family:"IM Fell French Canon",Georgia,serif;font-weight:400;text-wrap:balance;margin:0;line-height:1.18}
+.display{font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua","Iowan Old Style",serif;font-weight:400;letter-spacing:.01em}
+h1,h2,h3,h4{font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua","Iowan Old Style",serif;font-weight:400;text-wrap:balance;margin:0;line-height:1.18}
 h1{font-size:clamp(1.9rem,4.4vw,2.7rem)}
 h2{font-size:clamp(1.35rem,2.8vw,1.75rem)}
 h3{font-size:1.15rem}
@@ -102,26 +102,29 @@ header.top{
 .topgrid{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 26px;padding-block:26px 18px}
 .brandmark{
   width:44px;height:44px;flex:none;border:1.5px solid var(--ink);border-radius:50%;
-  display:grid;place-items:center;font-family:"IM Fell French Canon",serif;font-size:1.25rem;
+  display:grid;place-items:center;font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua",serif;font-size:1.25rem;
   background:var(--surface-2);
 }
 .brand{display:flex;align-items:center;gap:14px}
 .brand p{margin:0}
-nav.tabs{
-  display:flex;gap:2px;flex-wrap:wrap;margin-left:auto;
-  border-bottom:none;
+.navbar{
+  position:sticky;top:0;z-index:25;
+  background:var(--surface);border-bottom:1px solid var(--line);
 }
+.navbar .wrap{display:flex}
+nav.tabs{
+  display:flex;gap:0;flex:1;min-width:0;
+  overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+nav.tabs::-webkit-scrollbar{display:none}
 nav.tabs button{
   font-family:"Archivo",system-ui,sans-serif;font-size:.78rem;font-weight:500;
-  letter-spacing:.06em;text-transform:uppercase;
-  background:none;border:1px solid transparent;border-bottom:none;
-  color:var(--ink-2);padding:9px 14px 8px;cursor:pointer;border-radius:2px 2px 0 0;
-  position:relative;top:1px;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+  background:none;border:0;border-bottom:2px solid transparent;
+  color:var(--ink-2);padding:13px 15px 11px;cursor:pointer;
 }
-nav.tabs button:hover{color:var(--ink);background:var(--halo)}
-nav.tabs button[aria-selected="true"]{
-  color:var(--ink);background:var(--ground);border-color:var(--line);
-}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--rouge);font-weight:600}
 main{padding-block:26px 60px;min-height:60vh}
 section.panel[hidden]{display:none}
 
@@ -168,7 +171,7 @@ select{font-family:"Archivo",system-ui,sans-serif;font-size:.85rem}
   background:var(--surface-2);
   border:1.5px solid var(--ink);border-radius:2px;
   padding:5px;cursor:pointer;text-align:center;
-  font-family:"IM Fell French Canon",Georgia,serif;color:var(--ink);
+  font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua","Iowan Old Style",serif;color:var(--ink);
   box-shadow:var(--shadow);
   transition:transform .18s ease, box-shadow .18s ease;
 }
@@ -280,20 +283,43 @@ select{font-family:"Archivo",system-ui,sans-serif;font-size:.85rem}
 }
 
 /* ── Blocs de lecture ────────────────────────────────────────────── */
-.grille{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:24px}
+.grille{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;margin-top:24px}
 .bloc{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:16px 17px}
 .bloc h3{margin-bottom:9px}
 .bloc.souligne{border-left:3px solid var(--rouge)}
 .etapes{counter-reset:e;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
-.etapes li{counter-increment:e;display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start}
-.etapes li::before{
-  content:counter(e);font-family:"IM Fell French Canon",serif;font-size:1.05rem;
+.etapes>li{counter-increment:e;display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start}
+.etapes>li::before{
+  content:counter(e);font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua",serif;font-size:1.05rem;
   color:var(--rouge);border:1px solid var(--line);border-radius:50%;
   width:26px;height:26px;display:grid;place-items:center;line-height:1;
 }
 .etapes b{display:block;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;
   letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
 .etapes p{margin:0;font-size:.93rem;color:var(--ink-2)}
+.etapes .aide{font-style:italic;color:var(--ink-3);font-size:.86rem}
+.etapes .invite{
+  margin-top:8px;border-left:2px solid var(--line);padding:2px 0 2px 11px;
+  font-size:.92rem;color:var(--ink);
+}
+.etapes .invite ul{margin:4px 0 0;padding-left:1.15em;list-style:disc;display:block}
+.etapes .invite li{display:list-item;margin:0 0 5px;counter-increment:none}
+.etapes .invite li::before{content:none;display:none}
+.etapes .invite li::marker{color:var(--ink-3)}
+.etapes .invite b{
+  display:inline;font-family:inherit;font-size:inherit;font-weight:600;
+  letter-spacing:normal;text-transform:none;margin:0;
+}
+.etapes .invite em{font-style:normal;color:var(--ink-3)}
+.etapes li.fait{opacity:.5}
+.etapes li.fait::before{content:"✓";color:var(--vert);border-color:var(--vert)}
+.fait-btn{
+  font-family:"Archivo",sans-serif;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  background:none;border:1px solid var(--line);border-radius:20px;color:var(--ink-3);
+  padding:2px 9px;cursor:pointer;margin-top:7px;
+}
+.fait-btn:hover{color:var(--ink);border-color:var(--ink-3)}
+.etapes li.fait .fait-btn{border-color:var(--vert);color:var(--vert)}
 
 /* ── Fiche d'arcane (tiroir) ─────────────────────────────────────── */
 .tiroir{
@@ -324,7 +350,7 @@ select{font-family:"Archivo",system-ui,sans-serif;font-size:.85rem}
   background:var(--surface-2);border:1px solid var(--line-2);border-radius:var(--radius);
   padding:12px 13px;
 }
-.champ.question p{font-family:"IM Fell French Canon",serif;font-size:1.1rem;line-height:1.4}
+.champ.question p{font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua",serif;font-size:1.1rem;line-height:1.4}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{
   font-family:"Archivo",sans-serif;font-size:.7rem;letter-spacing:.05em;
@@ -355,13 +381,13 @@ table.tab th{
   font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.09em;
   text-transform:uppercase;color:var(--ink-3);border-bottom-color:var(--line);
 }
-table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon",serif;font-size:1.05rem}
+table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua",serif;font-size:1.05rem}
 .tab-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .colonnes{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;font-size:.72rem}
 @media (max-width:760px){.colonnes{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:430px){.colonnes{grid-template-columns:repeat(2,1fr)}}
 .colonnes div{border:1px solid var(--line-2);border-radius:var(--radius);padding:8px 7px;background:var(--surface-2)}
-.colonnes b{display:block;font-family:"IM Fell French Canon",serif;font-size:.95rem;font-weight:400;color:var(--rouge)}
+.colonnes b{display:block;font-family:"IM Fell French Canon","Palatino Linotype",Palatino,"Book Antiqua",serif;font-size:.95rem;font-weight:400;color:var(--rouge)}
 .colonnes span{display:block;color:var(--ink-2);line-height:1.3;margin-top:3px}
 
 /* ── Carnet ──────────────────────────────────────────────────────── */
@@ -398,6 +424,10 @@ table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon",s
         <p class="small muted">Atelier de lecture du Tarot de Marseille — dans la voie d'Alejandro Jodorowsky</p>
       </div>
     </div>
+  </div>
+</header>
+<div class="navbar">
+  <div class="wrap">
     <nav class="tabs ui" role="tablist" aria-label="Sections">
       <button role="tab" id="t-tapis" aria-controls="p-tapis" aria-selected="true">Le tapis</button>
       <button role="tab" id="t-lames" aria-controls="p-lames" aria-selected="false">Les 78 lames</button>
@@ -405,7 +435,7 @@ table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon",s
       <button role="tab" id="t-carnet" aria-controls="p-carnet" aria-selected="false">Carnet</button>
     </nav>
   </div>
-</header>
+</div>
 
 <main class="wrap">
 
@@ -461,8 +491,8 @@ table.tab td:first-child{white-space:nowrap;font-family:"IM Fell French Canon",s
           <div id="lecture-corps"></div>
         </div>
         <div class="bloc">
-          <span class="eyebrow">Méthode</span>
-          <h3 style="margin-top:4px">Lire pas à pas</h3>
+          <span class="eyebrow">Méthode · six temps</span>
+          <h3 style="margin-top:4px">Conduire la séance</h3>
           <ol class="etapes" id="etapes"></ol>
         </div>
       </div>
@@ -810,13 +840,13 @@ const MAJEURS = [
 
 /* ── Les quatre séries ──────────────────────────────────────────── */
 const SERIES = {
-  batons:{nom:"Bâtons",centre:"Élan créateur",el:"Feu",
+  batons:{nom:"Bâtons",prep:"de ",centre:"Élan créateur",el:"Feu",
     txt:"L'énergie créatrice et sexuelle : le désir, l'élan, l'envie de faire. Ce qui pousse, ce qui brûle, ce qui veut sortir. C'est la série du projet, de l'atelier, du lit, de la scène."},
-  coupes:{nom:"Coupes",centre:"Cœur & émotion",el:"Eau",
+  coupes:{nom:"Coupes",prep:"de ",centre:"Cœur & émotion",el:"Eau",
     txt:"L'émotion et le lien : l'amour, la famille, l'amitié, ce que l'on ressent. La coupe est un contenant — elle se remplit, se vide, se partage ou se garde."},
-  epees:{nom:"Épées",centre:"Esprit & parole",el:"Air",
+  epees:{nom:"Épées",prep:"d'",centre:"Esprit & parole",el:"Air",
     txt:"L'intellect et la parole : les idées, les décisions, les conflits, le discernement. L'épée tranche : elle sépare le vrai du faux, mais elle peut aussi blesser."},
-  deniers:{nom:"Deniers",centre:"Corps & matière",el:"Terre",
+  deniers:{nom:"Deniers",prep:"de ",centre:"Corps & matière",el:"Terre",
     txt:"Le concret : l'argent, le corps, le travail, la maison, la santé. Le denier est rond et complet — il circule, se thésaurise ou fructifie."}
 };
 
@@ -935,12 +965,12 @@ MAJEURS.forEach(m=>JEU.push(Object.assign({id:"M"+m.n,type:"majeur"},m)));
 SUITES.forEach(s=>{
   for(let i=1;i<=10;i++){
     JEU.push({id:s+"-"+i,type:"mineur",suite:s,n:i,
-      nom:(i===1?"As":i)+" de "+SERIES[s].nom, centre:SERIES[s].centre,
+      nom:(i===1?"As":i)+" "+SERIES[s].prep+SERIES[s].nom, centre:SERIES[s].centre,
       syn:MINEURS_SYN[s][i]});
   }
   ORDRE_FIG.forEach(f=>{
     JEU.push({id:s+"-"+f,type:"figure",suite:s,fig:f,n:null,
-      nom:FIGURES[f].nom+" de "+SERIES[s].nom, centre:SERIES[s].centre,
+      nom:FIGURES[f].nom+" "+SERIES[s].prep+SERIES[s].nom, centre:SERIES[s].centre,
       syn:FIGURES_SYN[s][f]});
   });
 });
@@ -1064,13 +1094,14 @@ function tirer(){
   cartes.sort((a,b)=>a.posIndex-b.posIndex);
   etat.cartes = cartes;
   etat.exemple = false;
+  etapesFaites = new Set();
   etat.question = $("#question").value.trim();
   $("#tissage").innerHTML = "";
   renderTapis(true);
 }
 
 function ranger(){
-  etat.cartes = []; etat.exemple = false; $("#tissage").innerHTML="";
+  etat.cartes = []; etat.exemple = false; etapesFaites = new Set(); $("#tissage").innerHTML="";
   renderTapis(false);
 }
 
@@ -1181,15 +1212,115 @@ function renderLecture(){
 }
 
 const ETAPES = [
- ["Regarder sans nommer","Avant toute interprétation, décrivez ce que vous voyez : les couleurs qui dominent, les directions, ce qui saute aux yeux. Faites décrire au consultant lui-même — c'est déjà la moitié de la séance."],
- ["Situer chaque lame","Nom, nombre, série. Dans quel centre la lame parle-t-elle ? À quelle étape du processus le nombre situe-t-il la question ?"],
- ["Lire les nombres ensemble","Montent-ils, descendent-ils ? Un nombre se répète-t-il ? Manque-t-il une étape ? Additionnez les majeurs pour trouver la clé."],
- ["Lire les regards et les gestes","Qui regarde qui ? Qui tourne le dos ? Quel objet est tendu vers quelle lame ? Ce que les personnages font entre eux raconte la dynamique réelle."],
- ["Faire parler les lames entre elles","Une lame propose, l'autre répond, une troisième empêche. Racontez le tapis comme une scène — pas comme une addition de définitions."],
- ["Rendre en questions","Ne concluez jamais à la place du consultant. Transformez chaque observation en question ouverte, et laissez-le reconnaître, corriger ou refuser. Ce qu'il refuse est aussi précieux que ce qu'il accepte."]
+ {t:"Regarder sans nommer",
+  aide:"Avant toute interprétation, faites décrire le tapis par le consultant lui-même : les couleurs, les directions, ce qui saute aux yeux. C'est déjà la moitié de la séance."},
+ {t:"Situer chaque lame",
+  aide:"Nom, nombre, série, centre. À quelle étape du processus le nombre situe-t-il la question ?"},
+ {t:"Lire les nombres ensemble",
+  aide:"Montent-ils, descendent-ils ? Un nombre se répète-t-il ? Manque-t-il une étape ?"},
+ {t:"Lire les regards et les gestes",
+  aide:"Ce que les personnages font entre eux raconte la dynamique réelle. Vérifiez sur le jeu que vous tenez : les gravures diffèrent d'une édition à l'autre."},
+ {t:"Faire parler les lames entre elles",
+  aide:"Une lame propose, l'autre répond, une troisième empêche. Racontez le tapis comme une scène — pas comme une addition de définitions."},
+ {t:"Rendre en questions",
+  aide:"Ne concluez jamais à la place du consultant. Ce qu'il refuse est aussi précieux que ce qu'il accepte."}
 ];
+let etapesFaites = new Set();
+
+/* Chaque étape reçoit des invites construites sur les lames réellement posées. */
+function invitesEtape(i){
+  const t = TIRAGES[etat.tirage];
+  const cs = etat.cartes.slice().sort((a,b)=>a.posIndex-b.posIndex)
+              .map(c=>({p:t.pos[c.posIndex]||{lab:""},k:PARID[c.id],deduite:c.deduite,idx:c.posIndex}));
+  if(!cs.length) return "";
+  const li = a => `<ul>${a.join("")}</ul>`;
+
+  if(i===0){
+    const cpt = {};
+    cs.forEach(x=>(x.k.encres||[]).forEach(e=>cpt[e]=(cpt[e]||0)+1));
+    const top = Object.keys(cpt).sort((a,b)=>cpt[b]-cpt[a]).slice(0,2);
+    const out = [];
+    if(top.length){
+      const noms = top.map(e=>{
+        const E = ENCRES.find(x=>x[0]===e);
+        return `<b>${E[1].toLowerCase()}</b> (${cpt[e]} lame${cpt[e]>1?"s":""})`;
+      }).join(" et le ");
+      const E0 = ENCRES.find(x=>x[0]===top[0]);
+      out.push(`<li>Le ${noms} dominent le tapis. <em>${esc(E0[2])}</em></li>`);
+    }
+    const suites = [...new Set(cs.map(x=>x.k.suite).filter(Boolean))];
+    if(suites.length) out.push(`<li>Séries en présence : ${suites.map(x=>SERIES[x].nom).join(", ")}. Laquelle attire l'œil en premier ?</li>`);
+    out.push(`<li>« Qu'est-ce que vous voyez d'abord ? Qu'est-ce qui vous dérange ? » — avant tout commentaire de votre part.</li>`);
+    return li(out);
+  }
+
+  if(i===1) return li(cs.map(x=>{
+    let d = "";
+    if(x.k.type==="majeur") d = x.k.mots.slice(0,3).join(" · ");
+    else if(x.k.type==="mineur") d = NOMBRES[x.k.n].t.toLowerCase()+" · "+SERIES[x.k.suite].nom.toLowerCase();
+    else d = FIGURES[x.k.fig].nom.toLowerCase()+" · "+SERIES[x.k.suite].nom.toLowerCase();
+    return `<li><b>${esc(x.p.lab)}</b> — ${esc(x.k.nom)}${x.deduite?" <em>(déduite)</em>":""}<br><em>${esc(x.k.centre)} · ${esc(d)}</em></li>`;
+  }));
+
+  if(i===2){
+    const nums = cs.filter(x=>!x.deduite && typeof x.k.n==="number" && x.k.n>0).map(x=>x.k.n);
+    if(nums.length<2) return li([`<li>Trop peu de nombres pour lire un mouvement. Regardez plutôt ce que la lame dit du <b>temps</b> : commence-t-elle, tient-elle, ou termine-t-elle quelque chose ?</li>`]);
+    const som = nums.reduce((a,b)=>a+b,0), red = reduire(som), cle = parNum(red);
+    const out = [`<li>Suite des nombres : <b class="ui" style="font-variant-numeric:tabular-nums">${nums.join(" · ")}</b></li>`];
+    const dbl = [...new Set(nums.filter((v,k)=>nums.indexOf(v)!==k))];
+    if(dbl.length) out.push(`<li>Le ${dbl.join(" et le ")} revient : la même étape se rejoue à deux étages de la vie. Lesquels ?</li>`);
+    const ecarts = nums.slice(1).map((v,k)=>Math.abs(v-nums[k]));
+    const maxE = Math.max.apply(null,ecarts);
+    if(maxE>=5) out.push(`<li>Un écart de ${maxE} entre deux lames voisines : une étape a peut-être été sautée. Laquelle n'a pas été vécue ?</li>`);
+    if(cle) out.push(`<li>Somme ${som} → ${red} : la clé serait <b>${esc(cle.nom)}</b>. ${esc(cle.q)}</li>`);
+    return li(out);
+  }
+
+  if(i===3){
+    const noms = cs.map(x=>x.k.nom);
+    const out = [`<li>Sur votre jeu : où regardent ${noms.slice(0,3).map(n=>`<b>${esc(n)}</b>`).join(", ")}${noms.length>3?"…":""} ?</li>`,
+      `<li>Une lame en regarde-t-elle une autre du tapis ? Y a-t-il un dos tourné ?</li>`,
+      `<li>Une lame regarde-t-elle <em>hors</em> du tirage ? Ce qu'elle vise n'a pas encore été dit.</li>`];
+    const frontales = cs.filter(x=>["La Justice","Le Diable","La Papesse","Le Pape","Le Chariot"].includes(x.k.nom));
+    if(frontales.length) out.push(`<li>${frontales.map(x=>`<b>${esc(x.k.nom)}</b>`).join(" et ")} regarde${frontales.length>1?"nt":""} le consultant en face. C'est souvent là que se joue la séance.</li>`);
+    return li(out);
+  }
+
+  if(i===4){
+    const par = [];
+    if(etat.tirage==="croix" && cs.length>=5){
+      const g = n => cs.find(x=>x.idx===n);
+      [[0,4,"le déclaré et le souterrain"],[1,3,"l'acquis et ce qui vient"],[2,0,"le nœud et l'intention"]]
+        .forEach(([a,b,lib])=>{ const A=g(a),B=g(b); if(A&&B) par.push([A,B,lib]); });
+    } else {
+      for(let k=0;k<cs.length-1;k++) par.push([cs[k],cs[k+1],cs[k].p.lab.toLowerCase()+" et "+cs[k+1].p.lab.toLowerCase()]);
+    }
+    return li(par.map(([A,B,lib])=>
+      `<li><b>${esc(A.k.nom)}</b> ↔ <b>${esc(B.k.nom)}</b><br><em>${esc(lib)} — que se disent ces deux-là ? L'une aide-t-elle l'autre, ou l'empêche-t-elle ?</em></li>`));
+  }
+
+  if(i===5) return li(cs.map(x=>{
+    let q;
+    if(x.k.q) q = x.k.q;
+    else if(x.k.type==="mineur") q = `${NOMBRES[x.k.n].t} dans ${SERIES[x.k.suite].centre.toLowerCase()} — où cela se passe-t-il concrètement dans votre vie ?`;
+    else q = `Quelle part de vous se tient comme ${x.k.nom.toLowerCase()} ?`;
+    return `<li><em>${esc(x.k.nom)}</em><br>${esc(q)}</li>`;
+  }).concat([`<li><em>Pour finir</em><br>« Qu'est-ce que vous emportez de ce tapis ? » — et rien de plus.</li>`]));
+
+  return "";
+}
+
 function renderEtapes(){
-  $("#etapes").innerHTML = ETAPES.map(([t,d])=>`<li><div><b>${t}</b><p>${d}</p></div></li>`).join("");
+  const pose = etat.cartes.length>0;
+  $("#etapes").innerHTML = ETAPES.map((e,i)=>{
+    const inv = pose ? invitesEtape(i) : "";
+    return `<li class="${etapesFaites.has(i)?"fait":""}"><div>
+      <b>${esc(e.t)}</b>
+      <p class="aide">${esc(e.aide)}</p>
+      ${inv?`<div class="invite">${inv}</div>`:""}
+      ${pose?`<button class="fait-btn" data-etape="${i}" aria-pressed="${etapesFaites.has(i)}">${etapesFaites.has(i)?"fait":"marquer fait"}</button>`:""}
+    </div></li>`;
+  }).join("");
 }
 
 /* ── Fiche d'arcane ─────────────────────────────────────────────── */
@@ -1502,6 +1633,12 @@ document.addEventListener("click", ev=>{
   if(lame && !ev.target.closest("#fiche")){ ouvrirFiche(lame.dataset.id); return; }
 
   if(ev.target.closest("#fermer") || ev.target.id==="tiroir"){ fermerFiche(); return; }
+  const et = ev.target.closest(".fait-btn");
+  if(et){
+    const i = +et.dataset.etape;
+    etapesFaites.has(i) ? etapesFaites.delete(i) : etapesFaites.add(i);
+    renderEtapes(); return;
+  }
   const sup = ev.target.closest("[data-suppr]"); if(sup){ supprimer(sup.dataset.suppr); return; }
   const rap = ev.target.closest("[data-rappel]"); if(rap){ rappeler(rap.dataset.rappel); return; }
 });
