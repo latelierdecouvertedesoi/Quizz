@@ -29,6 +29,20 @@ cristal ». L'outil ne prédit donc rien. Il déplie une situation, propose des
 hypothèses et rend le tout au consultant **sous forme de questions ouvertes**.
 Le cadre déontologique est intégré dans l'onglet *Grammaire*.
 
+## Charte graphique
+
+La page reprend `site/assets/style.css` : or `#B59659`, turquoise `#8ED8D8` /
+`#4E9E9E`, pâle `#DBEEEE`, encre `#33383B`, crème `#FBFAF8` ; Fraunces en
+graisse 300 pour les titres, Karla pour le corps ; boutons en or à rayon 9 px,
+cartes à 12 px, le « fil » or-turquoise en signature, les pastilles d'étapes
+reliées par le filet pointillé turquoise. Identité claire assumée : pas de
+thème sombre, comme le site.
+
+Seule exception : les **bandes d'encres** sur les lames gardent les pigments
+réels du pochoir marseillais (rouge, bleu, jaune, vert, chair, noir). Ce sont
+des données, pas de la décoration — l'outil s'en sert pour la première étape de
+lecture. L'interface est à la charte ; le contenu reste fidèle au jeu.
+
 ## Mettre la page en ligne
 
 - **Telle quelle** : déposer `index.html` sur un hébergement statique.
