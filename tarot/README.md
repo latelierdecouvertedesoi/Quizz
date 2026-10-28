@@ -29,6 +29,22 @@ cristal ». L'outil ne prédit donc rien. Il déplie une situation, propose des
 hypothèses et rend le tout au consultant **sous forme de questions ouvertes**.
 Le cadre déontologique est intégré dans l'onglet *Grammaire*.
 
+## Les dessins des lames
+
+Chaque arcane majeur, et chacune des quatre figures, porte un **dessin
+schématique en SVG** reprenant l'iconographie décrite dans sa fiche : la table
+à trois pieds du Bateleur, le livre ouvert de la Papesse, la potence du Pendu,
+les cordes lâches du Diable. Les aplats reprennent les pigments du pochoir,
+afin que la première étape de la lecture — regarder avant de nommer — ait
+quelque chose à regarder.
+
+Les arcanes mineurs n'ont pas besoin d'illustration : dans le Tarot de
+Marseille, ce sont de véritables figures géométriques, et les pips dessinés ici
+en sont la transposition fidèle.
+
+Ces dessins sont des schémas de travail, pas des reproductions : ils aident à
+situer la scène, ils ne remplacent pas le jeu que vous tenez en main.
+
 ## Charte graphique
 
 La page reprend `site/assets/style.css` : or `#B59659`, turquoise `#8ED8D8` /
