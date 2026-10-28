@@ -17,6 +17,7 @@ pas à pas, pour mettre le site en ligne.
 | `site/a-coller/` | Le contenu à **copier** page par page, si l'import ne passe pas |
 | `site/assets/style.css` | La charte graphique, à coller dans *CSS additionnel* |
 | `site/quiz/` | Le quiz interactif « Est-ce que mon accompagnement est fait pour vous ? » |
+| `site/miroir/` | Le Miroir des Arcanes, outil de lecture du Tarot de Marseille (voie de Jodorowsky) |
 | `site/maquette-originale.html` | La maquette de référence, conservée telle quelle |
 | `site/build.sh` | Régénère `a-coller/` après modification d'une page |
 
