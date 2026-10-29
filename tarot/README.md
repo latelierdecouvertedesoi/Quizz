@@ -45,6 +45,21 @@ en sont la transposition fidèle.
 Ces dessins sont des schémas de travail, pas des reproductions : ils aident à
 situer la scène, ils ne remplacent pas le jeu que vous tenez en main.
 
+### Mettre les images de votre propre jeu
+
+Onglet **Les 78 lames** → *Charger les photos de votre jeu*. Les images
+remplacent les dessins partout, y compris sur le tapis.
+
+Le rapprochement se fait sur le nom du fichier : `13.jpg`, `XIII.jpg`,
+`le-pendu.png`, `01-le-bateleur.jpg`, `3-de-batons.jpg`, `as-depees.jpg`,
+`reine-de-coupes.jpg`. Les fichiers non reconnus sont listés pour que vous
+puissiez les renommer. Chaque image est réduite à 620 px avant d'être rangée.
+
+Les images sont stockées dans l'`IndexedDB` du navigateur : elles ne quittent
+jamais l'appareil, ne sont pas envoyées au serveur et ne sont pas incluses dans
+la page publiée. Elles sont donc à refaire sur chaque appareil, et le bouton
+*Revenir aux dessins* les efface.
+
 ## Charte graphique
 
 La page reprend `site/assets/style.css` : or `#B59659`, turquoise `#8ED8D8` /

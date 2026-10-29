@@ -165,6 +165,12 @@ select{font-size:.88rem}
 }
 .lame-art{flex:1;display:grid;place-items:center;padding:4px 2px;min-height:0}
 .lame-art>svg,.figglyph svg.fig{width:100%;height:100%;display:block}
+.lame-art>img.scan{width:100%;height:100%;object-fit:contain;display:block;border-radius:3px}
+.lame.ascan .lame-art{padding:1px}
+#import-rapport ul{margin:6px 0 0;padding-left:1.15em;color:var(--ink-2)}
+#import-rapport li{margin-bottom:3px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:var(--pale);border-radius:4px;padding:1px 5px;color:var(--ink)}
 .lame-art>svg path,.lame-art>svg circle,.lame-art>svg ellipse,.lame-art>svg rect{vector-effect:non-scaling-stroke}
 .lame-nom{
   font-family:"Karla",sans-serif;font-size:.61rem;font-weight:600;line-height:1.2;
@@ -507,6 +513,19 @@ table.tab td:first-child{white-space:nowrap;font-family:"Fraunces",Georgia,serif
 <section class="panel" id="p-lames" role="tabpanel" aria-labelledby="t-lames" hidden>
   <h2>Les 78 lames</h2>
   <p class="lede">Chaque fiche donne l'iconographie à observer, le sens en élan et le sens en tension, le centre concerné et la question ouverte à rendre au consultant. Cliquez une lame.</p>
+  <div class="bloc" id="import-lames" style="margin-top:20px">
+    <span class="eyebrow">Vos lames</span>
+    <h3 style="margin:4px 0 8px">Charger les photos de votre jeu</h3>
+    <p class="small muted" style="max-width:68ch">Les dessins ci-dessous sont des schémas de travail. Pour lire sur vos vraies lames, choisissez les images de votre jeu : elles remplaceront les dessins partout, y compris sur le tapis. Elles restent dans ce navigateur, sur cet appareil — rien n'est envoyé nulle part.</p>
+    <p class="small faint" style="max-width:68ch;margin-top:-4px">Nommez les fichiers d'après la lame : <code>13.jpg</code>, <code>XIII.jpg</code>, <code>le-pendu.png</code>, <code>3-de-batons.jpg</code>, <code>reine-de-coupes.jpg</code>. Les images sont réduites avant d'être rangées.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <label class="btn" for="fichiers" style="margin:0">Choisir des images…</label>
+      <input type="file" id="fichiers" accept="image/*" multiple hidden>
+      <button class="btn btn-ghost" id="vider-lames">Revenir aux dessins</button>
+      <span class="small faint ui" id="import-etat"></span>
+    </div>
+    <div id="import-rapport" class="small" style="margin-top:12px"></div>
+  </div>
   <div class="filtres ui" style="margin-top:18px">
     <input type="text" id="rech" placeholder="Chercher une lame, un mot-clé…" style="max-width:280px" aria-label="Chercher">
     <div class="switch" role="group" aria-label="Filtrer">
@@ -922,6 +941,9 @@ const SEPTENAIRES = [
 const GLYPHES = {"1": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><ellipse cx=\"25\" cy=\"12\" rx=\"5.5\" ry=\"3.2\" fill=\"#D8A72A\"/><ellipse cx=\"35\" cy=\"12\" rx=\"5.5\" ry=\"3.2\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"22\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M23 28h14l3.5 19H19.5z\" fill=\"#B23A2C\"/>\n<path d=\"M23.5 31L17 39M37 31l7.5-8\"/><path d=\"M45.5 22.5L49 12\" stroke=\"#D8A72A\" stroke-width=\"2.6\"/>\n<path d=\"M10 48h40v4H10z\" fill=\"#D8A72A\"/>\n<path d=\"M14 52v18M30 52v14M46 52v18\"/>\n<circle cx=\"15.5\" cy=\"44.5\" r=\"2\" fill=\"#2C4E8F\"/><rect x=\"40\" y=\"42.5\" width=\"4.5\" height=\"4.5\" fill=\"#2C4E8F\"/></svg>", "2": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M13 19h34v50H13z\" fill=\"#2C4E8F\" opacity=\".16\" stroke=\"none\"/><path d=\"M13 19h34\"/>\n<path d=\"M25 7h10v4H25zM26 11h8v4h-8z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"22\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M20 28h20l4.5 27h-29z\" fill=\"#2C4E8F\"/>\n<rect x=\"21\" y=\"44\" width=\"18\" height=\"11\" fill=\"#FBFAF8\"/><path d=\"M30 44v11\"/></svg>", "3": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M23 11l2.5 5h9L37 11l1.5 7h-17z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"24\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M21 30h18l4 26H17z\" fill=\"#B23A2C\"/><path d=\"M21 42h18\" stroke=\"#D8A72A\" stroke-width=\"2\"/>\n<path d=\"M41.5 32L46 17\" stroke=\"#D8A72A\" stroke-width=\"2.4\"/><circle cx=\"46.5\" cy=\"14\" r=\"3\" fill=\"#D8A72A\"/>\n<path d=\"M11 40h12v15l-6 4-6-4z\" fill=\"#2C4E8F\"/><path d=\"M14 46l3 2.5-3 2.5M20 46l-3 2.5 3 2.5\" stroke=\"#FBFAF8\" stroke-width=\"1.1\"/></svg>", "4": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M23 12h14v6H23z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"24\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M20 30h17v19H20z\" fill=\"#B23A2C\"/>\n<path d=\"M23 49v20M23 61l14-10M37 51v18\"/>\n<path d=\"M39 32l6-14\" stroke=\"#D8A72A\" stroke-width=\"2.4\"/><circle cx=\"46\" cy=\"15\" r=\"3.2\" fill=\"#D8A72A\"/>\n<path d=\"M12 32h6v38h-6z\" fill=\"#2C4E8F\" opacity=\".35\" stroke=\"none\"/><path d=\"M12 32h6v38h-6z\"/></svg>", "5": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M25 6h10v4.5H25zM26 10.5h8v4h-8zM27 14.5h6v4h-6z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"25\" r=\"5\" fill=\"#E2B48C\"/>\n<path d=\"M20 31h20l4 24H16z\" fill=\"#2C4E8F\"/>\n<path d=\"M22 36v-6M25 36v-7M28 36v-6\" stroke=\"#E2B48C\" stroke-width=\"2\"/>\n<path d=\"M42 50V22M37 27h10M38.5 33h7M40 39h4\" stroke=\"#B23A2C\" stroke-width=\"1.8\"/>\n<circle cx=\"19\" cy=\"63\" r=\"4.5\" fill=\"#E2B48C\"/><circle cx=\"37\" cy=\"63\" r=\"4.5\" fill=\"#E2B48C\"/>\n<path d=\"M13 76c0-6 2.5-9 6-9s6 3 6 9M31 76c0-6 2.5-9 6-9s6 3 6 9\" fill=\"#B23A2C\"/></svg>", "6": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"30\" cy=\"10\" r=\"4\" fill=\"#E2B48C\"/><path d=\"M22 14c3-3 13-3 16 0-3 3-13 3-16 0z\" fill=\"#D8A72A\"/>\n<path d=\"M30 17v7M27 21l3 3 3-3\"/>\n<circle cx=\"13\" cy=\"34\" r=\"5\" fill=\"#E2B48C\"/><path d=\"M6 44h14l2 30H4z\" fill=\"#2C4E8F\"/>\n<circle cx=\"30\" cy=\"31\" r=\"5.2\" fill=\"#E2B48C\"/><path d=\"M22 41h16l2 33H20z\" fill=\"#B23A2C\"/>\n<circle cx=\"47\" cy=\"34\" r=\"5\" fill=\"#E2B48C\"/><path d=\"M40 44h14l2 30H38z\" fill=\"#D8A72A\"/>\n<path d=\"M4 74h52\" stroke=\"#5B8A4A\" stroke-width=\"3\"/></svg>", "7": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 18h36v5H12z\" fill=\"#2C4E8F\"/>\n<path d=\"M15 23v14M26 23v12M34 23v12M45 23v14\"/>\n<circle cx=\"30\" cy=\"30\" r=\"5\" fill=\"#E2B48C\"/><path d=\"M24 11h12l-1 6H25z\" fill=\"#D8A72A\"/>\n<path d=\"M23 36h14v14H23z\" fill=\"#B23A2C\"/>\n<path d=\"M10 50h40v8H10z\" fill=\"#D8A72A\"/>\n<path d=\"M8 58c0-4 3-7 7-7s7 3 7 7M38 58c0-4 3-7 7-7s7 3 7 7\" fill=\"#E2B48C\"/>\n<path d=\"M11 58v10M19 58v10M41 58v10M49 58v10\"/></svg>", "8": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M24 12l1.5 5h9L36 12l1 6H23z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"25\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M20 31h20l4 32H16z\" fill=\"#B23A2C\"/><path d=\"M20 44h20\" stroke=\"#D8A72A\" stroke-width=\"2\"/>\n<path d=\"M45 46V14\" stroke=\"#33383B\" stroke-width=\"2\"/><path d=\"M41 22h8\" stroke=\"#33383B\" stroke-width=\"2\"/>\n<path d=\"M15 34v16M9 50h12M9 50a3 3 0 0 0 6 0M15 50a3 3 0 0 0 6 0\" stroke=\"#2C4E8F\" stroke-width=\"1.4\"/></svg>", "9": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"30\" cy=\"20\" r=\"5\" fill=\"#E2B48C\"/><path d=\"M23 18c0-5 3-8 7-8s7 3 7 8z\" fill=\"#2C4E8F\"/>\n<path d=\"M30 26c-9 0-13 8-14 24-1 12-1 18-1 18h30s0-6-1-18c-1-16-5-24-14-24z\" fill=\"#2C4E8F\"/>\n<path d=\"M22 32L13 46\"/>\n<rect x=\"6\" y=\"44\" width=\"11\" height=\"12\" rx=\"1.5\" fill=\"#D8A72A\"/><path d=\"M11.5 41v3\"/>\n<path d=\"M44 20v52\" stroke=\"#B23A2C\" stroke-width=\"2.2\"/></svg>", "10": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"30\" cy=\"46\" r=\"20\" fill=\"#D8A72A\" opacity=\".25\"/><circle cx=\"30\" cy=\"46\" r=\"20\"/>\n<circle cx=\"30\" cy=\"46\" r=\"6\" fill=\"#B23A2C\"/>\n<path d=\"M30 26v40M12.7 36l34.6 20M12.7 56l34.6-20\"/>\n<path d=\"M50 46h7M53.5 42v8\" stroke-width=\"1.8\"/>\n<path d=\"M24 16h12l-2 8H26z\" fill=\"#2C4E8F\"/><circle cx=\"30\" cy=\"12\" r=\"4\" fill=\"#E2B48C\"/>\n<path d=\"M4 54c3-6 7-6 8 0 1 6-1 10-4 10s-6-4-4-10z\" fill=\"#5B8A4A\"/>\n<path d=\"M48 40c3-6 7-6 8 0 1 6-1 10-4 10s-6-4-4-10z\" fill=\"#B23A2C\"/></svg>", "11": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><ellipse cx=\"22\" cy=\"13\" rx=\"5\" ry=\"3\" fill=\"#D8A72A\"/><ellipse cx=\"31\" cy=\"13\" rx=\"5\" ry=\"3\" fill=\"#D8A72A\"/>\n<circle cx=\"26.5\" cy=\"23\" r=\"5\" fill=\"#E2B48C\"/>\n<path d=\"M18 29h17l4 33H14z\" fill=\"#2C4E8F\"/>\n<path d=\"M35 34l7 6\"/>\n<circle cx=\"46\" cy=\"47\" r=\"11\" fill=\"#D8A72A\"/><circle cx=\"46\" cy=\"47\" r=\"11\"/>\n<path d=\"M41 45.5h3M49 45.5h3\"/><path d=\"M41 52c2 2.5 8 2.5 10 0\" stroke=\"#B23A2C\" stroke-width=\"1.8\"/>\n<path d=\"M46 58c0 8-4 12-9 14\" stroke=\"#D8A72A\" stroke-width=\"2\"/></svg>", "12": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 10v66M52 10v66\" stroke=\"#5B8A4A\" stroke-width=\"3\"/>\n<path d=\"M8 16h44\" stroke=\"#5B8A4A\" stroke-width=\"3\"/>\n<path d=\"M4 26h8M4 40h8M48 26h8M48 40h8\" stroke=\"#5B8A4A\" stroke-width=\"2\"/>\n<path d=\"M30 16v10\" stroke=\"#D8A72A\" stroke-width=\"2\"/>\n<path d=\"M30 26v18M30 38l12 10\" stroke=\"#33383B\" stroke-width=\"2.4\"/>\n<path d=\"M22 48h16l3 16H19z\" fill=\"#2C4E8F\"/>\n<circle cx=\"30\" cy=\"69\" r=\"5.5\" fill=\"#E2B48C\"/>\n<path d=\"M38 52l8 8M22 52l-8 8\"/></svg>", "13": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M0 60h60v22H0z\" fill=\"#1C1A1B\"/>\n<circle cx=\"27\" cy=\"18\" r=\"6\" fill=\"#FBFAF8\"/><path d=\"M24 16.5h1.5M29 16.5h1.5M25 21h4\"/>\n<path d=\"M24 25h6v16h-6z\" fill=\"#FBFAF8\"/><path d=\"M21 29h12M21 34h12M21 39h12\"/>\n<path d=\"M27 41v16M27 46l-9 7M27 46l9 7\"/>\n<path d=\"M46 14v46\" stroke=\"#B23A2C\" stroke-width=\"2.4\"/>\n<path d=\"M46 16c-10 0-18 6-20 13 9-7 17-8 20-6z\" fill=\"#D8A72A\"/>\n<path d=\"M10 60v-7M14 53a4 4 0 0 1 0 7M48 60v-6\" stroke=\"#E2B48C\" stroke-width=\"2.2\"/>\n<path d=\"M36 60c0-5 2-7 4-7s4 2 4 7\" fill=\"#D8A72A\"/></svg>", "14": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M28 7l2 3 2-3-1 5h-2z\" fill=\"#D8A72A\"/>\n<circle cx=\"30\" cy=\"19\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M22 25h16l4 42H18z\" fill=\"#2C4E8F\"/>\n<path d=\"M22 28C12 28 5 36 5 46c6-8 12-11 17-11z\" fill=\"#B23A2C\"/>\n<path d=\"M38 28c10 0 17 8 17 18-6-8-12-11-17-11z\" fill=\"#B23A2C\"/>\n<path d=\"M10 42h11v9a5.5 5.5 0 0 1-11 0z\" fill=\"#D8A72A\"/>\n<path d=\"M39 50h11v9a5.5 5.5 0 0 1-11 0z\" fill=\"#D8A72A\"/>\n<path d=\"M21 47c6 0 12 3 18 6\" stroke=\"#2C4E8F\" stroke-width=\"2\"/></svg>", "15": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 8l3 7M38 8l-3 7\" stroke=\"#33383B\" stroke-width=\"2\"/>\n<circle cx=\"30\" cy=\"20\" r=\"5.5\" fill=\"#E2B48C\"/>\n<path d=\"M23 26h14v20H23z\" fill=\"#E2B48C\"/>\n<path d=\"M23 29C13 29 7 36 7 45c5-8 11-12 16-12zM37 29c10 0 16 7 16 16-5-8-11-12-16-12z\" fill=\"#1C1A1B\"/>\n<path d=\"M44 26V12\" stroke=\"#B23A2C\" stroke-width=\"2.2\"/><path d=\"M44 12c-2-4 0-7 0-7s2 3 0 7z\" fill=\"#D8A72A\"/>\n<path d=\"M18 46h24v8H18z\" fill=\"#B23A2C\"/>\n<circle cx=\"12\" cy=\"62\" r=\"4.5\" fill=\"#E2B48C\"/><circle cx=\"48\" cy=\"62\" r=\"4.5\" fill=\"#E2B48C\"/>\n<path d=\"M7 78c0-7 2-11 5-11s5 4 5 11M43 78c0-7 2-11 5-11s5 4 5 11\" fill=\"#1C1A1B\"/>\n<path d=\"M22 54c-4 2-7 4-10 4M38 54c4 2 7 4 10 4\" stroke=\"#D8A72A\" stroke-width=\"1.3\"/></svg>", "16": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 36h12v44H12zM36 36h12v44H36z\" fill=\"#B23A2C\"/>\n<path d=\"M12 36h36v44H12z\"/><path d=\"M24 36h12v44H24z\" fill=\"#D8A72A\" opacity=\".5\"/>\n<path d=\"M14 22h32v10H14z\" fill=\"#D8A72A\"/><path d=\"M14 22l32-8\" stroke=\"#33383B\" stroke-width=\"2\"/>\n<path d=\"M30 14L22 0M30 14l10-12\" stroke=\"#D8A72A\" stroke-width=\"2.4\"/>\n<circle cx=\"8\" cy=\"20\" r=\"2.4\" fill=\"#2C4E8F\"/><circle cx=\"52\" cy=\"26\" r=\"2.4\" fill=\"#B23A2C\"/>\n<circle cx=\"15\" cy=\"12\" r=\"2\" fill=\"#5B8A4A\"/><circle cx=\"47\" cy=\"12\" r=\"2\" fill=\"#D8A72A\"/>\n<circle cx=\"6\" cy=\"52\" r=\"4.5\" fill=\"#E2B48C\"/><circle cx=\"54\" cy=\"58\" r=\"4.5\" fill=\"#E2B48C\"/></svg>", "17": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M30 4l2.5 6.5L39 13l-6.5 2.5L30 22l-2.5-6.5L21 13l6.5-2.5z\" fill=\"#D8A72A\"/>\n<circle cx=\"11\" cy=\"10\" r=\"2.4\" fill=\"#2C4E8F\"/><circle cx=\"49\" cy=\"10\" r=\"2.4\" fill=\"#B23A2C\"/>\n<circle cx=\"7\" cy=\"22\" r=\"2\" fill=\"#5B8A4A\"/><circle cx=\"53\" cy=\"22\" r=\"2\" fill=\"#2C4E8F\"/>\n<circle cx=\"29\" cy=\"34\" r=\"5\" fill=\"#E2B48C\"/>\n<path d=\"M24 40c-2 6-2 12 0 18h12c2-6 2-12 0-18z\" fill=\"#E2B48C\"/>\n<path d=\"M24 58l-6 12h24l-6-12\" fill=\"#E2B48C\"/>\n<path d=\"M7 42h9v7a4.5 4.5 0 0 1-9 0z\" fill=\"#B23A2C\"/><path d=\"M11.5 55c-2 5-2 9 0 14\" stroke=\"#2C4E8F\" stroke-width=\"1.8\"/>\n<path d=\"M44 42h9v7a4.5 4.5 0 0 1-9 0z\" fill=\"#2C4E8F\"/><path d=\"M48.5 55c2 5 2 9 0 14\" stroke=\"#2C4E8F\" stroke-width=\"1.8\"/>\n<path d=\"M0 70h60\" stroke=\"#5B8A4A\" stroke-width=\"3\"/></svg>", "18": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"30\" cy=\"15\" r=\"11\" fill=\"#D8A72A\"/><circle cx=\"30\" cy=\"15\" r=\"11\"/>\n<path d=\"M26 13h1.5M33 13h1.5M27 19c2 1.5 4 1.5 6 0\"/>\n<path d=\"M14 30l2-5M30 32l2-5M46 30l2-5\" stroke=\"#2C4E8F\" stroke-width=\"2\"/>\n<path d=\"M2 40h8v24H2zM50 40h8v24h-8z\" fill=\"#B23A2C\"/><path d=\"M2 40h8v24H2zM50 40h8v24h-8z\"/>\n<path d=\"M17 60c0-7 2-10 4-10s4 3 4 10zM35 60c0-7 2-10 4-10s4 3 4 10z\" fill=\"#E2B48C\"/>\n<path d=\"M18 50l-2-5M24 50l2-5M36 50l-2-5M42 50l2-5\"/>\n<path d=\"M14 64h32c0 10-8 14-16 14s-16-4-16-14z\" fill=\"#2C4E8F\"/>\n<path d=\"M26 68h8v7h-8z\" fill=\"#5B8A4A\"/><path d=\"M26 70l-4-3M34 70l4-3\"/></svg>", "19": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"30\" cy=\"16\" r=\"11\" fill=\"#D8A72A\"/><circle cx=\"30\" cy=\"16\" r=\"11\"/>\n<path d=\"M30 2v3M30 27v3M16 16h-3M44 16h3M20 6l-2-2M40 6l2-2M20 26l-2 2M40 26l2 2\" stroke=\"#D8A72A\" stroke-width=\"2\"/>\n<path d=\"M26 14h1.5M33 14h1.5M27 20c2 1.5 4 1.5 6 0\"/>\n<path d=\"M14 34l-1.5 4M30 34l-1.5 4M46 34l-1.5 4\" stroke=\"#D8A72A\" stroke-width=\"2\"/>\n<circle cx=\"21\" cy=\"46\" r=\"5\" fill=\"#E2B48C\"/><circle cx=\"39\" cy=\"46\" r=\"5\" fill=\"#E2B48C\"/>\n<path d=\"M14 66c0-10 3-15 7-15s7 5 7 15M32 66c0-10 3-15 7-15s7 5 7 15\" fill=\"#E2B48C\"/>\n<path d=\"M26 52c3-2 5-2 8 0\" stroke=\"#B23A2C\" stroke-width=\"1.6\"/>\n<path d=\"M4 66h52v12H4z\" fill=\"#B23A2C\"/><path d=\"M4 72h52M21 66v6M39 72v6\"/></svg>", "20": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 6c4-4 10-4 13 0 5-3 11 0 11 5 5 0 7 5 4 8H10c-4-3-3-10 2-13z\" fill=\"#2C4E8F\" opacity=\".45\"/>\n<path d=\"M12 6c4-4 10-4 13 0 5-3 11 0 11 5 5 0 7 5 4 8H10c-4-3-3-10 2-13z\"/>\n<circle cx=\"24\" cy=\"12\" r=\"4.5\" fill=\"#E2B48C\"/>\n<path d=\"M30 16l20-8-2 10z\" fill=\"#D8A72A\"/><path d=\"M30 16l20-8-2 10z\"/>\n<circle cx=\"12\" cy=\"42\" r=\"5\" fill=\"#E2B48C\"/><circle cx=\"48\" cy=\"42\" r=\"5\" fill=\"#E2B48C\"/>\n<circle cx=\"30\" cy=\"38\" r=\"5\" fill=\"#E2B48C\"/>\n<path d=\"M5 62c0-10 3-15 7-15s7 5 7 15M41 62c0-10 3-15 7-15s7 5 7 15\" fill=\"#B23A2C\"/>\n<path d=\"M23 62c0-11 3-17 7-17s7 6 7 17z\" fill=\"#2C4E8F\"/>\n<path d=\"M4 62h52v18H4z\" fill=\"#E2B48C\"/><path d=\"M4 62h52v18H4z\"/></svg>", "21": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M30 14c12 7 12 41 0 54-12-13-12-47 0-54z\" fill=\"#5B8A4A\" opacity=\".3\"/>\n<path d=\"M30 14c12 7 12 41 0 54-12-13-12-47 0-54z\" stroke-width=\"2\"/>\n<circle cx=\"30\" cy=\"27\" r=\"4.6\" fill=\"#E2B48C\"/>\n<path d=\"M26 33c-2 6-2 11 0 15h8c2-4 2-9 0-15z\" fill=\"#E2B48C\"/>\n<path d=\"M26 36l-6 5M34 36l6-4\"/><path d=\"M27 48l-3 14M33 48l6 8\" stroke-width=\"1.8\"/>\n<circle cx=\"9\" cy=\"10\" r=\"6\" fill=\"#D8A72A\"/><circle cx=\"51\" cy=\"10\" r=\"6\" fill=\"#2C4E8F\"/>\n<circle cx=\"9\" cy=\"72\" r=\"6\" fill=\"#B23A2C\"/><circle cx=\"51\" cy=\"72\" r=\"6\" fill=\"#E2B48C\"/>\n<path d=\"M9 10h0M6 8h1M11 8h1M7 13c1 1 3 1 4 0M48 8h1M53 8h1M49 13c1 1 3 1 4 0M6 70h1M11 70h1M7 75c1 1 3 1 4 0M48 70h1M53 70h1M49 75c1 1 3 1 4 0\" stroke-width=\"1.1\"/></svg>", "0": "<svg viewBox=\"0 0 60 82\" fill=\"none\" stroke=\"#33383B\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 12c0-4 3-7 8-7s8 3 8 7c0 3-3 5-8 5s-8-2-8-5z\" fill=\"#B23A2C\"/>\n<circle cx=\"30\" cy=\"22\" r=\"5.2\" fill=\"#E2B48C\"/>\n<path d=\"M23 28h15l3 24H20z\" fill=\"#2C4E8F\"/><path d=\"M20 52l-2 24M41 52l3 24\"/>\n<path d=\"M22 32L13 20\" stroke=\"#33383B\" stroke-width=\"2\"/>\n<path d=\"M4 8l12 14\" stroke=\"#33383B\" stroke-width=\"2\"/>\n<path d=\"M5 6c5-3 10 0 9 5-4 3-9 1-9-5z\" fill=\"#D8A72A\"/>\n<path d=\"M38 34l10 40\" stroke=\"#5B8A4A\" stroke-width=\"2.6\"/>\n<path d=\"M44 58c4-3 9-1 10 4 1 6-3 10-8 9-5-1-6-9-2-13z\" fill=\"#D8A72A\"/>\n<path d=\"M49 57l-2-5M54 60l3-4\"/></svg>"};
 const GLYPHES_FIG = {"valet": "<circle cx=\"30\" cy=\"20\" r=\"5.2\" fill=\"#E2B48C\"/><path d=\"M22 10h16l-2 5H24z\" fill=\"#D8A72A\"/><path d=\"M22 26h16l3 30H19z\" fill=\"currentColor\" opacity=\".55\"/><path d=\"M22 26h16l3 30H19z\"/><path d=\"M22 56v20M38 56v20\"/>", "cavalier": "<circle cx=\"24\" cy=\"16\" r=\"5\" fill=\"#E2B48C\"/><path d=\"M17 22h14l3 16H14z\" fill=\"currentColor\" opacity=\".55\"/><path d=\"M17 22h14l3 16H14z\"/><path d=\"M6 46c6-6 32-8 44-2-2 10-6 14-14 14H16c-6 0-10-5-10-12z\" fill=\"currentColor\" opacity=\".3\"/><path d=\"M6 46c6-6 32-8 44-2-2 10-6 14-14 14H16c-6 0-10-5-10-12z\"/><path d=\"M12 58v16M22 58v14M38 58v16M48 56v18\"/><path d=\"M50 44l6-10 2 8\" fill=\"currentColor\"/>", "reine": "<path d=\"M22 10l2.5 5h11L38 10l1.5 7h-19z\" fill=\"#D8A72A\"/><circle cx=\"30\" cy=\"24\" r=\"5.2\" fill=\"#E2B48C\"/><path d=\"M21 30h18l6 46H15z\" fill=\"currentColor\" opacity=\".55\"/><path d=\"M21 30h18l6 46H15z\"/><path d=\"M15 56h30\"/>", "roi": "<path d=\"M21 9l3 6h12l3-6 2 8H19z\" fill=\"#D8A72A\"/><circle cx=\"30\" cy=\"25\" r=\"5.2\" fill=\"#E2B48C\"/><path d=\"M20 31h20l5 25H15z\" fill=\"currentColor\" opacity=\".55\"/><path d=\"M20 31h20l5 25H15z\"/><path d=\"M19 56v20M41 56v20M19 66h22\"/>"};
 const TEINTE_HEX = {batons:"#B5713F",coupes:"#4E9E9E",epees:"#5C6467",deniers:"#B59659"};
+/* Images du jeu du praticien, chargées depuis son appareil. Vide par défaut :
+   les dessins schématiques servent alors de repli. */
+const SCANS = {};
 const COLONNES = [
  {n:1,t:"Le potentiel",c:"I · VIII · XV",d:"L'énergie disponible, non encore employée."},
  {n:2,t:"L'accumulation",c:"II · VIIII · XVI",d:"Ce qui se garde en réserve — et finit par sortir."},
@@ -973,6 +995,7 @@ const LETTRE_FIG = {valet:"V",cavalier:"C",reine:"R",roi:"K"};
 const TEINTE = {batons:"var(--s-batons)",coupes:"var(--s-coupes)",epees:"var(--s-epees)",deniers:"var(--s-deniers)"};
 
 function artHTML(c){
+  if(SCANS[c.id]) return `<img class="scan" src="${SCANS[c.id]}" alt="">`;
   if(c.type==="majeur") return GLYPHES[c.n] || "";
   if(c.type==="figure"){
     const fig = `<svg class="fig" viewBox="0 0 60 82" fill="none" stroke="#33383B" stroke-width="1.5"`
@@ -987,7 +1010,7 @@ function lameHTML(c,{tag="button",cls="",attrs=""}={}){
   const num = c.type==="majeur" ? (c.r || "sans nombre")
             : c.type==="figure" ? FIGURES[c.fig].nom.toLowerCase()
             : (c.n===1?"as":c.n);
-  return `<${tag} class="lame ${cls}" data-id="${c.id}" ${c.suite?`data-suite="${c.suite}"`:""} ${attrs} aria-label="${esc(c.nom)}">
+  return `<${tag} class="lame ${cls}${SCANS[c.id]?" ascan":""}" data-id="${c.id}" ${c.suite?`data-suite="${c.suite}"`:""} ${attrs} aria-label="${esc(c.nom)}">
     <span class="grain"></span>
     <span class="lame-inner">
       <span class="lame-num">${esc(String(num))}</span>
@@ -1651,6 +1674,135 @@ function exemple(){
 }
 renderChoix(); exemple(); renderTapis(false);
 renderGalerie(); renderGrammaire(); renderNaissance(); renderCarnet(lsLire()); renderCarnetEtat("");
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   Les images de votre propre jeu
+   Rangées dans ce navigateur (IndexedDB), jamais envoyées ailleurs.
+   ═══════════════════════════════════════════════════════════════════ */
+const SANS_ACCENT = t => t.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const ROMAIN = {i:1,ii:2,iii:3,iiii:4,iv:4,v:5,vi:6,vii:7,viii:8,ix:9,viiii:9,x:10,
+  xi:11,xii:12,xiii:13,xiiii:14,xiv:14,xv:15,xvi:16,xvii:17,xviii:18,xviiii:19,xix:19,xx:20,xxi:21,xxii:0};
+const MOTS_SUITE = {batons:["baton","batons"],coupes:["coupe","coupes","cup","cups"],
+  epees:["epee","epees","sword","swords"],deniers:["denier","deniers","coin","coins","pentacle","pentacles"]};
+const MOTS_RANG = {valet:["valet","page","varlet"],cavalier:["cavalier","chevalier","knight"],
+  reine:["reine","dame","queen"],roi:["roi","roy","king"]};
+const MOTS_MAJ = {1:["bateleur"],2:["papesse"],3:["imperatrice"],4:["empereur"],5:["pape"],
+  6:["amoureux","amoureux"],7:["chariot"],8:["justice"],9:["ermite","hermite"],10:["roue","fortune"],
+  11:["force"],12:["pendu"],13:["mort","sansnom"],14:["temperance"],15:["diable"],
+  16:["maison","tour"],17:["etoile"],18:["lune"],19:["soleil"],20:["jugement"],21:["monde"],0:["mat","fou","fol"]};
+
+function trouverCarte(nomFichier){
+  const base = SANS_ACCENT(nomFichier).replace(/\.[a-z0-9]+$/,"");
+  const toks = base.split(/[^a-z0-9]+/).filter(Boolean);
+  const colle = (mots) => toks.some(t=>mots.some(m=>t===m||(m.length>3&&t.endsWith(m))));
+
+  let suite = null;
+  for(const k in MOTS_SUITE) if(colle(MOTS_SUITE[k])){ suite = k; break; }
+  if(suite){
+    for(const r in MOTS_RANG) if(colle(MOTS_RANG[r])) return suite+"-"+r;
+    for(const t of toks){
+      if(t==="as") return suite+"-1";
+      const n = parseInt(t,10);
+      if(n>=1 && n<=10) return suite+"-"+n;
+      if(ROMAIN[t] && ROMAIN[t]<=10) return suite+"-"+ROMAIN[t];
+    }
+    return null;
+  }
+  for(const n in MOTS_MAJ) if(colle(MOTS_MAJ[n])) return "M"+n;
+  for(const t of toks){
+    const n = parseInt(t,10);
+    if(!isNaN(n) && n>=0 && n<=22) return "M"+(n===22?0:n);
+    if(t in ROMAIN) return "M"+ROMAIN[t];
+  }
+  return null;
+}
+
+async function reduireImage(file){
+  const bmp = await createImageBitmap(file);
+  const r = Math.min(1, 620/Math.max(bmp.width,bmp.height));
+  const w = Math.round(bmp.width*r), h = Math.round(bmp.height*r);
+  const cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+  cv.getContext("2d").drawImage(bmp,0,0,w,h);
+  if(bmp.close) bmp.close();
+  return new Promise(res=>cv.toBlob(res,"image/jpeg",.82));
+}
+
+function ouvrirIdb(){
+  return new Promise((res,rej)=>{
+    const r = indexedDB.open("miroir-lames",1);
+    r.onupgradeneeded = ()=>{ r.result.createObjectStore("img"); };
+    r.onsuccess = ()=>res(r.result); r.onerror = ()=>rej(r.error);
+  });
+}
+async function idbPut(id,blob){
+  const d = await ouvrirIdb();
+  return new Promise((res,rej)=>{
+    const t = d.transaction("img","readwrite");
+    t.objectStore("img").put(blob,id);
+    t.oncomplete = ()=>res(); t.onerror = ()=>rej(t.error);
+  });
+}
+async function idbTout(){
+  const d = await ouvrirIdb();
+  return new Promise((res,rej)=>{
+    const o = d.transaction("img","readonly").objectStore("img");
+    const ks = o.getAllKeys(), vs = o.getAll();
+    let k = null, v = null;
+    const fini = ()=>{ if(k && v) res([k,v]); };
+    ks.onsuccess = ()=>{ k = ks.result; fini(); };
+    vs.onsuccess = ()=>{ v = vs.result; fini(); };
+    ks.onerror = vs.onerror = ()=>rej();
+  });
+}
+async function idbVider(){
+  const d = await ouvrirIdb();
+  return new Promise((res,rej)=>{
+    const t = d.transaction("img","readwrite");
+    t.objectStore("img").clear();
+    t.oncomplete = ()=>res(); t.onerror = ()=>rej(t.error);
+  });
+}
+
+function majScans(){
+  const n = Object.keys(SCANS).length;
+  $("#import-etat").textContent = n ? `${n} lame${n>1?"s":""} sur 78 portent votre image.` : "";
+  renderGalerie(); renderTapis(false);
+}
+async function chargerScans(){
+  if(!("indexedDB" in window)) return;
+  try{
+    const [ks,vs] = await idbTout();
+    Object.keys(SCANS).forEach(k=>{ URL.revokeObjectURL(SCANS[k]); delete SCANS[k]; });
+    ks.forEach((k,i)=>{ if(PARID[k]) SCANS[k] = URL.createObjectURL(vs[i]); });
+    majScans();
+  }catch(e){ /* navigateur sans stockage : on garde les dessins */ }
+}
+
+$("#fichiers").addEventListener("change", async e=>{
+  const files = Array.from(e.target.files||[]);
+  e.target.value = "";
+  if(!files.length) return;
+  const rap = $("#import-rapport"), refus = [];
+  rap.innerHTML = `<p class="pense"><i></i>Lecture de ${files.length} image${files.length>1?"s":""}…</p>`;
+  let ok = 0;
+  for(const f of files){
+    const id = trouverCarte(f.name);
+    if(!id || !PARID[id]){ refus.push(f.name); continue; }
+    try{ await idbPut(id, await reduireImage(f)); ok++; }
+    catch(err){ refus.push(f.name+" — illisible"); }
+  }
+  await chargerScans();
+  rap.innerHTML =
+    `<p style="margin:0"><b>${ok} image${ok>1?"s":""} associée${ok>1?"s":""}.</b></p>` +
+    (refus.length ? `<p class="faint" style="margin:7px 0 0">Non reconnues. Renommez-les d'après la lame, puis rechargez-les :</p><ul>${refus.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>` : "");
+});
+$("#vider-lames").addEventListener("click", async ()=>{
+  try{ await idbVider(); }catch(e){}
+  await chargerScans();
+  $("#import-rapport").innerHTML = `<p class="faint" style="margin:0">Retour aux dessins.</p>`;
+});
+chargerScans();
 
 /* ── Capacités du viewer, si elles arrivent ─────────────────────── */
 (async ()=>{
